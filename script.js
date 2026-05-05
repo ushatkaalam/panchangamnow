@@ -592,7 +592,7 @@ async function loadElementData(def_element, nowUTC) {
 
           resolvedExtras[key] = {
             code: lookupCode,
-            name: dictEntry?.en || .name ?? lookupCode ?? "—",
+            name: dictEntry?.name ?? lookupCode ?? "—",
             previous: dictEntry?.previous ?? "—",
             next: dictEntry?.next ?? "—"
           };
@@ -693,10 +693,10 @@ async function loadElementData(def_element, nowUTC) {
           // Sowramaanam block
             sowramanamDiv.innerHTML = `
               <strong>Sowramaana sankalpam</strong><br><br>
-              Samvatsaram: ${data.sowramanam.varsham?.en || .name ?? "—"}<br>
-              Ayanam: ${data.sowramanam.ayanam?.en || .name ?? "—"}<br>
-              Ruthu: ${data.sowramanam.ruthu?.en || .name ?? "—"}<br>
-              Masam: ${data.sowramanam.masam?.en || .name ?? "—"}<br>
+              Samvatsaram: ${data.sowramanam.varsham?.name ?? "—"}<br>
+              Ayanam: ${data.sowramanam.ayanam?.name ?? "—"}<br>
+              Ruthu: ${data.sowramanam.ruthu?.name ?? "—"}<br>
+              Masam: ${data.sowramanam.masam?.name ?? "—"}<br>
               Paksham: ${data.chandramanam.paksham}<br>
               Thithi: See thithi details below<br> 
               Vaasaram: ${data.chandramanam.weekdayTrad}<br>
@@ -705,7 +705,7 @@ async function loadElementData(def_element, nowUTC) {
             chandramanamDiv.innerHTML = `
               <strong>Chaandramaana sankalpam</strong><br><br>
               Samvatsaram: ${data.chandramanam.varsham}<br>
-              Ayanam: ${data.sowramanam.ayanam?.en || .name ?? "—"}<br>
+              Ayanam: ${data.sowramanam.ayanam?.name ?? "—"}<br>
               Ruthu: ${data.chandramanam.ruthu}<br>
               Masam: ${data.chandramanam.masam}<br>
               Paksham: ${data.chandramanam.paksham}<br>
@@ -769,7 +769,7 @@ function renderElementTable(def, lines, headers, index) {
 
     const code = cols[idx(def.codeColumn)]?.trim();
     const info = def.mapping[code] ?? {};
-    const name = info.en || .name ?? code ?? "—";
+    const name = info.name ?? code ?? "—";
 
     // Row label
     let label = "";

@@ -376,6 +376,8 @@ const ELEMENT_DEFINITIONS = {
          dictionary: paksham_data
        }
      },
+    mapping: thithi_data,
+
     canvasId: "timePie1",
     pieLabel: "Thithi in progress ....."
   },
@@ -387,6 +389,7 @@ const ELEMENT_DEFINITIONS = {
     codeColumn: "onakshatram_nakshatram",
     fromPrefix: "onakshatram_start",
     toPrefix: "onakshatram_end",
+    mapping: nakshatram_data,
     canvasId: "timePie2",
     pieLabel: "Nakshatram in progress ....."
   },
@@ -398,6 +401,7 @@ const ELEMENT_DEFINITIONS = {
     codeColumn: "oyogam_yogam",
     fromPrefix: "oyogam_start",
     toPrefix: "oyogam_end",
+    mapping: yogam_data,
     canvasId: "timePie3",
     pieLabel: "Yogam in progress ....."
   },
@@ -409,7 +413,8 @@ const ELEMENT_DEFINITIONS = {
     codeColumn: "okaranam_number",
     fromPrefix: "okaranam_start",
     toPrefix: "okaranam_end",
-    canvasId: "timePie4",
+    mapping: karanam_data,
+canvasId: "timePie4",
     pieLabel: "Karanam in progress ....."
   }
 
@@ -561,7 +566,7 @@ async function loadElementData(def_element, nowUTC) {
 
     const code = cols[idx(def_element.codeColumn)]?.trim();
     const info = def_element.mapping[code] ?? {};
-    const name = info.en || .name ?? code;
+    const name = info?.en ?? info?.name ?? code;
     const previous = info.previous ?? "—";
     const next = info.next ?? "—";
 
@@ -604,10 +609,10 @@ async function loadElementData(def_element, nowUTC) {
       // -------------------------------
       if (def_element.key === "thithi" && resolvedExtras) {
         GLOBAL_EXTRAS.chandramanam = {
-          varsham:  resolvedExtras.varsham?.en || .name ?? "—",
-          masam:    resolvedExtras.masam?.en || .name ?? "—",
-          paksham:  resolvedExtras.paksham?.en || .name ?? "—",
-          ruthu:    resolvedExtras.ruthu?.en || .name ?? "—",
+          varsham:  resolvedExtras.varsham?.en ?? resolvedExtras.varsham?.name ?? "—",
+          masam:    resolvedExtras.masam?.en ?? resolvedExtras.masam?.name ?? "—",
+          paksham:  resolvedExtras.paksham?.en ?? resolvedExtras.paksham?.name ?? "—",
+          ruthu:    resolvedExtras.ruthu?.en ?? resolvedExtras.ruthu?.name ?? "—",
           weekday:  CURRENT_DAY_INFO.weekday,
           weekdayTrad: CURRENT_DAY_INFO.traditional
         };
@@ -790,7 +795,7 @@ function renderElementTable(def, lines, headers, index) {
 
       if (pakCol) {
         const pakCode = cols[idx(pakCol)];
-        pakName = paksham_data[pakCode]?.en || .name ?? pakCode ?? "—";
+        pakName = paksham_data[pakCode]?.en ?? paksham_data[pakCode]?.name ?? pakCode ?? "—";
       }
 
       html += `<td>${pakName}</td>`;
@@ -954,8 +959,9 @@ ctx.restore();
 
   const pakshamLabel = isKrishna ? "Krishna" : "Shukla";
   const thithiName =
-    ELEMENT_DEFINITIONS.thithi.mapping[thithiCode]?.en || .name || localIndex;
-
+  ELEMENT_DEFINITIONS.thithi.mapping?.[thithiCode]?.en ??
+  ELEMENT_DEFINITIONS.thithi.mapping?.[thithiCode]?.name ??
+  localIndex;
   ctx.fillText(
     `${pakshamLabel} Paksham - Thithi ${thithiName} in progress`,
     centerX,

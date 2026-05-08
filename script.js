@@ -1,211 +1,211 @@
 const varsham_data = {
-PBV: {name: "Prabhava", en: "Prabhava", sa: "प्रभव", ta: "பிரபவ", te: "ప్రభవ", ka: "ಪ್ರಭವ"},
-VBV: {name: "Vibhava", en: "Vibhava", sa: "विभव", ta: "விபவ", te: "విభవ", ka: "ವಿಭವ"},
-SHU: {name: "Shukla", en: "Shukla", sa: "शुक्ल", ta: "சுக்ல", te: "శుక్ల", ka: "ಶುಕ್ಲ" },
-PMD: {name: "Pramodutha", en: "Pramodutha", sa: "प्रमोदूत", ta: "பிரமோதூத", te: "ప్రమోదూత", ka: "ಪ್ರಮೋದೂತ"},
-PJP: {name: "Prajotpatthi",en: "Prajotpatthi", sa: "प्रजोत्पत्ति", ta: "ப்ரஜோத்பத்தி", te: "ప్రజోత్పత్తి", ka: "ಪ್ರಜೋತ್ಪತ್ತಿ"}, 
-AAN: {name: "Aangirasa",en: "Aangirasa", sa: "आङ्गिरस", ta: "ஆங்கிரச", te: "ఆంగీరస", ka: "ಆಂಗೀರಸ" },
-SMK: {name: "Shrimukha",  en: "Shrimukha", sa: "श्रीमुख", ta: "ஸ்ரீமுக", te: "శ్రీముఖ", ka: "ಶ್ರೀಮುಖ" },
-BHV: {name: "Bhava",en: "Bhava", sa: "भाव", ta: "பவ", te: "భవ", ka: "ಭವ"},
-YUV: {name: "Yuva",en: "Yuva", sa: "युव", ta: "யுவ", te: "యువ", ka: "ಯುವ"},
-DHT: {name: "Dhathru",en: "Dhathru", sa: "धात", ta: "தாத", te: "ధాత", ka: "ಧಾತ"},
-EAS: {name: "Eashwara",en: "Eashwara", sa: "ईश्वर", ta: "ஈஸ்வர", te: "ఈశ్వర", ka: "ಈಶ್ವರ"},
-BDY: {name: "Bahudhanya", en: "Bahudhanya", sa: "बहुधान्य", ta: "பஹுதான்ய", te: "బహుధాన్య", ka: "ಬಹುಧಾನ್ಯ"},
-PMA: {name: "Pramadhi", en: "Pramadhi", sa: "प्रमाथी", ta: "ப்ரமாதி", te: "ప్రమాది", ka: "ಪ್ರಮಾದಿ"},
-VKM: {name: "Vikrama", en: "Vikrama", sa: "विक्रम", ta: "விக்ரம", te: "విక్రమ", ka: "ವಿಕ್ರಮ"},
-VSH: {name: "Vrusha", en: "Vrusha", sa: "वृष", ta: "வ்ருஷ", te: "వృష", ka: "ವೃಷ"},
-CBH: {name: "Chitrabhanu", en: "Chitrabhanu", sa: "चित्रभानु", ta: "சித்திரபானு", te: "చిత్రభాను", ka: "ಚಿತ್ರಭಾನು"},
-SBH: {name: "Swabhanu", en: "Swabhanu", sa: "स्वभानु", ta: "ஸ்வபானு", te: "స్వభాను", ka: "ಸ್ವಭಾನು"},
-DHA: {name: "Dharana", en: "Dharana", sa: "तारण", ta: "தாரண", te: "తారణ", ka: "ತಾರಣ"},
-PAA: {name: "Paarthiva", en: "Paarthiva", sa: "पार्थिव", ta: "பார்த்திவ", te: "పార్థివ", ka: "ಪಾರ್ಥಿವ"},
-VIY: {name: "Vyaya", en: "Vyaya", sa: "व्यय", ta: "வ்யய", te: "వ్యయ", ka: "ವ್ಯಯ"},
-SVJ: {name: "Sarvajit", en: "Sarvajit", sa: "सर्वजित्", ta: "சர்வஜித்", te: "సర్వజిత్", ka: "ಸರ್ವಜಿತ್"},
-SVD: {name: "Sarvadhari", en: "Sarvadhari", sa: "सर्वधारी", ta: "சர்வதாரி", te: "సర్వధారి", ka: "ಸರ್ವಧಾರಿ"},
-VRD: {name: "Virodhi", en: "Virodhi", sa: "विरोधी", ta: "விரோதி", te: "విరోధి", ka: "ವಿರೋಧಿ"},
-VKT: {name: "Vikruthi", en: "Vikruthi", sa: "विकृति", ta: "விக்ருதி", te: "వికృతి", ka: "ವಿಕೃತಿ"},
-KAR: {name: "Kara", en: "Kara", sa: "खर", ta: "கர", te: "ఖర", ka: "ಖರ"},
-NAN: {name: "Nandana", en: "Nandana", sa: "नन्दन", ta: "நந்தன", te: "నందన", ka: "ನಂದನ"},
-VIJ: {name: "Vijaya", en: "Vijaya", sa: "विजय", ta: "விஜய", te: "విజయ", ka: "ವಿಜಯ"},
-JAY: {name: "Jaya", en: "Jaya", sa: "जय", ta: "ஜய", te: "జయ", ka: "ಜಯ"},
-MAN: {name: "Manmatha", en: "Manmatha", sa: "मन्मथ", ta: "மன்மத", te: "మన్మథ", ka: "ಮನ್ಮಥ"},
-DRM: {name: "Durmukhi", en: "Durmukhi", sa: "दुर्मुखी", ta: "துர்முகி", te: "దుర్ముఖి", ka: "ದುರ್ಮುಖಿ"},
-HEY: {name: "Heyvilambi", en: "Heyvilambi", sa: "हेविलम्बि", ta: "ஹேவிளம்பி", te: "హేవిళంబి", ka: "ಹೇವಿಳಂಬಿ"},
-VIL: {name: "Vilambi", en: "Vilambi", sa: "विलम्बि", ta: "விளம்பி", te: "విళంబి", ka: "ವಿಳಂಬಿ"},
-VKR: {name: "Vikari", en: "Vikari", sa: "विकारी", ta: "விகாரி", te: "వికారి", ka: "ವಿಕಾರಿ"},
-SHA: {name: "Shaarvari", en: "Shaarvari", sa: "शार्वरी", ta: "சார்வரி", te: "శార్వరి", ka: "ಶಾರ್ವರಿ"},
-PLA: {name: "Plava", en: "Plava", sa: "प्लव", ta: "ப்லவ", te: "ప్లవ", ka: "ಪ್ಲವ"},
-SBK: {name: "Shubhakruth", en: "Shubhakruth", sa: "शुभकृत्", ta: "சுபக்ரித்", te: "శుభకృత్", ka: "ಶುಭಕೃತ್"},
-SHB: {name: "Shobhakruth", en: "Shobhakruth", sa: "शोभकृत्", ta: "சோபக்ரித்", te: "శోభకృత్", ka: "ಶೋಭಕೃತ್"},
-KRD: {name: "Krodhi", en: "Krodhi", sa: "क्रोधी", ta: "க்ரோதீ", te: "క్రోధి", ka: "ಕ್ರೋಧಿ"},
-VWV: {name: "Vishwaavasu", en: "Vishwaavasu", sa: "विश्ववासु", ta: "விஷ்வவாசு", te: "విశ్వవాసు", ka: "ವಿಶ್ವವಾಸು"},
-PAR: {name: "Paraabhava", en: "Paraabhava", sa: "पराभव", ta: "பராபவ", te: "పరాభవ", ka: "ಪರಾಭವ"},
-PVG: {name: "Plavanga", en: "Plavanga", sa: "प्लवङ्ग", ta: "ப்லவங்க", te: "ప్లవంగ", ka: "ಪ್ಲವಂಗ"},
-KLK: {name: "Keelaka", en: "Keelaka", sa: "कीलक", ta: "கீலக", te: "కీలక", ka: "ಕೀಲಕ"},
-SOW: {name: "Sowmya", en: "Sowmya", sa: "सौम्य", ta: "சௌம்ய", te: "సౌమ్య", ka: "ಸೌಮ್ಯ"},
-SAD: {name: "Saadhaarana", en: "Saadhaarana", sa: "साधारण", ta: "சாதாரண", te: "సాధారణ", ka: "ಸಾಧಾರಣ"},
-VDK: {name: "Virodhikruthi", en: "Virodhikruthi", sa: "विरोधिकृत्", ta: "விரோதிக்ரித்", te: "విరోధికృత్", ka: "ವಿರೋಧಿಕೃತ್"},
-PTP: {name: "Paridhavi", en: "Paridhavi", sa: "परिधावि", ta: "பரிதாவி", te: "పరిధావి", ka: "ಪರಿಧாவி"},
-PMC: {name: "Pramadeecha", en: "Pramadeecha", sa: "प्रमादीच", ta: "ப்ரமாதீச", te: "ప్రమాదీచ", ka: "ಪ್ರಮಾದೀಚ"},
-ANA: {name: "Aananda", en: "Aananda", sa: "आनन्द", ta: "ஆனந்த", te: "ఆనంద", ka: "ಆನಂದ"},
-RAK: {name: "Raakshasa", en: "Raakshasa", sa: "राक्षस", ta: "ராக்ஷச", te: "రాక్షస", ka: "ರಾಕ್ಷಸ"},
-NAL: {name: "Nala", en: "Nala", sa: "नल", ta: "நள", te: "నల", ka: "ನಳ"},
-PIN: {name: "Pingala", en: "Pingala", sa: "पिङ्गल", ta: "பிங்கல", te: "పింగళ", ka: "ಪಿಂಗಲ"},
-KAA: {name: "Kalaayukthi", en: "Kalaayukthi", sa: "कलायुक्ति", ta: "கலாயுக்தி", te: "కలాయుక్తి", ka: "ಕಲಾಯುಕ್ತಿ"},
-SID: {name: "Siddhaarthi", en: "Siddhaarthi", sa: "सिद्धार्थि", ta: "சித்தார்த்தி", te: "సిద్ధార్థి", ka: "ಸಿದ್ಧಾರ್ಥಿ"},
-RAU: {name: "Raudhri", en: "Raudhri", sa: "रौद्र", ta: "ரௌத்ர", te: "రౌద్ర", ka: "ರೌದ್ರ"},
-DHU: {name: "Durmathi", en: "Durmathi", sa: "दुर्मति", ta: "துர்மதி", te: "దుర్మతి", ka: "ದುರ್ಮತಿ"},
-DHN: {name: "Dundubi", en: "Dundubi", sa: "दुन्दुभि", ta: "துந்துபி", te: "దుందుభి", ka: "ದುಂದುಭಿ"},
-RUD: {name: "Rudraotkaari", en: "Rudraotkaari", sa: "रुधिरोद्गारि", ta: "ருதிரோத்காரி", te: "రుధిరోద్గారి", ka: "ರುಧಿರೋದ್ಗಾರಿ"},
-RKT: {name: "Raktaakshi", en: "Raktaakshi", sa: "रक्ताक्षि", ta: "ரக்தாக்ஷி", te: "రక్తాక్షి", ka: "ರಕ್ತಾಕ್ಷಿ"},
-KRO: {name: "Krodhana", en: "Krodhana", sa: "क्रोधन", ta: "க்ரோதன", te: "క్రోధన", ka: "ಕ್ರೋಧನ"},
-AKS: {name: "Akshaya", en: "Akshaya", sa: "अक्षय", ta: "அக்ஷய", te: "అక్షय", ka: "ಅಕ್ಷಯ"}
+PBV: {en: "Prabhava", sa: "प्रभव", ta: "பிரபவ", te: "ప్రభవ", ka: "ಪ್ರಭವ"},
+VBV: {en: "Vibhava", sa: "विभव", ta: "விபவ", te: "విభవ", ka: "ವಿಭವ"},
+SHU: {en: "Shukla", sa: "शुक्ल", ta: "சுக்ல", te: "శుక్ల", ka: "ಶುಕ್ಲ" },
+PMD: {en: "Pramodutha", sa: "प्रमोदूत", ta: "பிரமோதூத", te: "ప్రమోదూత", ka: "ಪ್ರಮೋದೂತ"},
+PJP: {en: "Prajotpatthi", sa: "प्रजोत्पत्ति", ta: "ப்ரஜோத்பத்தி", te: "ప్రజోత్పత్తి", ka: "ಪ್ರಜೋತ್ಪತ್ತಿ"}, 
+AAN: {en: "Aangirasa", sa: "आङ्गिरस", ta: "ஆங்கிரச", te: "ఆంగీరస", ka: "ಆಂಗೀರಸ" },
+SMK: {en: "Shrimukha", sa: "श्रीमुख", ta: "ஸ்ரீமுக", te: "శ్రీముఖ", ka: "ಶ್ರೀಮುಖ" },
+BHV: {en: "Bhava", sa: "भाव", ta: "பவ", te: "భవ", ka: "ಭವ"},
+YUV: {en: "Yuva", sa: "युव", ta: "யுவ", te: "యువ", ka: "ಯುವ"},
+DHT: {en: "Dhathru", sa: "धात", ta: "தாத", te: "ధాత", ka: "ಧಾತ"},
+EAS: {en: "Eashwara", sa: "ईश्वर", ta: "ஈஸ்வர", te: "ఈశ్వర", ka: "ಈಶ್ವರ"},
+BDY: {en: "Bahudhanya", sa: "बहुधान्य", ta: "பஹுதான்ய", te: "బహుధాన్య", ka: "ಬಹುಧಾನ್ಯ"},
+PMA: {en: "Pramadhi", sa: "प्रमाथी", ta: "ப்ரமாதி", te: "ప్రమాది", ka: "ಪ್ರಮಾದಿ"},
+VKM: {en: "Vikrama", sa: "विक्रम", ta: "விக்ரம", te: "విక్రమ", ka: "ವಿಕ್ರಮ"},
+VSH: {en: "Vrusha", sa: "वृष", ta: "வ்ருஷ", te: "వృష", ka: "ವೃಷ"},
+CBH: {en: "Chitrabhanu", sa: "चित्रभानु", ta: "சித்திரபானு", te: "చిత్రభాను", ka: "ಚಿತ್ರಭಾನು"},
+SBH: {en: "Swabhanu", sa: "स्वभानु", ta: "ஸ்வபானு", te: "స్వభాను", ka: "ಸ್ವಭಾನು"},
+DHA: {en: "Dharana", sa: "तारण", ta: "தாரண", te: "తారణ", ka: "ತಾರಣ"},
+PAA: {en: "Paarthiva", sa: "पार्थिव", ta: "பார்த்திவ", te: "పార్థివ", ka: "ಪಾರ್ಥಿವ"},
+VIY: {en: "Vyaya", sa: "व्यय", ta: "வ்யய", te: "వ్యయ", ka: "ವ್ಯಯ"},
+SVJ: {en: "Sarvajit", sa: "सर्वजित्", ta: "சர்வஜித்", te: "సర్వజిత్", ka: "ಸರ್ವಜಿತ್"},
+SVD: {en: "Sarvadhari", sa: "सर्वधारी", ta: "சர்வதாரி", te: "సర్వధారి", ka: "ಸರ್ವಧಾರಿ"},
+VRD: {en: "Virodhi", sa: "विरोधी", ta: "விரோதி", te: "విరోధి", ka: "ವಿರೋಧಿ"},
+VKT: {en: "Vikruthi", sa: "विकृति", ta: "விக்ருதி", te: "వికృతి", ka: "ವಿಕೃತಿ"},
+KAR: {en: "Kara", sa: "खर", ta: "கர", te: "ఖర", ka: "ಖರ"},
+NAN: {en: "Nandana", sa: "नन्दन", ta: "நந்தன", te: "నందన", ka: "ನಂದನ"},
+VIJ: {en: "Vijaya", sa: "विजय", ta: "விஜய", te: "విజయ", ka: "ವಿಜಯ"},
+JAY: {en: "Jaya", sa: "जय", ta: "ஜய", te: "జయ", ka: "ಜಯ"},
+MAN: {en: "Manmatha", sa: "मन्मथ", ta: "மன்மத", te: "మన్మథ", ka: "ಮನ್ಮಥ"},
+DRM: {en: "Durmukhi", sa: "दुर्मुखी", ta: "துர்முகி", te: "దుర్ముఖి", ka: "ದುರ್ಮುಖಿ"},
+HEY: {en: "Heyvilambi", sa: "हेविलम्बि", ta: "ஹேவிளம்பி", te: "హేవిళంబి", ka: "ಹೇವಿಳಂಬಿ"},
+VIL: {en: "Vilambi", sa: "विलम्बि", ta: "விளம்பி", te: "విళంబి", ka: "ವಿಳಂಬಿ"},
+VKR: {en: "Vikari", sa: "विकारी", ta: "விகாரி", te: "వికారి", ka: "ವಿಕಾರಿ"},
+SHA: {en: "Shaarvari", sa: "शार्वरी", ta: "சார்வரி", te: "శార్వరి", ka: "ಶಾರ್ವರಿ"},
+PLA: {en: "Plava", sa: "प्लव", ta: "ப்லவ", te: "ప్లవ", ka: "ಪ್ಲವ"},
+SBK: {en: "Shubhakruth", sa: "शुभकृत्", ta: "சுபக்ரித்", te: "శుభకృత్", ka: "ಶುಭಕೃತ್"},
+SHB: {en: "Shobhakruth", sa: "शोभकृत्", ta: "சோபக்ரித்", te: "శోభకృత్", ka: "ಶೋಭಕೃತ್"},
+KRD: {en: "Krodhi", sa: "क्रोधी", ta: "க்ரோதீ", te: "క్రోధి", ka: "ಕ್ರೋಧಿ"},
+VWV: {en: "Vishwaavasu", sa: "विश्ववासु", ta: "விஷ்வவாசு", te: "విశ్వవాసు", ka: "ವಿಶ್ವವಾಸು"},
+PAR: {en: "Paraabhava", sa: "पराभव", ta: "பராபவ", te: "పరాభవ", ka: "ಪರಾಭವ"},
+PVG: {en: "Plavanga", sa: "प्लवङ्ग", ta: "ப்லவங்க", te: "ప్లవంగ", ka: "ಪ್ಲವಂಗ"},
+KLK: {en: "Keelaka", sa: "कीलक", ta: "கீலக", te: "కీలక", ka: "ಕೀಲಕ"},
+SOW: {en: "Sowmya", sa: "सौम्य", ta: "சௌம்ய", te: "సౌమ్య", ka: "ಸೌಮ್ಯ"},
+SAD: {en: "Saadhaarana", sa: "साधारण", ta: "சாதாரண", te: "సాధారణ", ka: "ಸಾಧಾರಣ"},
+VDK: {en: "Virodhikruthi", sa: "विरोधिकृत्", ta: "விரோதிக்ரித்", te: "విరోధికృత్", ka: "ವಿರೋಧಿಕೃತ್"},
+PTP: {en: "Paridhavi", sa: "परिधावि", ta: "பரிதாவி", te: "పరిధావి", ka: "ಪರಿಧாவி"},
+PMC: {en: "Pramadeecha", sa: "प्रमादीच", ta: "ப்ரமாதீச", te: "ప్రమాదీచ", ka: "ಪ್ರಮಾದೀಚ"},
+ANA: {en: "Aananda", sa: "आनन्द", ta: "ஆனந்த", te: "ఆనంద", ka: "ಆನಂದ"},
+RAK: {en: "Raakshasa", sa: "राक्षस", ta: "ராக்ஷச", te: "రాక్షస", ka: "ರಾಕ್ಷಸ"},
+NAL: {en: "Nala", sa: "नल", ta: "நள", te: "నల", ka: "ನಳ"},
+PIN: {en: "Pingala", sa: "पिङ्गल", ta: "பிங்கல", te: "పింగళ", ka: "ಪಿಂಗಲ"},
+KAA: {en: "Kalaayukthi", sa: "कलायुक्ति", ta: "கலாயுக்தி", te: "కలాయుక్తి", ka: "ಕಲಾಯುಕ್ತಿ"},
+SID: {en: "Siddhaarthi", sa: "सिद्धार्थि", ta: "சித்தார்த்தி", te: "సిద్ధార్థి", ka: "ಸಿದ್ಧಾರ್ಥಿ"},
+RAU: {en: "Raudhri", sa: "रौद्र", ta: "ரௌத்ர", te: "రౌద్ర", ka: "ರೌದ್ರ"},
+DHU: {en: "Durmathi", sa: "दुर्मति", ta: "துர்மதி", te: "దుర్మతి", ka: "ದುರ್ಮತಿ"},
+DHN: {en: "Dundubi", sa: "दुन्दुभि", ta: "துந்துபி", te: "దుందుభి", ka: "ದುಂದುಭಿ"},
+RUD: {en: "Rudraotkaari", sa: "रुधिरोद्गारि", ta: "ருதிரோத்காரி", te: "రుధిరోద్గారి", ka: "ರುಧಿರೋದ್ಗಾರಿ"},
+RKT: {en: "Raktaakshi", sa: "रक्ताक्षि", ta: "ரக்தாக்ஷி", te: "రక్తాక్షి", ka: "ರಕ್ತಾಕ್ಷಿ"},
+KRO: {en: "Krodhana", sa: "क्रोधन", ta: "க்ரோதன", te: "క్రోధన", ka: "ಕ್ರೋಧನ"},
+AKS: {en: "Akshaya", sa: "अक्षय", ta: "அக்ஷய", te: "అక్షय", ka: "ಅಕ್ಷಯ"}
 };
 
 const thithi_data = { 
-  PRA: { name: "Prathama",en: "Prathama", sa: "प्रथमा", ta: "பிரதமை", te: "ప్రథమ", ka: "ಪ್ರಥಮೆ" },
-  DWI: { name: "Dwitheeya",en: "Dwitheeya", sa: "द्वितीया", ta: "த்விதியை", te: "ద్వితీయ", ka: "ದ್ವಿತೀಯೆ"  },
-  TRU: { name: "Trutheeya",en: "Trutheeya", sa: "तृतीया", ta: "திருதியை", te: "తృతీయ", ka: "ತೃತೀಯೆ"  },
-  CHA: { name: "Chathurthi", en: "Chathurthi", sa: "चतुर्थी", ta: "சதுர்த்தி", te: "చతుర్థి", ka: "ಚತುರ್ಥಿ"  },
-  PAN: { name: "Panchami", en: "Panchami", sa: "पञ्चमी", ta: "பஞ்சமி", te: "పంచమి", ka: "ಪಂಚಮಿ"  },
-  SHA: { name: "Shashti",en: "Shashti", sa: "षष्ठी", ta: "ஷஷ்டி", te: "షష్ఠి", ka: "ಷಷ್ಠಿ"  },
-  SAP: { name: "Sapthami",  en: "Sapthami", sa: "सप्तमी", ta: "சப்தமி", te: "సప్తమి", ka: "ಸಪ್ತಮಿ"  },
-  ASH: { name: "Ashtami", en: "Ashtami", sa: "अष्टमी", ta: "அஷ்டமி", te: "అష్టమి", ka: "ಅಷ್ಟಮಿ"  },
-  NAV: { name: "Navami",en: "Navami", sa: "नवमी", ta: "நவமி", te: "నవమి", ka: "ನವಮಿ"  },
-  DAS: { name: "Dashami", en: "Dashami", sa: "दशमी", ta: "தசமி", te: "దశమి", ka: "ದಶಮಿ"   },
-  EKA: { name: "Ekadashi",en: "Ekadashi", sa: "एकादशी", ta: "ஏகாதசி", te: "ఏకాదశి", ka: "ಏಕಾದಶಿ"   },
-  DWA: { name: "Dwadashi",en: "Dwadashi", sa: "द्वादशी", ta: "த்வாதசி", te: "ద్వాదశి", ka: "ದ್ವಾದಶಿ"  },
-  TRY: { name: "Tryodashi", en: "Tryodashi", sa: "त्रयोदशी", ta: "திரயோதசி", te: "త్రయోదశి", ka: "ತ್ರಯೋದಶಿ" },
-  CHD: { name: "Chathurdashi",en: "Chathurdashi", sa: "चतुर्दशी", ta: "சதுர்த்தசி", te: "చతుర్దశి", ka: "ಚತುರ್ಧಶಿ"  },
-  POU: { name: "Pournamaasi",en: "Pournamaasi", sa: "पूर्णिमा", ta: "பௌர்ணமி", te: "పౌర్ణమి", ka: "ಪೌರ್ಣಮಿ"  },
-  AMA: { name: "Amaavaasya",en: "Amaavaasya", sa: "अमावास्या", ta: "அமாவாசை", te: "అమావాస్య", ka: "ಅಮಾವಾಸ್ಯೆ"  }
+  PRA: {en: "Prathama", sa: "प्रथमा", ta: "பிரதமை", te: "ప్రథమ", ka: "ಪ್ರಥಮೆ" },
+  DWI: {en: "Dwitheeya", sa: "द्वितीया", ta: "த்விதியை", te: "ద్వితీయ", ka: "ದ್ವಿತೀಯೆ"  },
+  TRU: {en: "Trutheeya", sa: "तृतीया", ta: "திருதியை", te: "తృతీయ", ka: "ತೃತೀಯೆ"  },
+  CHA: {en: "Chathurthi", sa: "चतुर्थी", ta: "சதுர்த்தி", te: "చతుర్థి", ka: "ಚತುರ್ಥಿ"  },
+  PAN: {en: "Panchami", sa: "पञ्चमी", ta: "பஞ்சமி", te: "పంచమి", ka: "ಪಂಚಮಿ"  },
+  SHA: {en: "Shashti", sa: "षष्ठी", ta: "ஷஷ்டி", te: "షష్ఠి", ka: "ಷಷ್ಠಿ"  },
+  SAP: {en: "Sapthami", sa: "सप्तमी", ta: "சப்தமி", te: "సప్తమి", ka: "ಸಪ್ತಮಿ"  },
+  ASH: {en: "Ashtami", sa: "अष्टमी", ta: "அஷ்டமி", te: "అష్టమి", ka: "ಅಷ್ಟಮಿ"  },
+  NAV: {en: "Navami", sa: "नवमी", ta: "நவமி", te: "నవమి", ka: "ನವಮಿ"  },
+  DAS: {en: "Dashami", sa: "दशमी", ta: "தசமி", te: "దశమి", ka: "ದಶಮಿ"   },
+  EKA: {en: "Ekadashi", sa: "एकादशी", ta: "ஏகாதசி", te: "ఏకాదశి", ka: "ಏಕಾದಶಿ"   },
+  DWA: {en: "Dwadashi", sa: "द्वादशी", ta: "த்வாதசி", te: "ద్వాదశి", ka: "ದ್ವಾದಶಿ"  },
+  TRY: {en: "Tryodashi", sa: "त्रयोदशी", ta: "திரயோதசி", te: "త్రయోదశి", ka: "ತ್ರಯೋದಶಿ" },
+  CHD: {en: "Chathurdashi", sa: "चतुर्दशी", ta: "சதுர்த்தசி", te: "చతుర్దశి", ka: "ಚತುರ್ಧಶಿ"  },
+  POU: {en: "Pournamaasi", sa: "पूर्णिमा", ta: "பௌர்ணமி", te: "పౌర్ణమి", ka: "ಪೌರ್ಣಮಿ"  },
+  AMA: {en: "Amaavaasya", sa: "अमावास्या", ta: "அமாவாசை", te: "అమావాస్య", ka: "ಅಮಾವಾಸ್ಯೆ"  }
 
 };
 const nakshatram_data = {
-KRU: {name: "Krutthika", en: "Krutthika", sa: "कृत्तिका", ta: "கிருத்திகை", te: "కృత్తిక", ka: "ಕೃತ್ತಿಕಾ"},
-ROH: {name: "Rohini", en: "Rohini", sa: "रोहिणी", ta: "ரோகிணி", te: "రోహిణి", ka: "ರೋಹಿಣಿ"},
-MRU: {name: "Mrugasheersham", en: "Mrugasheersham", sa: "मृगशीर्ष", ta: "மிருகசீரிடம்", te: "మృగశిర", ka: "ಮೃಗಶಿರ"},
-AAR: {name: "Aardra", en: "Aardra", sa: "आर्द्रा", ta: "திருவாதிரை", te: "ఆర్ద్ర", ka: "ಆರ್ದ್ರ"},
-PUN: {name: "Punarvasu", en: "Punarvasu", sa: "पुनर्वसु", ta: "புனர்பூசம்", te: "పునర్వసు", ka: "ಪುನರ್ವಸು"},
-PUS: {name: "Pushya", en: "Pushya", sa: "पुष्य", ta: "பூசம்", te: "పుష్యమి", ka: "ಪುಷ್ಯ"},
-ASR: {name: "Ashresha", en: "Ashresha", sa: "आश्लेषा", ta: "ஆயில்யம்", te: "ఆశ్లేష", ka: "ಆಶ್ಲೇಷಾ"},
-MAG: {name: "Magha", en: "Magha", sa: "मघा", ta: "மகம்", te: "మఘ", ka: "ಮಘಾ"},
-PPH: {name: "Poorvaphalguni", en: "Poorvaphalguni", sa: "पूर्वफल्गुनी", ta: "பூரம்", te: "పూర్వ ఫల్గుని", ka: "ಪೂರ್ವ ಫಲ್ಗುಣಿ"},
-UPH: {name: "Uttaraphalguni", en: "Uttaraphalguni", sa: "उत्तरफल्गुनी", ta: "உத்திரம்", te: "ఉత్తర ఫల్గుని", ka: "ಉತ್ತರ ಫಲ್ಗುಣಿ"},
-HAS: {name: "Hasta", en: "Hasta", sa: "हस्त", ta: "ஹஸ்தம்", te: "హస్త", ka: "ಹಸ್ತ"},
-CHI: {name: "Chitra", en: "Chitra", sa: "चित्रा", ta: "சித்திரை", te: "చిత్ర", ka: "ಚಿತ್ರಾ"},
-SWA: {name: "Swaathi", en: "Swaathi", sa: "स्वाती", ta: "சுவாதி", te: "స్వాతి", ka: "ಸ್ವಾತಿ"},
-VIS: {name: "Vishaakha", en: "Vishaakha", sa: "विशाखा", ta: "விசாகம்", te: "విశాఖ", ka: "ವಿಶಾಖಾ"},
-ANU: {name: "Anuradha", en: "Anuradha", sa: "अनुराधा", ta: "அனுஷம்", te: "అనూరాధ", ka: "ಅನುರಾಧಾ"},
-JYE: {name: "Jyeshtaa", en: "Jyeshtaa", sa: "ज्येष्ठा", ta: "கேட்டை", te: "జ్యేష్ఠ", ka: "ಜ್ಯೇಷ್ಠಾ"},
-MUL: {name: "Mula", en: "Mula", sa: "मूल", ta: "மூலம்", te: "మూల", ka: "ಮೂಲ"},
-PVS: {name: "Poorvaashada", en: "Poorvaashada", sa: "पूर्वाषाढा", ta: "பூராடம்", te: "పూర్వాషాఢ", ka: "ಪೂರ್ವಾಷಾಢಾ"},
-UAS: {name: "Uttaraashada", en: "Uttaraashada", sa: "उत्तराषाढा", ta: "உத்திராடம்", te: "ఉత్తరాషాఢ", ka: "ಉತ್ತರಾಷಾಢಾ"},
-SHR: {name: "Shravana", en: "Shravana", sa: "श्रवण", ta: "திருவோணம்", te: "శ్రవణం", ka: "ಶ್ರವಣ"},
-SVT: {name: "Shravishta", en: "Shravishta", sa: "धनिष्ठा", ta: "அவிட்டம்", te: "ధనిష్ఠ", ka: "ಧನಿಷ್ಠಾ"},
-STB: {name: "Shatabhishak", en: "Shatabhishak", sa: "शतभिषा", ta: "சதயம்", te: "శతభిషం", ka: "ಶತಭಿಷಾ"},
-PPP: {name: "Poorvaproshtapada", en: "Poorvaproshtapada", sa: "पूर्वभाद्रपदा", ta: "பூரட்டாதி", te: "పూర్వ భాద్రపద", ka: "ಪೂರ್ವ ಭಾದ್ರಪದ"},
-UPP: {name: "Uttaraproshtapada", en: "Uttaraproshtapada", sa: "उत्तरभाद्रपदा", ta: "உத்திரட்டாதி", te: "ఉత్తర భాద్రపద", ka: "ಉತ್ತರ ಭಾದ್ರಪದ"},
-REV: {name: "Revathi", en: "Revathi", sa: "रेवती", ta: "ரேவதி", te: "రేవతి", ka: "ರೇವತಿ"},
-ASH: {name: "Ashwini", en: "Ashwini", sa: "अश्विनी", ta: "அஸ்வினி", te: "అశ్విని", ka: "ಅಶ್ವಿನಿ"},
-BHA: {name: "Apabharani", en: "Apabharani", sa: "भरणी", ta: "பரணி", te: "భరణి", ka: "ಭರಣಿ"}
+KRU: {en: "Krutthika", sa: "कृत्तिका", ta: "கிருத்திகை", te: "కృత్తిక", ka: "ಕೃತ್ತಿಕಾ"},
+ROH: {en: "Rohini", sa: "रोहिणी", ta: "ரோகிணி", te: "రోహిణి", ka: "ರೋಹಿಣಿ"},
+MRU: {en: "Mrugasheersham", sa: "मृगशीर्ष", ta: "மிருகசீரிடம்", te: "మృగశిర", ka: "ಮೃಗಶಿರ"},
+AAR: {en: "Aardra", sa: "आर्द्रा", ta: "திருவாதிரை", te: "ఆర్ద్ర", ka: "ಆರ್ದ್ರ"},
+PUN: {en: "Punarvasu", sa: "पुनर्वसु", ta: "புனர்பூசம்", te: "పునర్వసు", ka: "ಪುನರ್ವಸು"},
+PUS: {en: "Pushya", sa: "पुष्य", ta: "பூசம்", te: "పుష్యమి", ka: "ಪುಷ್ಯ"},
+ASR: {en: "Ashresha", sa: "आश्लेषा", ta: "ஆயில்யம்", te: "ఆశ్లేష", ka: "ಆಶ್ಲೇಷಾ"},
+MAG: {en: "Magha", sa: "मघा", ta: "மகம்", te: "మఘ", ka: "ಮಘಾ"},
+PPH: {en: "Poorvaphalguni", sa: "पूर्वफल्गुनी", ta: "பூரம்", te: "పూర్వ ఫల్గుని", ka: "ಪೂರ್ವ ಫಲ್ಗುಣಿ"},
+UPH: {en: "Uttaraphalguni", sa: "उत्तरफल्गुनी", ta: "உத்திரம்", te: "ఉత్తర ఫల్గుని", ka: "ಉತ್ತರ ಫಲ್ಗುಣಿ"},
+HAS: {en: "Hasta", sa: "हस्त", ta: "ஹஸ்தம்", te: "హస్త", ka: "ಹಸ್ತ"},
+CHI: {en: "Chitra", sa: "चित्रा", ta: "சித்திரை", te: "చిత్ర", ka: "ಚಿತ್ರಾ"},
+SWA: {en: "Swaathi", sa: "स्वाती", ta: "சுவாதி", te: "స్వాతి", ka: "ಸ್ವಾತಿ"},
+VIS: {en: "Vishaakha", sa: "विशाखा", ta: "விசாகம்", te: "విశాఖ", ka: "ವಿಶಾಖಾ"},
+ANU: {en: "Anuradha", sa: "अनुराधा", ta: "அனுஷம்", te: "అనూరాధ", ka: "ಅನುರಾಧಾ"},
+JYE: {en: "Jyeshtaa", sa: "ज्येष्ठा", ta: "கேட்டை", te: "జ్యేష్ఠ", ka: "ಜ್ಯೇಷ್ಠಾ"},
+MUL: {en: "Mula", sa: "मूल", ta: "மூலம்", te: "మూల", ka: "ಮೂಲ"},
+PVS: {en: "Poorvaashada", sa: "पूर्वाषाढा", ta: "பூராடம்", te: "పూర్వాషాఢ", ka: "ಪೂರ್ವಾಷಾಢಾ"},
+UAS: {en: "Uttaraashada", sa: "उत्तराषाढा", ta: "உத்திராடம்", te: "ఉత్తరాషాఢ", ka: "ಉತ್ತರಾಷಾಢಾ"},
+SHR: {en: "Shravana", sa: "श्रवण", ta: "திருவோணம்", te: "శ్రవణం", ka: "ಶ್ರವಣ"},
+SVT: {en: "Shravishta", sa: "धनिष्ठा", ta: "அவிட்டம்", te: "ధనిష్ఠ", ka: "ಧನಿಷ್ಠಾ"},
+STB: {en: "Shatabhishak", sa: "शतभिषा", ta: "சதயம்", te: "శతభిషం", ka: "ಶತಭಿಷಾ"},
+PPP: {en: "Poorvaproshtapada", sa: "पूर्वभाद्रपदा", ta: "பூரட்டாதி", te: "పూర్వ భాద్రపద", ka: "ಪೂರ್ವ ಭಾದ್ರಪದ"},
+UPP: {en: "Uttaraproshtapada", sa: "उत्तरभाद्रपदा", ta: "உத்திரட்டாதி", te: "ఉత్తర భాద్రపద", ka: "ಉತ್ತರ ಭಾದ್ರಪದ"},
+REV: {en: "Revathi", sa: "रेवती", ta: "ரேவதி", te: "రేవతి", ka: "ರೇವತಿ"},
+ASH: {en: "Ashwini", sa: "अश्विनी", ta: "அஸ்வினி", te: "అశ్విని", ka: "ಅಶ್ವಿನಿ"},
+BHA: {en: "Apabharani", sa: "भरणी", ta: "பரணி", te: "భరణి", ka: "ಭರಣಿ"}
 };
 
 const yogam_data = {
-VIS: {name: "Vishkambhaha", en: "Vishkambhaha", sa: "विष्कम्भ", ta: "விஷ்கம்ப", te: "విష్కంభ", ka: "ವಿಷ್ಕಂಭ"},
-PRE: {name: "Preethihi", en: "Preethihi", sa: "प्रीति", ta: "ப்ரீதி", te: "ప్రీతి", ka: "ಪ್ರೀತಿ"},
-AYU: {name: "Aayushmaan", en: "Aayushmaan", sa: "आयुष्मान्", ta: "ஆயுஷ்மான்", te: "ఆయుష్మాన్", ka: "ಆಯುಷ್ಮಾನ್"},
-SOW: {name: "Sowbhagyaha", en: "Sowbhagyaha", sa: "सौभाग्य", ta: "சௌபாக்கியம்", te: "సౌభాగ్యం", ka: "ಸೌಭಾಗ್ಯ"},
-SHO: {name: "Shobhanaha", en: "Shobhanaha", sa: "शोभन", ta: "சோபனம்", te: "శోభన", ka: "ಶೋಭನ"},
-ATH: {name: "Athigandaha", en: "Athigandaha", sa: "अतिगण्ड", ta: "அதிகண்டம்", te: "అతిగండ", ka: "ಅತಿಗಂಡ"},
-SUK: {name: "Sukarma", en: "Sukarma", sa: "सुकर्मा", ta: "சுகர்மா", te: "సుకర్మ", ka: "ಸುಕರ್ಮ"},
-DHU: {name: "Dhruthihi", en: "Dhruthihi", sa: "धृति", ta: "த்ருதி", te: "ధృతి", ka: "ಧೃತಿ"},
-SHL: {name: "Shoolaha", en: "Shoolaha", sa: "शूल", ta: "சூலம்", te: "శూల", ka: "ಶೂಲ"},
-GAN: {name: "Gandaha", en: "Gandaha", sa: "गण्ड", ta: "கண்டம்", te: "గండ", ka: "ಗಂಡ"},
-VRU: {name: "Vruddhihi", en: "Vruddhihi", sa: "वृद्धि", ta: "விருத்தி", te: "వృద్ధి", ka: "ವೃದ್ಧಿ"},
-DHR: {name: "Dhruvaha", en: "Dhruvaha", sa: "ध्रुव", ta: "துருவம்", te: "ధృవ", ka: "ಧ್ರುವ"},
-VYA: {name: "Vyaaghaathaha", en: "Vyaaghaathaha", sa: "व्याघात", ta: "வியாகாதம்", te: "వ్యాఘాత", ka: "ವ್ಯಾಘಾತ"},
-HAR: {name: "Harshanaha", en: "Harshanaha", sa: "हर्षण", ta: "ஹர்ஷணம்", te: "హర్షణ", ka: "ಹರ್ಷಣ"},
-VAJ: {name: "Vajram", en: "Vajram", sa: "वज्र", ta: "வஜ்ரம்", te: "వజ్ర", ka: "ವಜ್ರ"},
-SDH: {name: "Siddhihi", en: "Siddhihi", sa: "सिद्धि", ta: "சித்தி", te: "సిద్ధి", ka: "ಸಿದ್ಧಿ"},
-VYT: {name: "Vyateepaath", en: "Vyateepaath", sa: "व्यतीपात", ta: "வ்யதீபாதம்", te: "వ్యతిపాత", ka: "ವ್ಯತೀಪಾತ"},
-VAR: {name: "Vareeyaan", en: "Vareeyaan", sa: "वरियन", ta: "வரியானம்", te: "వరియాణ", ka: "ವರಿಯಾಣ"},
-PAR: {name: "Parighaha", en: "Parighaha", sa: "परिघ", ta: "பரிகம்", te: "పరిఘ", ka: "ಪರಿಘ"},
-SHI: {name: "Shivaha", en: "Shivaha", sa: "शिव", ta: "சிவம்", te: "శివ", ka: "ಶಿವ"},
-SID: {name: "Siddhaha", en: "Siddhaha", sa: "सिद्ध", ta: "சித்த", te: "సిద్ధ", ka: "ಸಿದ್ಧ"},
-SDY: {name: "Saadhyaha", en: "Saadhyaha", sa: "साध्य", ta: "சாத்தியம்", te: "సాధ్య", ka: "ಸಾಧ್ಯ"},
-SHB: {name: "Shubhaha", en: "Shubhaha", sa: "शुभ", ta: "சுபம்", te: "శుభ", ka: "ಶುಭ"},
-SHK: {name: "Shuklaha", en: "Shuklaha", sa: "शुक्ल", ta: "சுக்லம்", te: "శుక్ల", ka: "ಶುಕ್ಲ"},
-BRA: {name: "Braahmaha", en: "Braahmaha", sa: "ब्रह्म", ta: "பிரஹ்ம", te: "బ్రహ్మ", ka: "ಬ್ರಹ್ಮ"},
-IND: {name: "Indraha/Mahendraha", en: "Indraha/Mahendraha", sa: "इन्द्र", ta: "இந்திர", te: "ఇంద్ర", ka: "ಇಂದ್ರ"},
-VYD: {name: "Vydruthihi", en: "Vydruthihi", sa: "वैधृति", ta: "வைத்ருதி", te: "వైధృతి", ka: "ವೈಧೃತಿ"}
+VIS: {en: "Vishkambhaha", sa: "विष्कम्भ", ta: "விஷ்கம்ப", te: "విష్కంభ", ka: "ವಿಷ್ಕಂಭ"},
+PRE: {en: "Preethihi", sa: "प्रीति", ta: "ப்ரீதி", te: "ప్రీతి", ka: "ಪ್ರೀತಿ"},
+AYU: {en: "Aayushmaan", sa: "आयुष्मान्", ta: "ஆயுஷ்மான்", te: "ఆయుష్మాన్", ka: "ಆಯುಷ್ಮಾನ್"},
+SOW: {en: "Sowbhagyaha", sa: "सौभाग्य", ta: "சௌபாக்கியம்", te: "సౌభాగ్యం", ka: "ಸೌಭಾಗ್ಯ"},
+SHO: {en: "Shobhanaha", sa: "शोभन", ta: "சோபனம்", te: "శోభన", ka: "ಶೋಭನ"},
+ATH: {en: "Athigandaha", sa: "अतिगण्ड", ta: "அதிகண்டம்", te: "అతిగండ", ka: "ಅತಿಗಂಡ"},
+SUK: {en: "Sukarma", sa: "सुकर्मा", ta: "சுகர்மா", te: "సుకర్మ", ka: "ಸುಕರ್ಮ"},
+DHU: {en: "Dhruthihi", sa: "धृति", ta: "த்ருதி", te: "ధృతి", ka: "ಧೃತಿ"},
+SHL: {en: "Shoolaha", sa: "शूल", ta: "சூலம்", te: "శూల", ka: "ಶೂಲ"},
+GAN: {en: "Gandaha", sa: "गण्ड", ta: "கண்டம்", te: "గండ", ka: "ಗಂಡ"},
+VRU: {en: "Vruddhihi", sa: "वृद्धि", ta: "விருத்தி", te: "వృద్ధి", ka: "ವೃದ್ಧಿ"},
+DHR: {en: "Dhruvaha", sa: "ध्रुव", ta: "துருவம்", te: "ధృవ", ka: "ಧ್ರುವ"},
+VYA: {en: "Vyaaghaathaha", sa: "व्याघात", ta: "வியாகாதம்", te: "వ్యాఘాత", ka: "ವ್ಯಾಘಾತ"},
+HAR: {en: "Harshanaha", sa: "हर्षण", ta: "ஹர்ஷணம்", te: "హర్షణ", ka: "ಹರ್ಷಣ"},
+VAJ: {en: "Vajram", sa: "वज्र", ta: "வஜ்ரம்", te: "వజ్ర", ka: "ವಜ್ರ"},
+SDH: {en: "Siddhihi", sa: "सिद्धि", ta: "சித்தி", te: "సిద్ధి", ka: "ಸಿದ್ಧಿ"},
+VYT: {en: "Vyateepaath", sa: "व्यतीपात", ta: "வ்யதீபாதம்", te: "వ్యతిపాత", ka: "ವ್ಯತೀಪಾತ"},
+VAR: {en: "Vareeyaan", sa: "वरियन", ta: "வரியானம்", te: "వరియాణ", ka: "ವರಿಯಾಣ"},
+PAR: {en: "Parighaha", sa: "परिघ", ta: "பரிகம்", te: "పరిఘ", ka: "ಪರಿಘ"},
+SHI: {en: "Shivaha", sa: "शिव", ta: "சிவம்", te: "శివ", ka: "ಶಿವ"},
+SID: {en: "Siddhaha", sa: "सिद्ध", ta: "சித்த", te: "సిద్ధ", ka: "ಸಿದ್ಧ"},
+SDY: {en: "Saadhyaha", sa: "साध्य", ta: "சாத்தியம்", te: "సాధ్య", ka: "ಸಾಧ್ಯ"},
+SHB: {en: "Shubhaha", sa: "शुभ", ta: "சுபம்", te: "శుభ", ka: "ಶುಭ"},
+SHK: {en: "Shuklaha", sa: "शुक्ल", ta: "சுக்லம்", te: "శుక్ల", ka: "ಶುಕ್ಲ"},
+BRA: {en: "Braahmaha", sa: "ब्रह्म", ta: "பிரஹ்ம", te: "బ్రహ్మ", ka: "ಬ್ರಹ್ಮ"},
+IND: {en: "Indraha/Mahendraha", sa: "इन्द्र", ta: "இந்திர", te: "ఇంద్ర", ka: "ಇಂದ್ರ"},
+VYD: {en: "Vydruthihi", sa: "वैधृति", ta: "வைத்ருதி", te: "వైధృతి", ka: "ವೈಧೃತಿ"}
+
 };
 
 const karanam_data = {
-"1": {name: "Kimstughna", en: "Kimstughna", sa: "किंस्तुघ्न", ta: "கிம்ஸ்துக்ன", te: "కింస్తుఘ్న", ka: "ಕಿಂಸ್ತುಘ್ನ"},
-"2": {name: "Bavaha", en: "Bavaha", sa: "बव", ta: "பவ", te: "బవ", ka: "ಬವ"},
-"3": {name: "Baalavaha", en: "Baalavaha", sa: "बालव", ta: "பாலவ", te: "బాలవ", ka: "ಬಾಲವ"},
-"4": {name: "Kowlavaha", en: "Kowlavaha", sa: "कौलव", ta: "கௌலவ", te: "కౌలవ", ka: "ಕೌಲವ"},
-"5": {name: "Taithilaha", en: "Taithilaha", sa: "तैतिल", ta: "தைதில", te: "తైతిల", ka: "ತೈತಿಲ"},
-"6": {name: "Garaja", en: "Garaja", sa: "गर", ta: "கர", te: "గర", ka: "ಗರ"},
-"7": {name: "Vanijaha", en: "Vanijaha", sa: "वणिज", ta: "வணிக", te: "వణిజ", ka: "ವಣಿಜ"},
-"8": {name: "Vishtihi/Bhadra", en: "Vishtihi/Bhadra", sa: "विष्टि", ta: "விஷ்டி", te: "విష్టి", ka: "ವಿಷ್ಟಿ"},
-"9": {name: "Bavaha", en: "Bavaha", sa: "बव", ta: "பவ", te: "బవ", ka: "ಬವ"},
-"10": {name: "Baalavaha", en: "Baalavaha", sa: "बालव", ta: "பாலவ", te: "బాలవ", ka: "ಬಾಲವ"},
-"11": {name: "Kowlavaha", en: "Kowlavaha", sa: "कौलव", ta: "கௌலவ", te: "కౌలవ", ka: "ಕೌಲವ"},
-"12": {name: "Taithilaha", en: "Taithilaha", sa: "तैतिल", ta: "தைதில", te: "తైతిల", ka: "ತೈತಿಲ"},
-"13": {name: "Garaja", en: "Garaja", sa: "गर", ta: "கர", te: "గర", ka: "ಗರ"},
-"14": {name: "Vanijaha", en: "Vanijaha", sa: "वणिज", ta: "வணிக", te: "వణిజ", ka: "ವಣಿಜ"},
-"15": {name: "Vishtihi/Bhadra", en: "Vishtihi/Bhadra", sa: "विष्टि", ta: "விஷ்டி", te: "విష్టి", ka: "ವಿಷ್ಟಿ"},
-"16": {name: "Bavaha", en: "Bavaha", sa: "बव", ta: "பவ", te: "బవ", ka: "ಬವ"},
-"17": {name: "Baalavaha", en: "Baalavaha", sa: "बालव", ta: "பாலவ", te: "బాలవ", ka: "ಬಾಲವ"},
-"18": {name: "Kowlavaha", en: "Kowlavaha", sa: "कौलव", ta: "கௌலவ", te: "కౌలవ", ka: "ಕೌಲವ"},
-"19": {name: "Taithilaha", en: "Taithilaha", sa: "तैतिल", ta: "தைதில", te: "తైతిల", ka: "ತೈತಿಲ"},
-"20": {name: "Garaja", en: "Garaja", sa: "गर", ta: "கர", te: "గర", ka: "ಗರ"},
-"21": {name: "Vanijaha", en: "Vanijaha", sa: "वणिज", ta: "வணிக", te: "వణిజ", ka: "ವಣಿಜ"},
-"22": {name: "Vishtihi/Bhadra", en: "Vishtihi/Bhadra", sa: "विष्टि", ta: "விஷ்டி", te: "విష్టి", ka: "ವಿಷ್ಟಿ"},
-"23": {name: "Bavaha", en: "Bavaha", sa: "बव", ta: "பவ", te: "బవ", ka: "ಬವ"},
-"24": {name: "Baalavaha", en: "Baalavaha", sa: "बालव", ta: "பாலவ", te: "బాలవ", ka: "ಬಾಲವ"},
-"25": {name: "Kowlavaha", en: "Kowlavaha", sa: "कौलव", ta: "கௌலவ", te: "కౌలవ", ka: "ಕೌಲವ"},
-"26": {name: "Taithilaha", en: "Taithilaha", sa: "तैतिल", ta: "தைதில", te: "తైతిల", ka: "ತೈತಿಲ"},
-"27": {name: "Garaja", en: "Garaja", sa: "गर", ta: "கர", te: "గర", ka: "ಗರ"},
-"28": {name: "Vanijaha", en: "Vanijaha", sa: "वणिज", ta: "வணிக", te: "వణిజ", ka: "ವಣಿಜ"},
-"29": {name: "Vishtihi/Bhadra", en: "Vishtihi/Bhadra", sa: "विष्टि", ta: "விஷ்டி", te: "విష్టి", ka: "ವಿಷ್ಟಿ"},
-"30": {name: "Bavaha", en: "Bavaha", sa: "बव", ta: "பவ", te: "బవ", ka: "ಬವ"},
-"31": {name: "Baalavaha", en: "Baalavaha", sa: "बालव", ta: "பாலவ", te: "బాలవ", ka: "ಬಾಲವ"},
-"32": {name: "Kowlavaha", en: "Kowlavaha", sa: "कौलव", ta: "கௌலவ", te: "కౌలవ", ka: "ಕೌಲವ"},
-"33": {name: "Taithilaha", en: "Taithilaha", sa: "तैतिल", ta: "தைதில", te: "తైతిల", ka: "ತೈತಿಲ"},
-"34": {name: "Garaja", en: "Garaja", sa: "गर", ta: "கர", te: "గర", ka: "ಗರ"},
-"35": {name: "Vanijaha", en: "Vanijaha", sa: "वणिज", ta: "வணிக", te: "వణిజ", ka: "ವಣಿಜ"},
-"36": {name: "Vishtihi/Bhadra", en: "Vishtihi/Bhadra", sa: "विष्टि", ta: "விஷ்டி", te: "విష్టి", ka: "ವಿಷ್ಟಿ"},
-"37": {name: "Bavaha", en: "Bavaha", sa: "बव", ta: "பவ", te: "బవ", ka: "ಬವ"},
-"38": {name: "Baalavaha", en: "Baalavaha", sa: "बालव", ta: "பாலவ", te: "బాలవ", ka: "ಬಾಲವ"},
-"39": {name: "Kowlavaha", en: "Kowlavaha", sa: "कौलव", ta: "கௌலவ", te: "కౌలవ", ka: "ಕೌಲವ"},
-"40": {name: "Taithilaha", en: "Taithilaha", sa: "तैतिल", ta: "தைதில", te: "తైతిల", ka: "ತೈತಿಲ"},
-"41": {name: "Garaja", en: "Garaja", sa: "गर", ta: "கர", te: "గర", ka: "ಗರ"},
-"42": {name: "Vanijaha", en: "Vanijaha", sa: "वणिज", ta: "வணிக", te: "వణిజ", ka: "ವಣಿಜ"},
-"43": {name: "Vishtihi/Bhadra", en: "Vishtihi/Bhadra", sa: "विष्टि", ta: "விஷ்டி", te: "విష్టి", ka: "ವಿಷ್ಟಿ"},
-"44": {name: "Bavaha", en: "Bavaha", sa: "बव", ta: "பவ", te: "బవ", ka: "ಬವ"},
-"45": {name: "Baalavaha", en: "Baalavaha", sa: "बालव", ta: "பாலவ", te: "బాలవ", ka: "ಬಾಲವ"},
-"46": {name: "Kowlavaha", en: "Kowlavaha", sa: "कौलव", ta: "கௌலவ", te: "కౌలవ", ka: "ಕೌಲವ"},
-"47": {name: "Taithilaha", en: "Taithilaha", sa: "तैतिल", ta: "தைதில", te: "తైతిల", ka: "ತೈತಿಲ"},
-"48": {name: "Garaja", en: "Garaja", sa: "गर", ta: "கர", te: "గర", ka: "ಗರ"},
-"49": {name: "Vanijaha", en: "Vanijaha", sa: "वणिज", ta: "வணிக", te: "వణిజ", ka: "ವಣಿಜ"},
-"50": {name: "Vishtihi/Bhadra", en: "Vishtihi/Bhadra", sa: "विष्टि", ta: "விஷ்டி", te: "విష్టి", ka: "ವಿಷ್ಟಿ"},
-"51": {name: "Bavaha", en: "Bavaha", sa: "बव", ta: "பவ", te: "బవ", ka: "ಬವ"},
-"52": {name: "Baalavaha", en: "Baalavaha", sa: "बालव", ta: "பாலவ", te: "బాలవ", ka: "ಬಾಲವ"},
-"53": {name: "Kowlavaha", en: "Kowlavaha", sa: "कौलव", ta: "கௌலவ", te: "కౌలవ", ka: "ಕೌಲವ"},
-"54": {name: "Taithilaha", en: "Taithilaha", sa: "तैतिल", ta: "தைதில", te: "తైతిల", ka: "ತೈತಿಲ"},
-"55": {name: "Garaja", en: "Garaja", sa: "गर", ta: "கர", te: "గర", ka: "ಗರ"},
-"56": {name: "Vanijaha", en: "Vanijaha", sa: "वणिज", ta: "வணிக", te: "వణిజ", ka: "ವಣಿಜ"},
-"57": {name: "Vishtihi/Bhadra", en: "Vishtihi/Bhadra", sa: "विष्टि", ta: "விஷ்டி", te: "విష్టి", ka: "ವಿಷ್ಟಿ"},
-"58": {name: "Shakuni", en: "Shakuni", sa: "शकुनि", ta: "சகுனி", te: "శకుని", ka: "ಶಕುನಿ"},
-"59": {name: "Chathushpaath", en: "Chathushpaath", sa: "चतुष्पाद", ta: "சதுஷ்பாத", te: "చతుష్పాద", ka: "ಚತುಷ್ಪಾದ"},
-"60": {name: "Naaga", en: "Naaga", sa: "नाग", ta: "நாக", te: "నాగ", ka: "ನಾಗ"}
+"1": {en: "Kimstughna", sa: "किंस्तुघ्न", ta: "கிம்ஸ்துக்ன", te: "కింస్తుఘ్న", ka: "ಕಿಂಸ್ತುಘ್ನ"},
+"2": {en: "Bavaha", sa: "बव", ta: "பவ", te: "బవ", ka: "ಬವ"},
+"3": {en: "Baalavaha", sa: "बालव", ta: "பாலவ", te: "బాలవ", ka: "ಬಾಲವ"},
+"4": {en: "Kowlavaha", sa: "कौलव", ta: "கௌலவ", te: "కౌలవ", ka: "ಕೌಲವ"},
+"5": {en: "Taithilaha", sa: "तैतिल", ta: "தைதில", te: "తైతిల", ka: "ತೈತಿಲ"},
+"6": {en: "Garaja", sa: "गर", ta: "கர", te: "గర", ka: "ಗರ"},
+"7": {en: "Vanijaha", sa: "वणिज", ta: "வணிக", te: "వణిజ", ka: "ವಣಿಜ"},
+"8": {en: "Vishtihi/Bhadra", sa: "विष्टि", ta: "விஷ்டி", te: "విష్టి", ka: "ವಿಷ್ಟಿ"},
+"9": {en: "Bavaha", sa: "बव", ta: "பவ", te: "బవ", ka: "ಬವ"},
+"10": {en: "Baalavaha", sa: "बालव", ta: "பாலவ", te: "బాలవ", ka: "ಬಾಲವ"},
+"11": {en: "Kowlavaha", sa: "कौलव", ta: "கௌலவ", te: "కౌలవ", ka: "ಕೌಲವ"},
+"12": {en: "Taithilaha", sa: "तैतिल", ta: "தைதில", te: "తైతిల", ka: "ತೈತಿಲ"},
+"13": {en: "Garaja", sa: "गर", ta: "கர", te: "గర", ka: "ಗರ"},
+"14": {en: "Vanijaha", sa: "वणिज", ta: "வணிக", te: "వణిజ", ka: "ವಣಿಜ"},
+"15": {en: "Vishtihi/Bhadra", sa: "विष्टि", ta: "விஷ்டி", te: "విష్టి", ka: "ವಿಷ್ಟಿ"},
+"16": {en: "Bavaha", sa: "बव", ta: "பவ", te: "బవ", ka: "ಬವ"},
+"17": {en: "Baalavaha", sa: "बालव", ta: "பாலவ", te: "బాలవ", ka: "ಬಾಲವ"},
+"18": {en: "Kowlavaha", sa: "कौलव", ta: "கௌலவ", te: "కౌలవ", ka: "ಕೌಲವ"},
+"19": {en: "Taithilaha", sa: "तैतिल", ta: "தைதில", te: "తైతిల", ka: "ತೈತಿಲ"},
+"20": {en: "Garaja", sa: "गर", ta: "கர", te: "గర", ka: "ಗರ"},
+"21": {en: "Vanijaha", sa: "वणिज", ta: "வணிக", te: "వణిజ", ka: "ವಣಿಜ"},
+"22": {en: "Vishtihi/Bhadra", sa: "विष्टि", ta: "விஷ்டி", te: "విష్టి", ka: "ವಿಷ್ಟಿ"},
+"23": {en: "Bavaha", sa: "बव", ta: "பவ", te: "బవ", ka: "ಬವ"},
+"24": {en: "Baalavaha", sa: "बालव", ta: "பாலவ", te: "బాలవ", ka: "ಬಾಲವ"},
+"25": {en: "Kowlavaha", sa: "कौलव", ta: "கௌலவ", te: "కౌలవ", ka: "ಕೌಲವ"},
+"26": {en: "Taithilaha", sa: "तैतिल", ta: "தைதில", te: "తైతిల", ka: "ತೈತಿಲ"},
+"27": {en: "Garaja", sa: "गर", ta: "கர", te: "గర", ka: "ಗರ"},
+"28": {en: "Vanijaha", sa: "वणिज", ta: "வணிக", te: "వణిజ", ka: "ವಣಿಜ"},
+"29": {en: "Vishtihi/Bhadra", sa: "विष्टि", ta: "விஷ்டி", te: "విష్టి", ka: "ವಿಷ್ಟಿ"},
+"30": {en: "Bavaha", sa: "बव", ta: "பவ", te: "బవ", ka: "ಬವ"},
+"31": {en: "Baalavaha", sa: "बालव", ta: "பாலவ", te: "బాలవ", ka: "ಬಾಲವ"},
+"32": {en: "Kowlavaha", sa: "कौलव", ta: "கௌலவ", te: "కౌలవ", ka: "ಕೌಲವ"},
+"33": {en: "Taithilaha", sa: "तैतिल", ta: "தைதில", te: "తైతిల", ka: "ತೈತಿಲ"},
+"34": {en: "Garaja", sa: "गर", ta: "கர", te: "గర", ka: "ಗರ"},
+"35": {en: "Vanijaha", sa: "वणिज", ta: "வணிக", te: "వణిజ", ka: "ವಣಿಜ"},
+"36": {en: "Vishtihi/Bhadra", sa: "विष्टि", ta: "விஷ்டி", te: "విష్టి", ka: "ವಿಷ್ಟಿ"},
+"37": {en: "Bavaha", sa: "बव", ta: "பவ", te: "బవ", ka: "ಬವ"},
+"38": {en: "Baalavaha", sa: "बालव", ta: "பாலவ", te: "బాలవ", ka: "ಬಾಲವ"},
+"39": {en: "Kowlavaha", sa: "कौलव", ta: "கௌலவ", te: "కౌలవ", ka: "ಕೌಲವ"},
+"40": {en: "Taithilaha", sa: "तैतिल", ta: "தைதில", te: "తైతిల", ka: "ತೈತಿಲ"},
+"41": {en: "Garaja", sa: "गर", ta: "கர", te: "గర", ka: "ಗರ"},
+"42": {en: "Vanijaha", sa: "वणिज", ta: "வணிக", te: "వణిజ", ka: "ವಣಿಜ"},
+"43": {en: "Vishtihi/Bhadra", sa: "विष्टि", ta: "விஷ்டி", te: "విష్టి", ka: "ವಿಷ್ಟಿ"},
+"44": {en: "Bavaha", sa: "बव", ta: "பவ", te: "బవ", ka: "ಬವ"},
+"45": {en: "Baalavaha", sa: "बालव", ta: "பாலவ", te: "బాలవ", ka: "ಬಾಲವ"},
+"46": {en: "Kowlavaha", sa: "कौलव", ta: "கௌலவ", te: "కౌలవ", ka: "ಕೌಲವ"},
+"47": {en: "Taithilaha", sa: "तैतिल", ta: "தைதில", te: "తైతిల", ka: "ತೈತಿಲ"},
+"48": {en: "Garaja", sa: "गर", ta: "கர", te: "గర", ka: "ಗರ"},
+"49": {en: "Vanijaha", sa: "वणिज", ta: "வணிக", te: "వణిజ", ka: "ವಣಿಜ"},
+"50": {en: "Vishtihi/Bhadra", sa: "विष्टि", ta: "விஷ்டி", te: "విష్టి", ka: "ವಿಷ್ಟಿ"},
+"51": {en: "Bavaha", sa: "बव", ta: "பவ", te: "బవ", ka: "ಬವ"},
+"52": {en: "Baalavaha", sa: "बालव", ta: "பாலவ", te: "బాలవ", ka: "ಬಾಲವ"},
+"53": {en: "Kowlavaha", sa: "कौलव", ta: "கௌலவ", te: "కౌలవ", ka: "ಕೌಲವ"},
+"54": {en: "Taithilaha", sa: "तैतिल", ta: "தைதில", te: "తైతిల", ka: "ತೈತಿಲ"},
+"55": {en: "Garaja", sa: "गर", ta: "கர", te: "గర", ka: "ಗರ"},
+"56": {en: "Vanijaha", sa: "वणिज", ta: "வணிக", te: "వణిజ", ka: "ವಣಿಜ"},
+"57": {en: "Vishtihi/Bhadra", sa: "विष्टि", ta: "விஷ்டி", te: "విష్టి", ka: "ವಿಷ್ಟಿ"},
+"58": {en: "Shakuni", sa: "शकुनि", ta: "சகுனி", te: "శకుని", ka: "ಶಕುನಿ"},
+"59": {en: "Chathushpaath", sa: "चतुष्पाद", ta: "சதுஷ்பாத", te: "చతుష్పాద", ka: "ಚತುಷ್ಪಾದ"},
+"60": {en: "Naaga", sa: "नाग", ta: "நாக", te: "నాగ", ka: "ನಾಗ"}
 };
 
 const ayanam_data = {
   UTT: {
-    name: "Uttaraayanam",
     en: "Uttaraayanam",
     sa: "उत्तरायण",
     ta: "உத்தராயணம்",
@@ -213,7 +213,6 @@ const ayanam_data = {
     ka: "ಉತ್ತರಾಯಣ"
   },
   DAK: {
-    name: "Dakshinaayanam",
     en: "Dakshinaayanam",
     sa: "दक्षिणायण",
     ta: "தட்சிணாயணம்",
@@ -222,71 +221,121 @@ const ayanam_data = {
   }
 };
 const ruthu_data = {
-  VAS: {name: "Vasantha", en: "Vasantha", sa: "वसन्त", ta: "வசந்தம்", te: "వసంతం", ka: "ವಸಂತ"},
-  GRE: {name: "Greeshma", en: "Greeshma", sa: "ग्रीष्म", ta: "க்ரீஷ்மம்", te: "గ్రీష్మం", ka: "ಗ್ರೀಷ್ಮ"},
-  VAR: {name: "Varsha", en: "Varsha", sa: "वर्षा", ta: "வருஷா", te: "వర్షా", ka: "ವರ್ಷಾ"},
-  SHA: {name: "Sharad", en: "Sharad", sa: "शरद्", ta: "சரத்", te: "శరదృతువు", ka: "ಶರದ್"},
-  HEM: {name: "Hemantha", en: "Hemantha", sa: "हेमन्त", ta: "ஹேமந்தம்", te: "హేమంతం", ka: "ಹೇಮಂತ"},
-  SHI: {name: "Shishira", en: "Shishira", sa: "शिशिर", ta: "சிஷிரம்", te: "శిశిరం", ka: "ಶಿಶಿರ"}
+  VAS: {en: "Vasantha", sa: "वसन्त", ta: "வசந்தம்", te: "వసంతం", ka: "ವಸಂತ"},
+  GRE: {en: "Greeshma", sa: "ग्रीष्म", ta: "க்ரீஷ்மம்", te: "గ్రీష్మం", ka: "ಗ್ರೀಷ್ಮ"},
+  VAR: {en: "Varsha", sa: "वर्षा", ta: "வருஷா", te: "వర్షా", ka: "ವರ್ಷಾ"},
+  SHA: {en: "Sharad", sa: "शरद्", ta: "சரத்", te: "శరదృతువు", ka: "ಶರದ್"},
+  HEM: {en: "Hemantha", sa: "हेमन्त", ta: "ஹேமந்தம்", te: "హేమంతం", ka: "ಹೇಮಂತ"},
+  SHI: {en: "Shishira", sa: "शिशिर", ta: "சிஷிரம்", te: "శిశిరం", ka: "ಶಿಶಿರ"}
 };
 
 const masam_data = {
-  CHA: {name: "Chaitra", en: "Chaitra", sa: "चैत्र", ta: "சித்திரை", te: "చైత్రం", ka: "ಚೈತ್ರ"},
-  VAI: {name: "Vaishaakha", en: "Vaishaakha", sa: "वैशाख", ta: "வைகாசி", te: "వైశాఖం", ka: "ವೈಶಾಖ"},
-  JYE: {name: "Jyeshta", en: "Jyeshta", sa: "ज्येष्ठ", ta: "ஆனி", te: "జ్యేష్ఠం", ka: "ಜ್ಯೇಷ್ಠ"},
-  AAS: {name: "Aashaada", en: "Aashaada", sa: "आषाढ", ta: "ஆடி", te: "ఆషాఢం", ka: "ಆಷಾಢ"},
-  SHR: {name: "Shraavan", en: "Shraavan", sa: "श्रावण", ta: "ஆவணி", te: "శ్రావణం", ka: "ಶ್ರಾವಣ"},
-  BHA: {name: "Bhaadrapada", en: "Bhaadrapada", sa: "भाद्रपद", ta: "புரட்டாசி", te: "భాద్రపదం", ka: "ಭಾದ್ರಪದ"},
-  ASV: {name: "Aashvayuja", en: "Aashvayuja", sa: "आश्वयुज", ta: "ஐப்பசி", te: "ఆశ్వయుజం", ka: "ಆಶ್ವಯುಜ"},
-  KAR: {name: "Kaarthik", en: "Kaarthik", sa: "कार्तिक", ta: "கார்த்திகை", te: "కార్తీకం", ka: "ಕಾರ್ತಿಕ"},
-  MGS: {name: "Maargasheersha", en: "Maargasheersha", sa: "मार्गशीर्ष", ta: "மார்கழி", te: "మార్గశిరం", ka: "ಮಾರ್ಗಶಿರ"},
-  PAU: {name: "Pausha", en: "Pausha", sa: "पौष", ta: "தை", te: "పౌషం", ka: "ಪೌಷ"},
-  MAG: {name: "Maagha", en: "Maagha", sa: "माघ", ta: "மாசி", te: "మాఘం", ka: "ಮಾಘ"},
-  PHA: {name: "Phaalguna", en: "Phaalguna", sa: "फाल्गुन", ta: "பங்குனி", te: "ఫాల్గుణం", ka: "ಫಾಲ್ಗುಣ"},
+  CHA: {en: "Chaitra", sa: "चैत्र", ta: "சித்திரை", te: "చైత్రం", ka: "ಚೈತ್ರ"},
+  VAI: {en: "Vaishaakha", sa: "वैशाख", ta: "வைகாசி", te: "వైశాఖం", ka: "ವೈಶಾಖ"},
+  JYE: {en: "Jyeshta", sa: "ज्येष्ठ", ta: "ஆனி", te: "జ్యేష్ఠం", ka: "ಜ್ಯೇಷ್ಠ"},
+  AAS: {en: "Aashaada", sa: "आषाढ", ta: "ஆடி", te: "ఆషాఢం", ka: "ಆಷಾಢ"},
+  SHR: {en: "Shraavan", sa: "श्रावण", ta: "ஆவணி", te: "శ్రావణం", ka: "ಶ್ರಾವಣ"},
+  BHA: {en: "Bhaadrapada", sa: "भाद्रपद", ta: "புரட்டாசி", te: "భాద్రపదం", ka: "ಭಾದ್ರಪದ"},
+  ASV: {en: "Aashvayuja", sa: "आश्वयुज", ta: "ஐப்பசி", te: "ఆశ్వయుజం", ka: "ಆಶ್ವಯುಜ"},
+  KAR: {en: "Kaarthik", sa: "कार्तिक", ta: "கார்த்திகை", te: "కార్తీకం", ka: "ಕಾರ್ತಿಕ"},
+  MGS: {en: "Maargasheersha", sa: "मार्गशीर्ष", ta: "மார்கழி", te: "మార్గశిరం", ka: "ಮಾರ್ಗಶಿರ"},
+  PAU: {en: "Pausha", sa: "पौष", ta: "தை", te: "పౌషం", ka: "ಪೌಷ"},
+  MAG: {en: "Maagha", sa: "माघ", ta: "மாசி", te: "మాఘం", ka: "ಮಾಘ"},
+  PHA: {en: "Phaalguna", sa: "फाल्गुन", ta: "பங்குனி", te: "ఫాల్గుణం", ka: "ಫಾಲ್ಗುಣ"},
 
-  CH1: {name: "Adhika Chaitra", en: "Adhika Chaitra", sa: "अधिक चैत्र", ta: "அதிக சித்திரை", te: "అధిక చైత్రం", ka: "ಅಧಿಕ ಚೈತ್ರ"},
-  VA1: {name: "Adhika Vaishaakha", en: "Adhika Vaishaakha", sa: "अधिक वैशाख", ta: "அதிக வைகாசி", te: "అధిక వైశాఖం", ka: "ಅಧಿಕ ವೈಶಾಖ"},
-  JY1: {name: "Adhika Jyeshta", en: "Adhika Jyeshta", sa: "अधिक ज्येष्ठ", ta: "அதிக ஆனி", te: "అధిక జ్యేష్ఠం", ka: "ಅಧಿಕ ಜ್ಯೇಷ್ಠ"},
-  AA1: {name: "Adhika Aashaada", en: "Adhika Aashaada", sa: "अधिक आषाढ", ta: "அதிக ஆடி", te: "అధిక ఆషాఢం", ka: "ಅಧಿಕ ಆಷಾಢ"},
-  SH1: {name: "Adhika Shraavan", en: "Adhika Shraavan", sa: "अधिक श्रावण", ta: "அதிக ஆவணி", te: "అధిక శ్రావణం", ka: "ಅಧಿಕ ಶ್ರಾವಣ"},
-  BH1: {name: "Adhika Bhaadrapada", en: "Adhika Bhaadrapada", sa: "अधिक भाद्रपद", ta: "அதிக புரட்டாசி", te: "అధిక భాద్రపదం", ka: "ಅಧಿಕ ಭಾದ್ರಪದ"},
-  AS1: {name: "Adhika Aashvayuja", en: "Adhika Aashvayuja", sa: "अधिक आश्वयुज", ta: "அதிக ஐப்பசி", te: "అధిక ఆశ్వయుజం", ka: "ಅಧಿಕ ಆಶ್ವಯುಜ"},
-  KA1: {name: "Adhika Kaarthik", en: "Adhika Kaarthik", sa: "अधिक कार्तिक", ta: "அதிக கார்த்திகை", te: "అధిక కార్తీకం", ka: "ಅಧಿಕ ಕಾರ್ತಿಕ"},
-  MG1: {name: "Adhika Maargasheersha", en: "Adhika Maargasheersha", sa: "अधिक मार्गशीर्ष", ta: "அதிக மார்கழி", te: "అధిక మార్గశిరం", ka: "ಅಧಿಕ ಮಾರ್ಗಶಿರ"},
-  PA1: {name: "Adhika Pausha", en: "Adhika Pausha", sa: "अधिक पौष", ta: "அதிக தை", te: "అధిక పౌషం", ka: "ಅಧಿಕ ಪೌಷ"},
-  MA1: {name: "Adhika Maagha", en: "Adhika Maagha", sa: "अधिक माघ", ta: "அதிக மாசி", te: "అధిక మాఘం", ka: "ಅಧಿಕ ಮಾಘ"},
-  PH1: {name: "Adhika Phaalguna", en: "Adhika Phaalguna", sa: "अधिक फाल्गुन", ta: "அதிக பங்குனி", te: "అధిక ఫాల్గుణం", ka: "ಅಧಿಕ ಫಾಲ್ಗುಣ"},
+CH1: {en: "Adhika Chaitra", sa: "अधिक चैत्र", ta: "அதிக சித்திரை", te: "అధిక చైత్రం", ka: "ಅಧಿಕ ಚೈತ್ರ"},
+VA1: {en: "Adhika Vaishaakha", sa: "अधिक वैशाख", ta: "அதிக வைகாசி", te: "అధిక వైశాఖం", ka: "ಅಧಿಕ ವೈಶಾಖ"},
+JY1: {en: "Adhika Jyeshta", sa: "अधिक ज्येष्ठ", ta: "அதிக ஆனி", te: "అధిక జ్యేష్ఠం", ka: "ಅಧಿಕ ಜ್ಯೇಷ್ಠ"},
+AA1: {en: "Adhika Aashaada", sa: "अधिक आषाढ", ta: "அதிக ஆடி", te: "అధిక ఆషాఢం", ka: "ಅಧಿಕ ಆಷಾಢ"},
+SH1: {en: "Adhika Shraavan", sa: "अधिक श्रावण", ta: "அதிக ஆவணி", te: "అధిక శ్రావణం", ka: "ಅಧಿಕ ಶ್ರಾವಣ"},
+BH1: {en: "Adhika Bhaadrapada", sa: "अधिक भाद्रपद", ta: "அதிக புரட்டாசி", te: "అధిక భాద్రపదం", ka: "ಅಧಿಕ ಭಾದ್ರಪದ"},
+AS1: {en: "Adhika Aashvayuja", sa: "अधिक आश्वयुज", ta: "அதிக ஐப்பசி", te: "అధిక ఆశ్వయుజం", ka: "ಅಧಿಕ ಆಶ್ವಯುಜ"},
+KA1: {en: "Adhika Kaarthik", sa: "अधिक कार्तिक", ta: "அதிக கார்த்திகை", te: "అధిక కార్తీకం", ka: "ಅಧಿಕ ಕಾರ್ತಿಕ"},
+MG1: {en: "Adhika Maargasheersha", sa: "अधिक मार्गशीर्ष", ta: "அதிக மார்கழி", te: "అధిక మార్గశిరం", ka: "ಅಧಿಕ ಮಾರ್ಗಶಿರ"},
+PA1: {en: "Adhika Pausha", sa: "अधिक पौष", ta: "அதிக தை", te: "అధిక పౌషం", ka: "ಅಧಿಕ ಪೌಷ"},
+MA1: {en: "Adhika Maagha", sa: "अधिक माघ", ta: "அதிக மாசி", te: "అధిక మాఘం", ka: "ಅಧಿಕ ಮಾಘ"},
+PH1: {en: "Adhika Phaalguna", sa: "अधिक फाल्गुन", ta: "அதிக பங்குனி", te: "అధిక ఫాల్గుణం", ka: "ಅಧಿಕ ಫಾಲ್ಗುಣ"},
 
-  MES: {name: "Mesham", en: "Mesham", sa: "मेष", ta: "மேஷம்", te: "మేషం", ka: "ಮೇಷ"},
-  VRU: {name: "Vrushabham", en: "Vrushabham", sa: "वृषभ", ta: "ரிஷபம்", te: "వృషభం", ka: "ವೃಷಭ"},
-  MIT: {name: "Mithunam", en: "Mithunam", sa: "मिथुन", ta: "மிதுனம்", te: "మిథునం", ka: "ಮಿಥುನ"},
-  KTK: {name: "Katakam", en: "Katakam", sa: "कर्क", ta: "கடகம்", te: "కర్కాటకం", ka: "ಕಟಕ"},
-  SIM: {name: "Simham", en: "Simham", sa: "सिंह", ta: "சிம்மம்", te: "సింహం", ka: "ಸಿಂಹ"},
-  KNY: {name: "Kanya", en: "Kanya", sa: "कन्या", ta: "கன்னி", te: "కన్యా", ka: "ಕನ್ಯಾ"},
-  TUL: {name: "Tulam", en: "Tulam", sa: "तुला", ta: "துலாம்", te: "తులా", ka: "ತುಲಾ"},
-  VCH: {name: "Vrushchikam", en: "Vrushchikam", sa: "वृश्चिक", ta: "விருச்சிகம்", te: "వృశ్చికం", ka: "ವೃಶ್ಚಿಕ"},
-  DHA: {name: "Dhanus", en: "Dhanus", sa: "धनुस्", ta: "தனுசு", te: "ధనుస్సు", ka: "ಧನುಸ್ಸು"},
-  MAK: {name: "Makaram", en: "Makaram", sa: "मकर", ta: "மகரம்", te: "మకరం", ka: "ಮಕರ"},
-  KUM: {name: "Kumbham", en: "Kumbham", sa: "कुम्भ", ta: "கும்பம்", te: "కుంభం", ka: "ಕುಂಭ"},
-  MNM: {name: "Meenum", en: "Meenum", sa: "मीन", ta: "மீனம்", te: "మీనం", ka: "ಮೀನ"}
+MES: {en: "Mesham", sa: "मेष", ta: "மேஷம்", te: "మేషం", ka: "ಮೇಷ"},
+VRU: {en: "Vrushabham", sa: "वृषभ", ta: "ரிஷபம்", te: "వృషభం", ka: "ವೃಷಭ"},
+MIT: {en: "Mithunam", sa: "मिथुन", ta: "மிதுனம்", te: "మిథునం", ka: "ಮಿಥುನ"},
+KTK: {en: "Katakam", sa: "कर्क", ta: "கடகம்", te: "కర్కాటకం", ka: "ಕಟಕ"},
+SIM: {en: "Simham", sa: "सिंह", ta: "சிம்மம்", te: "సింహం", ka: "ಸಿಂಹ"},
+KNY: {en: "Kanya", sa: "कन्या", ta: "கன்னி", te: "కన్యా", ka: "ಕನ್ಯಾ"},
+TUL: {en: "Tulam", sa: "तुला", ta: "துலாம்", te: "తులా", ka: "ತುಲಾ"},
+VCH: {en: "Vrushchikam", sa: "वृश्चिक", ta: "விருச்சிகம்", te: "వృశ్చికం", ka: "ವೃಶ್ಚಿಕ"},
+DHA: {en: "Dhanus", sa: "धनुस्", ta: "தனுசு", te: "ధనుస్సు", ka: "ಧನುಸ್ಸು"},
+MAK: {en: "Makaram", sa: "मकर", ta: "மகரம்", te: "మకరం", ka: "ಮಕರ"},
+KUM: {en: "Kumbham", sa: "कुम्भ", ta: "கும்பம்", te: "కుంభం", ka: "ಕುಂಭ"},
+MNM: {en: "Meenum", sa: "मीन", ta: "மீனம்", te: "మీనం", ka: "ಮೀನ"}
+
 };
 
 const paksham_data = {
-  SHU: {name: "Shukla", en: "Shukla", sa: "शुक्ल", ta: "சுக்ல", te: "శుక్ల", ka: "ಶುಕ್ಲ"},
-  KRI: {name: "Krishna", en: "Krishna", sa: "कृष्ण", ta: "கிருஷ்ண", te: "కృష్ణ", ka: "ಕೃಷ್ಣ"}
+  SHU: {en: "Shukla", sa: "शुक्ल", ta: "சுக்ல", te: "శుక్ల", ka: "ಶುಕ್ಲ"},
+  KRI: {en: "Krishna", sa: "कृष्ण", ta: "கிருஷ்ண", te: "కృష్ణ", ka: "ಕೃಷ್ಣ"}
 };
 
 
 
 const day_of_week_data = {
-Sunday: {name: "Bhanu"},
-Monday: {name: "Indu"},
-Tuesday: {name: "Bhowma"},
-Wednesday: {name: "Sowmya"},
-Thursday: {name: "Guru"},
-Friday: {name: "Bhrugu"},
-Saturday: {name: "Sthira"}
+  Sunday: {
+    en: "Bhanu",
+    sa: "भानु",
+    ta: "பானு",
+    te: "భాను",
+    ka: "ಭಾನು"
+  },
+
+  Monday: {
+    en: "Indu",
+    sa: "इन्दु",
+    ta: "இந்து",
+    te: "ఇందు",
+    ka: "ಇಂದು"
+  },
+
+  Tuesday: {
+    en: "Bhowma",
+    sa: "भौम",
+    ta: "பௌம",
+    te: "భౌమ",
+    ka: "ಭೌಮ"
+  },
+
+  Wednesday: {
+    en: "Sowmya",
+    sa: "सौम्य",
+    ta: "சௌம்ய",
+    te: "సౌమ్య",
+    ka: "ಸೌಮ್ಯ"
+  },
+
+  Thursday: {
+    en: "Guru",
+    sa: "गुरु",
+    ta: "குரு",
+    te: "గురు",
+    ka: "ಗುರು"
+  },
+
+  Friday: {
+    en: "Bhrugu",
+    sa: "भृगु",
+    ta: "பிருகு",
+    te: "భృగు",
+    ka: "ಭೃಗು"
+  },
+
+  Saturday: {
+    en: "Sthira",
+    sa: "स्थिर",
+    ta: "ஸ்திர",
+    te: "స్థిర",
+    ka: "ಸ್ಥಿರ"
+  }
 };
+
 const ELEMENT_INDEX_STORE = {
   thithi: null,
   nakshatram: null,
@@ -432,6 +481,8 @@ const THITHI_INDEX = {
   POU: 15, AMA: 15
 };
 const CACHE_BUSTER = "?v=" + Date.now();
+const UI_LANG = "en"; // change globally: "sa", "ta", "te", "ka"
+
 // ---- GLOBAL TIME SETUP (runs once) ----
 const nowLocal = new Date();
 nowLocal.setSeconds(0, 0);        // normalize seconds
@@ -440,7 +491,7 @@ const weekdayName = nowLocal.toLocaleDateString("en-US", {
   weekday: "long"
 });
 const weekdayInfo = day_of_week_data[weekdayName];
-const weekdayTradName = weekdayInfo?.name ?? "—";
+const weekdayTradName = getLang(weekdayInfo);
 const CURRENT_DAY_INFO = {
   weekday: weekdayName,
   traditional: weekdayTradName
@@ -523,17 +574,15 @@ async function loadsowramanamExtras(nowUTC) {
         const result = {};
 
         for (const cfg of OS_CONFIG.lookups) {
-          const colIdx = idx(cfg.column);
-          const code = colIdx !== -1 ? cols[colIdx]?.trim() : null;
-          const entry = (code != null && code !== "") ? cfg.dict[code] : null;
-          result[cfg.key] = {
-            code,
-            name: entry?.name ?? "—",
-            previous: entry?.previous ?? "—",
-            next: entry?.next ?? "—"
-        };
-      }
+  		const colIdx = idx(cfg.column);
 
+  		const code =
+    		colIdx !== -1 ? cols[colIdx]?.trim() : null;
+
+  		const entry =
+   	 		(code != null && code !== "") ? cfg.dict[code]: null;
+		result[cfg.key] = {code,...(entry || {})};
+	}
       GLOBAL_EXTRAS.sowramanam = result;
       tryRenderCombinedExtras();
       return;
@@ -565,10 +614,8 @@ async function loadElementData(def_element, nowUTC) {
     ELEMENT_INDEX_STORE[def_element.key] = i;
 
     const code = cols[idx(def_element.codeColumn)]?.trim();
-    const info = def_element.mapping[code] ?? {};
-    const name = info?.en ?? info?.name ?? code;
-    const previous = info.previous ?? "—";
-    const next = info.next ?? "—";
+    const info = def_element.mapping?.[code] ?? {};
+    const name = getLang(info);
 
     const elapsedMs   = nowUTC - fromUTC;
     const remainingMs = toUTC - nowUTC;
@@ -595,26 +642,20 @@ async function loadElementData(def_element, nowUTC) {
           const lookupCode = colIdx !== -1 ? cols[colIdx] : null;
           const dictEntry = lookupCode && cfg.dictionary[lookupCode];
 
-          resolvedExtras[key] = {
-            code: lookupCode,
-            name: dictEntry?.name ?? lookupCode ?? "—",
-            previous: dictEntry?.previous ?? "—",
-            next: dictEntry?.next ?? "—"
-          };
+	  resolvedExtras[key] = {code: lookupCode,...(dictEntry || {})};
         }
-      }
 
       // -------------------------------
       // Thithi-only extras rendering
       // -------------------------------
       if (def_element.key === "thithi" && resolvedExtras) {
-        GLOBAL_EXTRAS.chandramanam = {
-          varsham:  resolvedExtras.varsham?.en ?? resolvedExtras.varsham?.name ?? "—",
-          masam:    resolvedExtras.masam?.en ?? resolvedExtras.masam?.name ?? "—",
-          paksham:  resolvedExtras.paksham?.en ?? resolvedExtras.paksham?.name ?? "—",
-          ruthu:    resolvedExtras.ruthu?.en ?? resolvedExtras.ruthu?.name ?? "—",
-          weekday:  CURRENT_DAY_INFO.weekday,
-          weekdayTrad: CURRENT_DAY_INFO.traditional
+	GLOBAL_EXTRAS.chandramanam = {
+  		varsham: resolvedExtras.varsham,
+  		masam: resolvedExtras.masam,
+	  	paksham: resolvedExtras.paksham,
+	        ruthu: resolvedExtras.ruthu,
+                weekday:  CURRENT_DAY_INFO.weekday,
+                weekdayTrad: CURRENT_DAY_INFO.traditional
         };
         // -------------------------------
         // Paksham Degrees Calculation
@@ -675,6 +716,13 @@ async function loadElementData(def_element, nowUTC) {
 /***********************
  * HELPER functions
  ***********************/
+// -------------------------------
+      // This ensures getting lang used for language toggle.
+      // -------------------------------
+	function getLang(obj) {
+	  return obj?.[UI_LANG] ?? obj?.en ?? "—";
+}
+	
 
 // -------------------------------
       // This ensures rendering happens only when BOTH are loaded
@@ -698,26 +746,26 @@ async function loadElementData(def_element, nowUTC) {
           // Sowramaanam block
             sowramanamDiv.innerHTML = `
               <strong>Sowramaana sankalpam</strong><br><br>
-              Samvatsaram: ${data.sowramanam.varsham?.name ?? "—"}<br>
-              Ayanam: ${data.sowramanam.ayanam?.name ?? "—"}<br>
-              Ruthu: ${data.sowramanam.ruthu?.name ?? "—"}<br>
-              Masam: ${data.sowramanam.masam?.name ?? "—"}<br>
-              Paksham: ${data.chandramanam.paksham}<br>
+	      Samvatsaram: ${getLang(data.sowramanam.varsham)}<br>
+	      Ayanam: ${getLang(data.sowramanam.ayanam)}<br>
+	      Ruthu: ${getLang(data.sowramanam.ruthu)}<br>
+	      Masam: ${getLang(data.sowramanam.masam)}<br>
+              Paksham: ${getLang(data.chandramanam.paksham)}<br>
               Thithi: See thithi details below<br> 
               Vaasaram: ${data.chandramanam.weekdayTrad}<br>
             `;
-          // Chaandramaanam block
-            chandramanamDiv.innerHTML = `
-              <strong>Chaandramaana sankalpam</strong><br><br>
-              Samvatsaram: ${data.chandramanam.varsham}<br>
-              Ayanam: ${data.sowramanam.ayanam?.name ?? "—"}<br>
-              Ruthu: ${data.chandramanam.ruthu}<br>
-              Masam: ${data.chandramanam.masam}<br>
-              Paksham: ${data.chandramanam.paksham}<br>
-              Thithi: See thithi details below<br> 
-              Vaasaram: ${data.chandramanam.weekdayTrad}<br>
-            `;
+	 // Chaandramaanam block
+	   chandramanamDiv.innerHTML = `
+	     <strong>Chaandramaana sankalpam</strong><br><br>
+	     Samvatsaram: ${getLang(data.chandramanam.varsham)}<br>
+	     Ayanam: ${getLang(data.sowramanam.ayanam)}<br>
+	     Ruthu: ${getLang(data.chandramanam.ruthu)}<br>
+	     Masam: ${getLang(data.chandramanam.masam)}<br>
+	     Paksham: ${getLang(data.chandramanam.paksham)}<br>
 
+  	     Thithi: See thithi details below<br> 
+             Vaasaram: ${data.chandramanam.weekdayTrad}<br>
+            `;
         }
 
 
@@ -773,9 +821,8 @@ function renderElementTable(def, lines, headers, index) {
     const toLocal   = toUTC ? new Date(toUTC).toLocaleString() : "—";
 
     const code = cols[idx(def.codeColumn)]?.trim();
-    const info = def.mapping[code] ?? {};
-    const name = info.name ?? code ?? "—";
-
+    const info = def.mapping?.[code] ?? {};
+    const name = getLang(info);
     // Row label
     let label = "";
     if (i === 0) label = "Previous";
@@ -795,7 +842,7 @@ function renderElementTable(def, lines, headers, index) {
 
       if (pakCol) {
         const pakCode = cols[idx(pakCol)];
-        pakName = paksham_data[pakCode]?.en ?? paksham_data[pakCode]?.name ?? pakCode ?? "—";
+        pakName = getLang(paksham_data[pakCode]);
       }
 
       html += `<td>${pakName}</td>`;
@@ -880,6 +927,8 @@ function renderElementBlock({
   remainingColor);
 }
 
+
+
 function drawPakshamDegreesPie({ thithiCode, elapsedMs, remainingMs, paksham }) {
   const canvas = document.getElementById("pakshamDegreesPie");
   if (!canvas) return;
@@ -888,7 +937,7 @@ function drawPakshamDegreesPie({ thithiCode, elapsedMs, remainingMs, paksham }) 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   const tIndex = THITHI_INDEX[thithiCode];
-  if (!tIndex) return;
+  if (tIndex == null) return;
 
   const totalMs = elapsedMs + remainingMs;
   if (totalMs <= 0) return;
@@ -953,15 +1002,14 @@ ctx.restore();
   ctx.stroke();
 
   // --- Label ---
-  ctx.fillStyle = "#000";
+  ctx.fillStyle = "#111";
   ctx.font = "16px Arial";
   ctx.textAlign = "center";
 
-  const pakshamLabel = isKrishna ? "Krishna" : "Shukla";
-  const thithiName =
-  ELEMENT_DEFINITIONS.thithi.mapping?.[thithiCode]?.en ??
-  ELEMENT_DEFINITIONS.thithi.mapping?.[thithiCode]?.name ??
-  localIndex;
+  const pakshamInfo = paksham_data?.[paksham];
+  const pakshamLabel = paksham_data?.[paksham]? getLang(paksham_data[paksham]): "";
+  const thithiName = getLang(
+    ELEMENT_DEFINITIONS.thithi.mapping?.[thithiCode]) ?? localIndex;
   ctx.fillText(
     `${pakshamLabel} Paksham - Thithi ${thithiName} in progress`,
     centerX,
@@ -1065,7 +1113,7 @@ function drawTimePie(canvasId, elapsedMs, remainingMs, titleText, elapsedColor, 
   ctx.strokeStyle = "#666";
   ctx.lineWidth = 1;
   ctx.strokeRect(x, y, 10, 10);
-  ctx.fillStyle = "#000";
+  ctx.fillStyle = "#111";
   ctx.fillText(`Complete: ${percentComplete}%`, x + 16, y + 9);
 
   x += ctx.measureText(`Complete: ${percentComplete}%`).width + 30;
@@ -1076,7 +1124,7 @@ function drawTimePie(canvasId, elapsedMs, remainingMs, titleText, elapsedColor, 
   ctx.strokeStyle = "#666";
   ctx.lineWidth = 1;
   ctx.strokeRect(x, y, 10, 10);
-  ctx.fillStyle = "#000";
+  ctx.fillStyle = "#111";
   ctx.fillText(`Remaining: ${percentRemaining}%`, x + 16, y + 9);
 
   // --- Corrected Red hand ---

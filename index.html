@@ -7,12 +7,25 @@
 <style>
   body { font-family: Arial, sans-serif; padding: 20px; }
   .box { border: 1px solid #ccc; padding: 15px; margin-top: 10px; }
+
+  #langSwitch button {
+    padding: 6px 10px;
+    margin: 2px;
+    border: 1px solid #aaa;
+    background: #fff;
+    cursor: pointer;
+  }
+
+  #langSwitch button.active {
+    background: #333;
+    color: #fff;
+  }
 </style>
 </head>
 
 <body>
 
-<h2>!!! Panchangam NOW U006!!!</h2>
+<h2>!!! Panchangam NOW U008!!!</h2>
 
 
 <div id="nowTime" style="margin-bottom:8px;"></div>
@@ -27,6 +40,12 @@
   <b>P A K S H A M&nbsp;&nbsp;&nbsp;P R O G R E S S</b><br><br>
   <canvas id="pakshamDegreesPie" width="500" height="480"></canvas>
 </div>
+<div id="langSwitch">
+  <button data-lang="en">ENGLISH</button>
+<button data-lang="ta">TAMIL</button>
+<button data-lang="sa">SANSKRIT</button>
+<button data-lang="ka">KANNADA</button>
+</div> 
 <hr>
 
 <h2>Detailed Tables</h2>

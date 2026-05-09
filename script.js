@@ -528,8 +528,7 @@ let GLOBAL_EXTRAS = {
 
 
 async function loadAll(nowUTC) {
-  console.log("loadAll fired");
-	await loadElementColors();
+  await loadElementColors();
   await loadsowramanamExtras(nowUTC);  
   await loadElementData(ELEMENT_DEFINITIONS.thithi, nowUTC);
   await loadElementData(ELEMENT_DEFINITIONS.nakshatram, nowUTC);

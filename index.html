@@ -9,17 +9,31 @@
   .box { border: 1px solid #ccc; padding: 15px; margin-top: 10px; }
 
   #langSwitch button {
-    padding: 6px 10px;
-    margin: 2px;
-    border: 1px solid #aaa;
-    background: #fff;
-    cursor: pointer;
-  }
+  padding: 6px 10px;
+  margin: 2px;
+  border: 1px solid #0F766E;
+  background: #0F766E;
+  color: #FFFFFF;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+
+#langSwitch button:hover {
+  background: #115E59;
+}
+
+#langSwitch button.active {
+  background: #134E4A;
+  border-color: #134E4A;
+  font-weight: bold;
+}
 
   #langSwitch button.active {
-    background: #333;
-    color: #fff;
-  }
+  background: #134E4A;   /* darker teal (selected state) */
+  color: #FFFFFF;
+  border: 1px solid #134E4A;
+}
 </style>
 </head>
 

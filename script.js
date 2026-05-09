@@ -481,12 +481,13 @@ const THITHI_INDEX = {
   POU: 15, AMA: 15
 };
 const CACHE_BUSTER = "?v=" + Date.now();
-const UI_LANG = "en"; // change globally: "sa", "ta", "te", "ka"
+let UI_LANG = localStorage.getItem("ui_lang") || "en";
+
 
 // ---- GLOBAL TIME SETUP (runs once) ----
 const nowLocal = new Date();
 nowLocal.setSeconds(0, 0);        // normalize seconds
-const nowUTC = Date.now();
+
 const weekdayName = nowLocal.toLocaleDateString("en-US", {
   weekday: "long"
 });
@@ -716,13 +717,35 @@ async function loadElementData(def_element, nowUTC) {
 /***********************
  * HELPER functions
  ***********************/
-// -------------------------------
-      // This ensures getting lang used for language toggle.
-      // -------------------------------
-	function getLang(obj) {
-	  return obj?.[UI_LANG] ?? obj?.en ?? "—";
+	function updateLangUI(lang) {
+	document.querySelectorAll("#langSwitch button").forEach(btn => {
+	btn.classList.toggle("active", btn.dataset.lang === lang);
+	});
 }
+	// -------------------------------
+        // This ensures getting lang used for language toggle.
+       // -------------------------------
+	function getLang(obj) {
+  	if (!obj) return "";
+
+  	// If already a string, return directly
+  	if (typeof obj === "string") return obj;
+
+  	// Language-aware lookup
+  	return obj[UI_LANG] ?? obj.en ?? "";
+	}
 	
+// -------------------------------
+      // This function ensures setting language
+      // -------------------------------
+	
+	function setLanguage(lang) {
+	  UI_LANG = lang;
+	  localStorage.setItem("ui_lang", lang);
+
+	  updateLangUI(lang);
+	  loadAll(Date.now());  // redraw canvas
+}
 
 // -------------------------------
       // This ensures rendering happens only when BOTH are loaded
@@ -1147,4 +1170,14 @@ function drawTimePie(canvasId, elapsedMs, remainingMs, titleText, elapsedColor, 
 /***********************
  * CALL IT
  ***********************/
-loadAll(nowUTC);
+/***********************
+ * CALL IT
+ ***********************/
+updateLangUI(UI_LANG);   // sync button highlight
+loadAll(Date.now());     // redraw canvas
+
+document.querySelectorAll("#langSwitch button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    setLanguage(btn.dataset.lang);
+  });
+});

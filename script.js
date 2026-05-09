@@ -633,77 +633,71 @@ async function loadElementData(def_element, nowUTC) {
       // -------------------------------
       // Resolve extra lookups (generic)
       // -------------------------------
-      let resolvedExtras = null;
-
-      if (def_element.extraLookups) {
-        resolvedExtras = {};
-
-        for (const [key, cfg] of Object.entries(def_element.extraLookups)) {
-          const colIdx = idx(cfg.column);
-          const lookupCode = colIdx !== -1 ? cols[colIdx] : null;
-          const dictEntry = lookupCode && cfg.dictionary[lookupCode];
-
-	  resolvedExtras[key] = {code: lookupCode,...(dictEntry || {})};
-        }
-
       // -------------------------------
-      // Thithi-only extras rendering
-      // -------------------------------
-      if (def_element.key === "thithi" && resolvedExtras) {
-	GLOBAL_EXTRAS.chandramanam = {
-  		varsham: resolvedExtras.varsham,
-  		masam: resolvedExtras.masam,
-	  	paksham: resolvedExtras.paksham,
-	        ruthu: resolvedExtras.ruthu,
-                weekday:  CURRENT_DAY_INFO.weekday,
-                weekdayTrad: CURRENT_DAY_INFO.traditional
-        };
-        // -------------------------------
-        // Paksham Degrees Calculation
-        // -------------------------------
-        const totalMs = elapsedMs + remainingMs;
-        const fraction = totalMs > 0 ? (elapsedMs / totalMs) : 0;
-        
-        const baseDeg = THITHI_BASE_DEGREES[code] ?? 0;
-        let completedDeg = baseDeg + (24 * fraction);
-        
-        // Clamp to 360
-        completedDeg = Math.min(360, completedDeg);
-        const remainingDeg = 360 - completedDeg;
-        
-        drawPakshamDegreesPie({
-          thithiCode: code,                 // <-- ADD THIS
-          elapsedMs,
-          remainingMs,
-          paksham: resolvedExtras.paksham?.code
-        });
-        tryRenderCombinedExtras();
-      }
+// Resolve extra lookups (generic)
+// -------------------------------
+let resolvedExtras = null;
 
-      
-      // -------------------------------
-      // Main block rendering (unchanged)
-      // -------------------------------
-      renderElementBlock({
-        title: def_element.title,
-        name,
-        fromLocal: new Date(fromUTC),
-        toLocal: new Date(toUTC),
-        elapsedStr: formatDuration(elapsedMs),
-        remainingStr: formatDuration(remainingMs),
-        elapsedMs,
-        remainingMs,
-        canvasId: def_element.canvasId,
-        pieLabel: def_element.pieLabel,
-        containerId: def_element.containerId,
-        elapsedColor: pieColors.elapsed,
-        remainingColor: pieColors.remaining
-      });
-        
-      return;
-    }
+if (def_element.extraLookups) {
+  resolvedExtras = {};
+
+  for (const [key, cfg] of Object.entries(def_element.extraLookups)) {
+    const colIdx = idx(cfg.column);
+    const lookupCode = colIdx !== -1 ? cols[colIdx] : null;
+    const dictEntry = lookupCode && cfg.dictionary[lookupCode];
+
+    resolvedExtras[key] = {
+      code: lookupCode,
+      ...(dictEntry || {})
+    };
   }
 
+  // -------------------------------
+  // Thithi-only extras rendering
+  // -------------------------------
+  if (def_element.key === "thithi" && resolvedExtras) {
+    GLOBAL_EXTRAS.chandramanam = {
+      varsham: resolvedExtras.varsham,
+      masam: resolvedExtras.masam,
+      paksham: resolvedExtras.paksham,
+      ruthu: resolvedExtras.ruthu,
+      weekday: CURRENT_DAY_INFO.weekday,
+      weekdayTrad: CURRENT_DAY_INFO.traditional
+    };
+
+    drawPakshamDegreesPie({
+      thithiCode: code,
+      elapsedMs,
+      remainingMs,
+      paksham: resolvedExtras.paksham?.code
+    });
+
+    tryRenderCombinedExtras();
+  }
+}
+
+// -------------------------------
+// ALWAYS render block (FIX IS HERE)
+// -------------------------------
+renderElementBlock({
+  title: def_element.title,
+  name,
+  fromLocal: new Date(fromUTC),
+  toLocal: new Date(toUTC),
+  elapsedStr: formatDuration(elapsedMs),
+  remainingStr: formatDuration(remainingMs),
+  elapsedMs,
+  remainingMs,
+  canvasId: def_element.canvasId,
+  pieLabel: def_element.pieLabel,
+  containerId: def_element.containerId,
+  elapsedColor: pieColors.elapsed,
+  remainingColor: pieColors.remaining
+});
+
+return; 
+  }
+  }
   // -------------------------------
   // No matching record
   // -------------------------------

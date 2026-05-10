@@ -492,10 +492,10 @@ const weekdayName = nowLocal.toLocaleDateString("en-US", {
   weekday: "long"
 });
 const weekdayInfo = day_of_week_data[weekdayName];
-const weekdayTradName = getLang(weekdayInfo);
+
 const CURRENT_DAY_INFO = {
   weekday: weekdayName,
-  traditional: weekdayTradName
+  traditional: weekdayInfo
 };
 
 const formattedDateTime = nowLocal.toLocaleString("en-US", {
@@ -769,7 +769,7 @@ return;
 	      Masam: ${getLang(data.sowramanam.masam)}<br>
               Paksham: ${getLang(data.chandramanam.paksham)}<br>
               Thithi: See thithi details below<br> 
-              Vaasaram: ${data.chandramanam.weekdayTrad}<br>
+              Vaasaram: ${getLang(data.chandramanam.weekdayTrad)}<br>
             `;
 	 // Chaandramaanam block
 	   chandramanamDiv.innerHTML = `
@@ -779,9 +779,8 @@ return;
 	     Ruthu: ${getLang(data.chandramanam.ruthu)}<br>
 	     Masam: ${getLang(data.chandramanam.masam)}<br>
 	     Paksham: ${getLang(data.chandramanam.paksham)}<br>
-
-  	     Thithi: See thithi details below<br> 
-             Vaasaram: ${data.chandramanam.weekdayTrad}<br>
+ 	     Thithi: See thithi details below<br> 
+             Vaasaram: ${getLang(data.chandramanam.weekdayTrad)}<br>
             `;
         }
 

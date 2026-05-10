@@ -335,6 +335,63 @@ const day_of_week_data = {
     ka: "ಸ್ಥಿರ"
   }
 };
+const ui_labels = {
+  samvatsaram: {
+    en: "Samvatsaram",
+    sa: "संवत्सरम्",
+    ta: "ஸம்வத்ஸரம்",
+    te: "సంవత్సరం",
+    ka: "ಸಂವತ್ಸರ"
+  },
+
+  ayanam: {
+    en: "Ayanam",
+    sa: "अयनम्",
+    ta: "அயனம்",
+    te: "అయనం",
+    ka: "ಅಯನ"
+  },
+
+  ruthu: {
+    en: "Ruthu",
+    sa: "ऋतुः",
+    ta: "ருது",
+    te: "ఋತು",
+    ka: "ಋತು"
+  },
+
+  masam: {
+    en: "Masam",
+    sa: "मासः",
+    ta: "மாசம்",
+    te: "మాసం",
+    ka: "ಮಾಸ"
+  },
+
+  paksham: {
+    en: "Paksham",
+    sa: "पक्षः",
+    ta: "பக்ஷம்",
+    te: "పక్షం",
+    ka: "ಪಕ್ಷ"
+  },
+
+  thithi: {
+    en: "Thithi",
+    sa: "तिथिः",
+    ta: "திதி",
+    te: "తిథి",
+    ka: "ತಿಥಿ"
+  },
+
+  vaasaram: {
+    en: "Vaasaram",
+    sa: "वासरः",
+    ta: "வாஸரம்",
+    te: "వాసరం",
+    ka: "ವಾಸರ"
+  }
+};
 
 const ELEMENT_INDEX_STORE = {
   thithi: null,
@@ -763,24 +820,26 @@ return;
           // Sowramaanam block
             sowramanamDiv.innerHTML = `
               <strong>Sowramaana sankalpam</strong><br><br>
-	      Samvatsaram: ${getLang(data.sowramanam.varsham)}<br>
-	      Ayanam: ${getLang(data.sowramanam.ayanam)}<br>
-	      Ruthu: ${getLang(data.sowramanam.ruthu)}<br>
-	      Masam: ${getLang(data.sowramanam.masam)}<br>
-              Paksham: ${getLang(data.chandramanam.paksham)}<br>
-              Thithi: See thithi details below<br> 
-              Vaasaram: ${getLang(data.chandramanam.weekdayTrad)}<br>
+		${getLang(ui_labels.samvatsaram)}: ${getLang(data.sowramanam.varsham)}<br>
+		${getLang(ui_labels.ayanam)}: ${getLang(data.sowramanam.ayanam)}<br>
+		${getLang(ui_labels.ruthu)}: ${getLang(data.sowramanam.ruthu)}<br>
+		${getLang(ui_labels.masam)}: ${getLang(data.sowramanam.masam)}<br>
+		${getLang(ui_labels.paksham)}: ${getLang(data.chandramanam.paksham)}<br>
+		${getLang(ui_labels.thithi)}: See thithi details below<br>
+		${getLang(ui_labels.vaasaram)}:
+		${getLang(data.chandramanam.weekdayTrad)}<br>
             `;
+
 	 // Chaandramaanam block
 	   chandramanamDiv.innerHTML = `
 	     <strong>Chaandramaana sankalpam</strong><br><br>
-	     Samvatsaram: ${getLang(data.chandramanam.varsham)}<br>
-	     Ayanam: ${getLang(data.sowramanam.ayanam)}<br>
-	     Ruthu: ${getLang(data.chandramanam.ruthu)}<br>
-	     Masam: ${getLang(data.chandramanam.masam)}<br>
-	     Paksham: ${getLang(data.chandramanam.paksham)}<br>
- 	     Thithi: See thithi details below<br> 
-             Vaasaram: ${getLang(data.chandramanam.weekdayTrad)}<br>
+	     ${getLang(ui_labels.samvatsaram)}: ${getLang(data.chandramanam.varsham)}<br>
+	     ${getLang(ui_labels.ayanam)}: ${getLang(data.sowramanam.ayanam)}<br>
+	     ${getLang(ui_labels.ruthu)}: ${getLang(data.chandramanam.ruthu)}<br>
+	     ${getLang(ui_labels.masam)}: ${getLang(data.chandramanam.masam)}<br>
+	     ${getLang(ui_labels.paksham)}: ${getLang(data.chandramanam.paksham)}<br>
+ 	     ${getLang(ui_labels.thithi)}: See thithi details below<br> 
+             ${getLang(ui_labels.vaasaram)}: ${getLang(data.chandramanam.weekdayTrad)}<br>
             `;
         }
 

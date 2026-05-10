@@ -5,7 +5,10 @@
 <title>Panchangam - On the go</title>
 
 <style>
-  body { font-family: Arial, sans-serif; padding: 20px; }
+  body {
+  font-family: Arial, sans-serif;
+  padding: 70px 20px 20px 20px;
+}
   .box { border: 1px solid #ccc; padding: 15px; margin-top: 10px; }
 
   #langSwitch button {
@@ -22,11 +25,16 @@
   background: #115E59;
 }
 #langSwitch {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 999;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+
   background: white;
-  padding: 8px 0;
+  padding: 8px 10px;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 #langSwitch button.active {
   background: #FFFFFF;

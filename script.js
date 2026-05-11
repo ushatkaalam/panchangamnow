@@ -393,6 +393,26 @@ const ui_labels = {
   }
 };
 
+const ui_labels_for_sowramanam = {
+  see_thithi_details_below: {
+    en: "see_thithi_details_below display in sowramanam English",
+    sa: "see_तिथिः_details_below display in sowramanam Sanskrit",,
+    ta: "see_திதி_details_below display in sowramanam Tamil",
+    te: "see_తిథి_details_below display in sowramanam Telugu",
+    ka: "see_ತಿಥಿ_details_below display in sowramanam Kannada"
+  }
+};
+
+
+const ui_labels_for_chandramanam = {
+  see_thithi_details_below: {
+    en: "see_thithi_details_below display in chandramanam English",
+    sa: "see_तिथिः_details_below display in chandramanam Sanskrit",,
+    ta: "see_திதி_details_below display in chandramanam Tamil",
+    te: "see_తిథి_details_below display in chandramanam Telugu",
+    ka: "see_ತಿಥಿ_details_below display in chandramanam Kannada"
+  }
+};
 const ELEMENT_INDEX_STORE = {
   thithi: null,
   nakshatram: null,
@@ -825,12 +845,13 @@ return;
 		${getLang(ui_labels.ruthu)}: ${getLang(data.sowramanam.ruthu)}<br>
 		${getLang(ui_labels.masam)}: ${getLang(data.sowramanam.masam)}<br>
 		${getLang(ui_labels.paksham)}: ${getLang(data.chandramanam.paksham)}<br>
-		${getLang(ui_labels.thithi)}: See thithi details below<br>
+		${getLang(ui_labels.thithi)}: ${getLang(ui_labels_for_sowramanam.see_thithi_details_below)}<br>
 		${getLang(ui_labels.vaasaram)}:
 		${getLang(data.chandramanam.weekdayTrad)}<br>
             `;
 
 	 // Chaandramaanam block
+
 	   chandramanamDiv.innerHTML = `
 	     <strong>Chaandramaana sankalpam</strong><br><br>
 	     ${getLang(ui_labels.samvatsaram)}: ${getLang(data.chandramanam.varsham)}<br>
@@ -838,7 +859,7 @@ return;
 	     ${getLang(ui_labels.ruthu)}: ${getLang(data.chandramanam.ruthu)}<br>
 	     ${getLang(ui_labels.masam)}: ${getLang(data.chandramanam.masam)}<br>
 	     ${getLang(ui_labels.paksham)}: ${getLang(data.chandramanam.paksham)}<br>
- 	     ${getLang(ui_labels.thithi)}: See thithi details below<br> 
+ 	     ${getLang(ui_labels.thithi)}: ${getLang(ui_labels_for_chandramanam.see_thithi_details_below)}<br> 
              ${getLang(ui_labels.vaasaram)}: ${getLang(data.chandramanam.weekdayTrad)}<br>
             `;
         }

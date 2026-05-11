@@ -396,7 +396,7 @@ const ui_labels = {
 const ui_labels_for_sowramanam = {
   see_thithi_details_below: {
     en: "see_thithi_details_below display in sowramanam English",
-    sa: "see_तिथिः_details_below display in sowramanam Sanskrit",,
+    sa: "see_तिथिः_details_below display in sowramanam Sanskrit",
     ta: "see_திதி_details_below display in sowramanam Tamil",
     te: "see_తిథి_details_below display in sowramanam Telugu",
     ka: "see_ತಿಥಿ_details_below display in sowramanam Kannada"
@@ -407,7 +407,7 @@ const ui_labels_for_sowramanam = {
 const ui_labels_for_chandramanam = {
   see_thithi_details_below: {
     en: "see_thithi_details_below display in chandramanam English",
-    sa: "see_तिथिः_details_below display in chandramanam Sanskrit",,
+    sa: "see_तिथिः_details_below display in chandramanam Sanskrit",
     ta: "see_திதி_details_below display in chandramanam Tamil",
     te: "see_తిథి_details_below display in chandramanam Telugu",
     ka: "see_ತಿಥಿ_details_below display in chandramanam Kannada"

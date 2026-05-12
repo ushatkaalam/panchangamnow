@@ -409,7 +409,7 @@ const ui_labels_for_sowramanam = {
   },
   sankalpam_line: {
     en: "sankalpam_line display in sowramanam English",
-    sa: "sankalpam_line display in sowramanam Sanskrit",,
+    sa: "sankalpam_line display in sowramanam Sanskrit",
     ta: "sankalpam_line display in sowramanam Tamil",
     te: "sankalpam_line display in sowramanam Telugu",
     ka: "sankalpam_line display in sowramanam Kannada"
@@ -420,14 +420,14 @@ const ui_labels_for_sowramanam = {
 const ui_labels_for_chandramanam = {
   see_thithi_details_below: {
     en: "see_thithi_details_below display in chandramanam English",
-    sa: "see_तिथिः_details_below display in chandramanam Sanskrit",,
+    sa: "see_तिथिः_details_below display in chandramanam Sanskrit",
     ta: "see_திதி_details_below display in chandramanam Tamil",
     te: "see_తిథి_details_below display in chandramanam Telugu",
     ka: "see_ತಿಥಿ_details_below display in chandramanam Kannada"
   },
   sankalpam_line: {
     en: "sankalpam_line display in chandramanam English",
-    sa: "sankalpam_line display in chandramanam Sanskrit",,
+    sa: "sankalpam_line display in chandramanam Sanskrit",
     ta: "sankalpam_line display in chandramanam Tamil",
     te: "sankalpam_line display in chandramanam Telugu",
     ka: "sankalpam_line display in chandramanam Kannada"

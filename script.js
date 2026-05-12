@@ -1,6 +1,10 @@
 /* added see thithi details below successfully */
 
-/* working on sankalpam line */
+/* added sankalpam lines  successfully */
+
+/* removed pre, current, next extra lines and made it common title  sankalpam lines  successfully */
+
+/* adding pie title and pie labels */
 
 
 
@@ -498,7 +502,13 @@ const OS_CONFIG = {
 const ELEMENT_DEFINITIONS = {
   thithi: {
     key: "thithi",
-    title: "T H I T H I&nbsp;&nbsp;&nbsp;D E T A I L S",
+    title: title: {
+  en: "T H I T H I&nbsp;&nbsp;&nbsp;D E T A I L S",
+  sa: "तिथिः&nbsp;&nbsp;&nbsp;विवरणम्",
+  ta: "திதி&nbsp;&nbsp;&nbsp;விவரங்கள்",
+  te: "తిథి&nbsp;&nbsp;&nbsp;వివరాలు",
+  ka: "ತಿಥಿ&nbsp;&nbsp;&nbsp;ವಿವರಗಳು"
+},
     containerId: "thithiBlock",
     csv: "data_thithi.csv",
     codeColumn: "othithi_thithi",
@@ -525,7 +535,13 @@ const ELEMENT_DEFINITIONS = {
     mapping: thithi_data,
 
     canvasId: "timePie1",
-    pieLabel: "Thithi in progress ....."
+    pieLabel: pieLabel: {
+  en: "Thithi in progress .....",
+  sa: "तिथिः प्रवर्तते .....",
+  ta: "திதி நடைபெற்று கொண்டிருக்கிறது .....",
+  te: "తిథి కొనసాగుతోంది .....",
+  ka: "ತಿಥಿ ನಡೆಯುತ್ತಿದೆ ....."
+}
   },
   nakshatram: {
     key: "nakshatram",
@@ -777,7 +793,7 @@ if (def_element.extraLookups) {
 // ALWAYS render block (FIX IS HERE)
 // -------------------------------
 renderElementBlock({
-  title: def_element.title,
+  title: getLang(def_element.title),
   name,
   fromLocal: new Date(fromUTC),
   toLocal: new Date(toUTC),
@@ -786,7 +802,7 @@ renderElementBlock({
   elapsedMs,
   remainingMs,
   canvasId: def_element.canvasId,
-  pieLabel: def_element.pieLabel,
+  pieLabel: getLang(def_element.pieLabel),
   containerId: def_element.containerId,
   elapsedColor: pieColors.elapsed,
   remainingColor: pieColors.remaining

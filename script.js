@@ -406,7 +406,7 @@ const ui_labels_for_sowramanam = {
     ta: "see_sowramanam_திதி_details_below displayed in Tamil",
     te: "see_sowramanam_తిథి_details_below displayed in Telugu",
     ka: "see_sowramanam_ತಿಥಿ_details_below displayed in Kannada"
-  }
+  },
   sankalpam_line: {
     en: "sowramanam Sankalpam_line displayed in English",
     sa: "sowramanam Sankalpam_line displayed in Sanskrit",
@@ -423,7 +423,7 @@ const ui_labels_for_chandramanam = {
     ta: "see_chandramanam_திதி_details_below displayed in Tamil",
     te: "see_chandramanam_తిథి_details_below displayed in Telugu",
     ka: "see_chandramanam_ತಿಥಿ_details_below displayed in Kannada"
-  }
+  },
   sankalpam_line: {
     en: "chandramanam Sankalpam_line displayed in English",
     sa: "chandramanam Sankalpam_line displayed in Sanskrit",

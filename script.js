@@ -502,7 +502,7 @@ const OS_CONFIG = {
 const ELEMENT_DEFINITIONS = {
   thithi: {
     key: "thithi",
-    title: title: {
+    title: {
   en: "T H I T H I&nbsp;&nbsp;&nbsp;D E T A I L S",
   sa: "तिथिः&nbsp;&nbsp;&nbsp;विवरणम्",
   ta: "திதி&nbsp;&nbsp;&nbsp;விவரங்கள்",
@@ -535,7 +535,7 @@ const ELEMENT_DEFINITIONS = {
     mapping: thithi_data,
 
     canvasId: "timePie1",
-    pieLabel: pieLabel: {
+    pieLabel: {
   en: "Thithi in progress .....",
   sa: "तिथिः प्रवर्तते .....",
   ta: "திதி நடைபெற்று கொண்டிருக்கிறது .....",

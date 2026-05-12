@@ -402,7 +402,7 @@ const ui_labels = {
 const ui_labels_for_sowramanam = {
   see_thithi_details_below: {
     en: "see_thithi_details_below display in sowramanam English",
-    sa: "see_तिथिः_details_below display in sowramanam Sanskrit",,
+    sa: "see_तिथिः_details_below display in sowramanam Sanskrit",
     ta: "see_திதி_details_below display in sowramanam Tamil",
     te: "see_తిథి_details_below display in sowramanam Telugu",
     ka: "see_ತಿಥಿ_details_below display in sowramanam Kannada"

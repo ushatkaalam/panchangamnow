@@ -1,3 +1,9 @@
+/* added see thithi details below successfully */
+
+/* working on sankalpam line */
+
+
+
 const varsham_data = {
 PBV: {en: "Prabhava", sa: "प्रभव", ta: "பிரபவ", te: "ప్రభవ", ka: "ಪ್ರಭವ"},
 VBV: {en: "Vibhava", sa: "विभव", ta: "விபவ", te: "విభవ", ka: "ವಿಭವ"},
@@ -396,10 +402,17 @@ const ui_labels = {
 const ui_labels_for_sowramanam = {
   see_thithi_details_below: {
     en: "see_thithi_details_below display in sowramanam English",
-    sa: "see_तिथिः_details_below display in sowramanam Sanskrit",
+    sa: "see_तिथिः_details_below display in sowramanam Sanskrit",,
     ta: "see_திதி_details_below display in sowramanam Tamil",
     te: "see_తిథి_details_below display in sowramanam Telugu",
     ka: "see_ತಿಥಿ_details_below display in sowramanam Kannada"
+  },
+  sankalpam_line: {
+    en: "sankalpam_line display in sowramanam English",
+    sa: "sankalpam_line display in sowramanam Sanskrit",,
+    ta: "sankalpam_line display in sowramanam Tamil",
+    te: "sankalpam_line display in sowramanam Telugu",
+    ka: "sankalpam_line display in sowramanam Kannada"
   }
 };
 
@@ -407,10 +420,17 @@ const ui_labels_for_sowramanam = {
 const ui_labels_for_chandramanam = {
   see_thithi_details_below: {
     en: "see_thithi_details_below display in chandramanam English",
-    sa: "see_तिथिः_details_below display in chandramanam Sanskrit",
+    sa: "see_तिथिः_details_below display in chandramanam Sanskrit",,
     ta: "see_திதி_details_below display in chandramanam Tamil",
     te: "see_తిథి_details_below display in chandramanam Telugu",
     ka: "see_ತಿಥಿ_details_below display in chandramanam Kannada"
+  },
+  sankalpam_line: {
+    en: "sankalpam_line display in chandramanam English",
+    sa: "sankalpam_line display in chandramanam Sanskrit",,
+    ta: "sankalpam_line display in chandramanam Tamil",
+    te: "sankalpam_line display in chandramanam Telugu",
+    ka: "sankalpam_line display in chandramanam Kannada"
   }
 };
 const ELEMENT_INDEX_STORE = {
@@ -839,7 +859,7 @@ return;
 
           // Sowramaanam block
             sowramanamDiv.innerHTML = `
-              <strong>Sowramaana sankalpam</strong><br><br>
+              <strong>${getLang(ui_labels_for_sowramanam.sankalpam_line)}</strong><br><br>
 		${getLang(ui_labels.samvatsaram)}: ${getLang(data.sowramanam.varsham)}<br>
 		${getLang(ui_labels.ayanam)}: ${getLang(data.sowramanam.ayanam)}<br>
 		${getLang(ui_labels.ruthu)}: ${getLang(data.sowramanam.ruthu)}<br>
@@ -853,8 +873,8 @@ return;
 	 // Chaandramaanam block
 
 	   chandramanamDiv.innerHTML = `
-	     <strong>Chaandramaana sankalpam</strong><br><br>
-	     ${getLang(ui_labels.samvatsaram)}: ${getLang(data.chandramanam.varsham)}<br>
+	     <strong>${getLang(ui_labels_for_chandramanam.sankalpam_line)}</strong><br><br>
+		${getLang(ui_labels.samvatsaram)}: ${getLang(data.chandramanam.varsham)}<br>
 	     ${getLang(ui_labels.ayanam)}: ${getLang(data.sowramanam.ayanam)}<br>
 	     ${getLang(ui_labels.ruthu)}: ${getLang(data.chandramanam.ruthu)}<br>
 	     ${getLang(ui_labels.masam)}: ${getLang(data.chandramanam.masam)}<br>

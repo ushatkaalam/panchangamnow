@@ -4,7 +4,7 @@
 
 /* removed pre, current, next extra lines and made it common title  sankalpam lines  successfully */
 
-/* adding pie title and pie labels */
+/* added pie title and pie labels successfully*/
 
 
 
@@ -545,7 +545,13 @@ const ELEMENT_DEFINITIONS = {
   },
   nakshatram: {
     key: "nakshatram",
-    title: "N A K S H A T R A M&nbsp;&nbsp;&nbsp;D E T A I L S",
+    title: {
+    en: "N A K S H A T R A M&nbsp;&nbsp;&nbsp;D E T A I L S",
+    sa: "नक्षत्रम्&nbsp;&nbsp;&nbsp;विवरणम्",
+    ta: "நட்சத்திரம்&nbsp;&nbsp;&nbsp;விவரங்கள்",
+    te: "నక్షత్రం&nbsp;&nbsp;&nbsp;వివరాలు",
+    ka: "ನಕ್ಷತ್ರ&nbsp;&nbsp;&nbsp;ವಿವರಗಳು"
+  },
     containerId: "nakshatramBlock", 
     csv: "data_nakshatram.csv",
     codeColumn: "onakshatram_nakshatram",
@@ -553,11 +559,23 @@ const ELEMENT_DEFINITIONS = {
     toPrefix: "onakshatram_end",
     mapping: nakshatram_data,
     canvasId: "timePie2",
-    pieLabel: "Nakshatram in progress ....."
+    {
+    en: "Nakshatram in progress .....",
+    sa: "नक्षत्रम् प्रवर्तते .....",
+    ta: "நட்சத்திரம் நடைபெற்று கொண்டிருக்கிறது .....",
+    te: "నక్షత్రం కొనసాగుతోంది .....",
+    ka: "ನಕ್ಷತ್ರ ನಡೆಯುತ್ತಿದೆ ....."
+  }
   },
   yogam: {
     key: "yogam",
-    title: "Y O G A M&nbsp;&nbsp;&nbsp;D E T A I L S",
+    title: {
+    en: "Y O G A M&nbsp;&nbsp;&nbsp;D E T A I L S",
+    sa: "योगः&nbsp;&nbsp;&nbsp;विवरणम्",
+    ta: "யோகம்&nbsp;&nbsp;&nbsp;விவரங்கள்",
+    te: "యోగం&nbsp;&nbsp;&nbsp;వివరాలు",
+    ka: "ಯೋಗ&nbsp;&nbsp;&nbsp;ವಿವರಗಳು"
+  },
     containerId: "yogamBlock",
     csv: "data_yogam.csv",
     codeColumn: "oyogam_yogam",
@@ -565,19 +583,37 @@ const ELEMENT_DEFINITIONS = {
     toPrefix: "oyogam_end",
     mapping: yogam_data,
     canvasId: "timePie3",
-    pieLabel: "Yogam in progress ....."
+    {
+    en: "Yogam in progress .....",
+    sa: "योगः प्रवर्तते .....",
+    ta: "யோகம் நடைபெற்று கொண்டிருக்கிறது .....",
+    te: "యోగం కొనసాగుతోంది .....",
+    ka: "ಯೋಗ ನಡೆಯುತ್ತಿದೆ ....."
+  }
   },
   karanam: {
     key: "karanam",
-    title: "K A R A N A M&nbsp;&nbsp;&nbsp;D E T A I L S",
+    title: {
+    en: "K A R A N A M&nbsp;&nbsp;&nbsp;D E T A I L S",
+    sa: "करणम्&nbsp;&nbsp;&nbsp;विवरणम्",
+    ta: "கரணம்&nbsp;&nbsp;&nbsp;விவரங்கள்",
+    te: "కరణం&nbsp;&nbsp;&nbsp;వివరాలు",
+    ka: "ಕರಣ&nbsp;&nbsp;&nbsp;ವಿವರಗಳು"
+  },
     containerId: "karanamBlock", 
     csv: "data_karanam.csv",
     codeColumn: "okaranam_number",
     fromPrefix: "okaranam_start",
     toPrefix: "okaranam_end",
     mapping: karanam_data,
-canvasId: "timePie4",
-    pieLabel: "Karanam in progress ....."
+    canvasId: "timePie4",
+    pieLabel: {
+    en: "Karanam in progress .....",
+    sa: "करणम् प्रवर्तते .....",
+    ta: "கரணம் நடைபெற்று கொண்டிருக்கிறது .....",
+    te: "కరణం కొనసాగుతోంది .....",
+    ka: "ಕರಣ ನಡೆಯುತ್ತಿದೆ ....."
+  }
   }
 
 };

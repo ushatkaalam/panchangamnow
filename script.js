@@ -509,8 +509,11 @@ const common_ui_labels = {
     ta: "அடுத்த +1",
     te: "తదుపరి +1",
     ka: "ಮುಂದಿನ +1"
-  },
-complete: {
+  }
+
+
+};
+/* complete: {
   en: "Complete",
   sa: "पूर्णम्",
   ta: "முழுமை",
@@ -524,10 +527,7 @@ remaining: {
   ta: "மீதமுள்ளது",
   te: "మిగిలినది",
   ka: "ಉಳಿದದ್ದು"
-}
-
-};
-
+} */
 
 const ELEMENT_INDEX_STORE = {
   thithi: null,

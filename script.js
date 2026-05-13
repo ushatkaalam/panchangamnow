@@ -559,7 +559,7 @@ const ELEMENT_DEFINITIONS = {
     toPrefix: "onakshatram_end",
     mapping: nakshatram_data,
     canvasId: "timePie2",
-    {
+    pieLabel: {
     en: "Nakshatram in progress .....",
     sa: "नक्षत्रम् प्रवर्तते .....",
     ta: "நட்சத்திரம் நடைபெற்று கொண்டிருக்கிறது .....",
@@ -583,7 +583,7 @@ const ELEMENT_DEFINITIONS = {
     toPrefix: "oyogam_end",
     mapping: yogam_data,
     canvasId: "timePie3",
-    {
+    pieLabel: {
     en: "Yogam in progress .....",
     sa: "योगः प्रवर्तते .....",
     ta: "யோகம் நடைபெற்று கொண்டிருக்கிறது .....",

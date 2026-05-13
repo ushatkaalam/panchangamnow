@@ -437,6 +437,98 @@ const ui_labels_for_chandramanam = {
   }
 };
 
+const common_ui_labels = {
+
+  name: {
+    en: "Name",
+    sa: "नाम",
+    ta: "பெயர்",
+    te: "పేరు",
+    ka: "ಹೆಸರು"
+  },
+
+  started_at: {
+    en: "Started at",
+    sa: "आरब्धसमयः",
+    ta: "தொடங்கிய நேரம்",
+    te: "ప్రారంభ సమయం",
+    ka: "ಪ್ರಾರಂಭ ಸಮಯ"
+  },
+
+  ends_at: {
+    en: "Ends at",
+    sa: "समाप्तिसमयः",
+    ta: "முடியும் நேரம்",
+    te: "ముగింపు సమయం",
+    ka: "ಅಂತ್ಯ ಸಮಯ"
+  },
+
+  elapsed_time: {
+    en: "Elapsed time",
+    sa: "गतकालः",
+    ta: "கடந்த நேரம்",
+    te: "గడిచిన సమయం",
+    ka: "ಕಳೆದ ಸಮಯ"
+  },
+
+  remaining_time: {
+    en: "Remaining time",
+    sa: "अवशिष्टकालः",
+    ta: "மீதமுள்ள நேரம்",
+    te: "మిగిలిన సమయం",
+    ka: "ಉಳಿದ ಸಮಯ"
+  },
+
+  previous: {
+    en: "Previous",
+    sa: "पूर्वम्",
+    ta: "முந்தைய",
+    te: "మునుపటి",
+    ka: "ಹಿಂದಿನ"
+  },
+
+  current: {
+    en: "Current",
+    sa: "वर्तमानम्",
+    ta: "தற்போதைய",
+    te: "ప్రస్తుత",
+    ka: "ಪ್ರಸ್ತುತ"
+  },
+
+  next: {
+    en: "Next",
+    sa: "अनन्तरम्",
+    ta: "அடுத்த",
+    te: "తదుపరి",
+    ka: "ಮುಂದಿನ"
+  },
+
+  next_plus_1: {
+    en: "Next +1",
+    sa: "अनन्तरम् +१",
+    ta: "அடுத்த +1",
+    te: "తదుపరి +1",
+    ka: "ಮುಂದಿನ +1"
+  },
+complete: {
+  en: "Complete",
+  sa: "पूर्णम्",
+  ta: "முழுமை",
+  te: "పూర్తి",
+  ka: "ಪೂರ್ಣ"
+},
+
+remaining: {
+  en: "Remaining",
+  sa: "अवशिष्टम्",
+  ta: "மீதமுள்ளது",
+  te: "మిగిలినది",
+  ka: "ಉಳಿದದ್ದು"
+}
+
+};
+
+
 const ELEMENT_INDEX_STORE = {
   thithi: null,
   nakshatram: null,
@@ -1080,14 +1172,14 @@ function renderElementBlock({
 }) {
   const container = document.getElementById(containerId);
   if (!container) return;
-
+xxxxxxxxxxxxxxx
     container.innerHTML = `
       <b>${title}</b><br><br>
-      <b>Name: ${name}</b><br>
-      Started at: ${fromLocal.toLocaleString()}<br>
-      Ends at: ${toLocal.toLocaleString()}<br>
-      Elapsed time: ${elapsedStr}<br>
-      <b>Remaining time: ${remainingStr}</b><br>
+      <b>${getLang(common_ui_labels.name)}: ${name}</b><br>
+      ${getLang(common_ui_labels.started_at)}: ${fromLocal.toLocaleString()}<br>
+      ${getLang(common_ui_labels.ends_at)}: ${toLocal.toLocaleString()}<br>
+      ${getLang(common_ui_labels.elapsed_time)}: ${elapsedStr}<br>
+      <b>${getLang(common_ui_labels.remaining_time)}: ${remainingStr}</b><br>
       <canvas id="${canvasId}" width="450" height="400" style="margin-top:10px;"></canvas>
     `;
 

@@ -1049,7 +1049,7 @@ function renderElementTable(def, lines, headers, index) {
   // HEADER (CUSTOM)
   // -------------------------------
   html += "<tr>";
-Xxxxxxxxxx
+
   if (def.key === "thithi") {
     html += `<th></th><th>Paksham</th><th>Thithi</th><th>${getLang(common_ui_labels.started_at)}</th><th>${getLang(common_ui_labels.ends_at)}</th>`;
   } else {

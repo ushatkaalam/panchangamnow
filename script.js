@@ -1172,7 +1172,7 @@ function renderElementBlock({
 }) {
   const container = document.getElementById(containerId);
   if (!container) return;
-xxxxxxxxxxxxxxx
+
     container.innerHTML = `
       <b>${title}</b><br><br>
       <b>${getLang(common_ui_labels.name)}: ${name}</b><br>

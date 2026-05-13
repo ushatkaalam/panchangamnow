@@ -1052,7 +1052,7 @@ function renderElementTable(def, lines, headers, index) {
   lines[index + 2]    // Next+1
 ].filter(Boolean);
 
-  let html = `<b>${def.title} - Previous, Current plus next two names and times</b><br><br>`;
+  let html = ``;
   html += `<table border="1" cellpadding="6" cellspacing="0">`;
 
   // -------------------------------

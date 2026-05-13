@@ -402,11 +402,11 @@ const ui_labels_for_sowramanam = {
     ka: "see_sowramanam_ತಿಥಿ_details_below displayed in Kannada"
   },
   sankalpam_line: {
-    en: "sowramanam Sankalpam_line displayed in English",
-    sa: "sowramanam Sankalpam_line displayed in Sanskrit",
-    ta: "sowramanam Sankalpam_line displayed in Tamil",
-    te: "sowramanam Sankalpam_line displayed in Telugu",
-    ka: "sowramanam Sankalpam_line displayed in Kannada"
+    en: "Sowramana Sankalpam",
+    sa: "सौरमान सङ्कल्पः",
+    ta: "சௌரமாண சங்கல்பம்",
+    te: "సౌరమాన సంకల్పం",
+    ka: "ಸೌರಮಾಣ ಸಂಕಲ್ಪ"
   }
 };
 
@@ -419,11 +419,11 @@ const ui_labels_for_chandramanam = {
     ka: "see_chandramanam_ತಿಥಿ_details_below displayed in Kannada"
   },
   sankalpam_line: {
-    en: "chandramanam Sankalpam_line displayed in English",
-    sa: "chandramanam Sankalpam_line displayed in Sanskrit",
-    ta: "chandramanam Sankalpam_line displayed in Tamil",
-    te: "chandramanam Sankalpam_line displayed in Telugu",
-    ka: "chandramanam Sankalpam_line displayed in Kannada"
+    en: "Chandramana Sankalpam",
+    sa: "चन्द्रमान सङ्कल्पः",
+    ta: "சந்திரமாண சங்கல்பம்",
+    te: "చాంద్రమాన సంకల్పం",
+    ka: "ಚಾಂದ್ರಮಾನ ಸಂಕಲ್ಪ"
   }
 };
 

@@ -1,13 +1,3 @@
-/* added see thithi details below successfully */
-
-/* added sankalpam lines  successfully */
-
-/* removed pre, current, next extra lines and made it common title  sankalpam lines  successfully */
-
-/* added pie title and pie labels successfully*/
-
-
-
 const varsham_data = {
 PBV: {en: "Prabhava", sa: "प्रभव", ta: "பிரபவ", te: "ప్రభవ", ka: "ಪ್ರಭವ"},
 VBV: {en: "Vibhava", sa: "विभव", ta: "விபவ", te: "విభవ", ka: "ವಿಭವ"},
@@ -1059,11 +1049,11 @@ function renderElementTable(def, lines, headers, index) {
   // HEADER (CUSTOM)
   // -------------------------------
   html += "<tr>";
-
+Xxxxxxxxxx
   if (def.key === "thithi") {
-    html += `<th></th><th>Paksham</th><th>Thithi</th><th>Start</th><th>End</th>`;
+    html += `<th></th><th>Paksham</th><th>Thithi</th><th>${getLang(common_ui_labels.started_at)}</th><th>${getLang(common_ui_labels.ends_at)}</th>`;
   } else {
-    html += `<th></th><th>Name</th><th>Start</th><th>End</th>`;
+    html += `<th></th><th>${getLang(common_ui_labels.name)}</th><th>${getLang(common_ui_labels.started_at)}</th><th>${getLang(common_ui_labels.ends_at)}</th>`;
   }
 
   html += "</tr>";
@@ -1085,10 +1075,10 @@ function renderElementTable(def, lines, headers, index) {
     const name = getLang(info);
     // Row label
     let label = "";
-    if (i === 0) label = "Previous";
-    else if (i === 1) label = "Current";
-          else if (i === 2) label = "Next";
-              else label = "Next+1";
+    if (i === 0) label = getLang(common_ui_labels.previous);
+	else if (i === 1) label = getLang(common_ui_labels.current);
+	else if (i === 2) label = getLang(common_ui_labels.next);
+	else label = getLang(common_ui_labels.next_plus_1);
 
     html += "<tr>";
 

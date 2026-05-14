@@ -519,6 +519,25 @@ remaining: {
   ka: "ಉಳಿದದ್ದು"
 } */
 
+
+const ui_labels_table_header = {
+  header_line_1: {
+    en: "Previous, current, next and next +1",
+    sa: "पूर्वम् वर्तमानम् अनन्तरम् च +१",
+    ta: "முந்தைய, தற்போதைய, அடுத்தது மற்றும் அடுத்த +1",
+    te: "మునుపటి, ప్రస్తుత, తదుపరి మరియు తదుపరి +1",
+    ka: "ಹಿಂದಿನ, ಪ್ರಸ್ತುತ, ಮುಂದಿನ ಮತ್ತು ಮುಂದಿನ +1"
+  },
+  header_line_2: {
+    en: "Details are displayed below",
+    sa: "विवरणानि अधः प्रदर्शितानि",
+    ta: "விவரங்கள் கீழே காண்பிக்கப்படுகின்றன",
+    te: "వివరాలు క్రింద చూపబడుతున్నాయి",
+    ka: "ವಿವರಗಳು ಕೆಳಗೆ ಪ್ರದರ್ಶಿಸಲಾಗುತ್ತಿವೆ"
+  }
+};
+
+
 const ELEMENT_INDEX_STORE = {
   thithi: null,
   nakshatram: null,
@@ -942,6 +961,19 @@ return;
 /***********************
  * HELPER functions
  ***********************/
+
+	function renderTableHeader() {
+  		const el = document.getElementById("tableHeaderBlock");
+  		if (!el) return;
+
+  		el.innerHTML = `
+    		<h2 style="line-height:1.1;">
+      		${getLang(ui_labels_table_header.header_line_1)}<br>
+      		${getLang(ui_labels_table_header.header_line_2)}
+    		</h2>
+ 		 `;
+		}
+
 	function updateLangUI(lang) {
 	document.querySelectorAll("#langSwitch button").forEach(btn => {
 	btn.classList.toggle("active", btn.dataset.lang === lang);
@@ -963,15 +995,15 @@ return;
 // -------------------------------
       // This function ensures setting language
       // -------------------------------
-	
 	function setLanguage(lang) {
-	  UI_LANG = lang;
-	  localStorage.setItem("ui_lang", lang);
+  		UI_LANG = lang;
+  		localStorage.setItem("ui_lang", lang);
 
-	  updateLangUI(lang);
-	  loadAll(Date.now());  // redraw canvas
-}
+  		updateLangUI(lang);
+  		loadAll(Date.now());
 
+  		renderTableHeader(); // important
+		}
 // -------------------------------
       // This ensures rendering happens only when BOTH are loaded
       // -------------------------------

@@ -505,21 +505,23 @@ const common_ui_labels = {
 };
 
 const ui_labels_pie_legend = {
-  complete: {
-    en: "Complete",
-    sa: "समाप्तम्",
-    ta: "முடிந்தது",
-    te: "పూర్తైంది",
-    ka: "ಪೂರ್ಣಗೊಂಡಿದೆ"
+
+  complete_line: {
+    en: "Complete: {value}%",
+    sa: "समाप्तम्: {value} प्रतिशतम्",
+    ta: "முடிந்தது: {value} சதவீதம்",
+    te: "పూర్తైంది: {value} శాతం",
+    ka: "ಪೂರ್ಣಗೊಂಡಿದೆ: {value} ಶೇಕಡಾ"
   },
 
-  remaining: {
-    en: "Remaining",
-    sa: "अवशिष्टम्",
-    ta: "மீதமுள்ளது",
-    te: "మిగిలినది",
-    ka: "ಉಳಿದಿದೆ"
+  remaining_line: {
+    en: "Remaining: {value}%",
+    sa: "अवशिष्टम्: {value} प्रतिशतम्",
+    ta: "மீதமுள்ளது: {value} சதவீதம்",
+    te: "మిగిలినది: {value} శాతం",
+    ka: "ಉಳಿದಿದೆ: {value} ಶೇಕಡಾ"
   }
+
 };
 
 const ui_labels_table_header = {
@@ -1412,15 +1414,16 @@ function drawTimePie(canvasId, elapsedMs, remainingMs, titleText, elapsedColor, 
   ctx.lineWidth = 1;
   ctx.strokeRect(x, y, 10, 10);
   ctx.fillStyle = "#111";
-  ctx.fillText(
-  `${getLang(ui_labels_pie_legend.complete)}: ${percentComplete}%`,
+  const completeText = getLang(ui_labels_pie_legend.complete_line)
+  .replace("{value}", percentComplete);
+
+ctx.fillText(
+  completeText,
   x + 16,
   y + 9
 );
 
-  x += ctx.measureText(
-  `${getLang(ui_labels_pie_legend.complete)}: ${percentComplete}%`
-).width + 30;
+x += ctx.measureText(completeText).width + 30;
 
   // Remaining
   ctx.fillStyle = remainingColor;
@@ -1429,8 +1432,11 @@ function drawTimePie(canvasId, elapsedMs, remainingMs, titleText, elapsedColor, 
   ctx.lineWidth = 1;
   ctx.strokeRect(x, y, 10, 10);
   ctx.fillStyle = "#111";
-  ctx.fillText(
-  `${getLang(ui_labels_pie_legend.remaining)}: ${percentRemaining}%`,
+  const remainingText = getLang(ui_labels_pie_legend.remaining_line)
+  .replace("{value}", percentRemaining);
+
+ctx.fillText(
+  remainingText,
   x + 16,
   y + 9
 );

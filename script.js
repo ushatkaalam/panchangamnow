@@ -1398,8 +1398,8 @@ function drawTimePie(canvasId, elapsedMs, remainingMs, titleText, elapsedColor, 
   ctx.fillText(titleText, centerX, centerY + radius + 36);
 
   // --- Legend ---
-  const percentComplete = +(fraction * 100).toFixed(2);
-  const percentRemaining = +(100 - percentComplete).toFixed(2);
+  const percentComplete = (fraction * 100).toFixed(2);
+  const percentRemaining = (100 - percentComplete).toFixed(2);
 
   ctx.textAlign = "left";
   ctx.font = "16px Arial";

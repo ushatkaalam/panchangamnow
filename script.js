@@ -537,6 +537,16 @@ const ui_labels_table_header = {
   }
 };
 
+const ui_labels_paksham = {
+  label_line: {
+    en: "{paksham} Paksham - Thithi {thithi} in progress",
+    sa: "{paksham} पक्षः - तिथिः {thithi} प्रवर्तते",
+    ta: "{paksham} பக்ஷம் - திதி {thithi} நடைபெறுகிறது",
+    te: "{paksham} పక్షం - తిథి {thithi} కొనసాగుతోంది",
+    ka: "{paksham} ಪಕ್ಷ - ತಿಥಿ {thithi} ನಡೆಯುತ್ತಿದೆ"
+  }
+};
+
 
 const ELEMENT_INDEX_STORE = {
   thithi: null,
@@ -1294,11 +1304,15 @@ ctx.restore();
   const pakshamLabel = paksham_data?.[paksham]? getLang(paksham_data[paksham]): "";
   const thithiName = getLang(
     ELEMENT_DEFINITIONS.thithi.mapping?.[thithiCode]) ?? localIndex;
+  const pakshamText = getLang(ui_labels_paksham.label_line)
+  .replace("{paksham}", pakshamLabel)
+  .replace("{thithi}", thithiName);
+
   ctx.fillText(
-    `${pakshamLabel} Paksham - Thithi ${thithiName} in progress`,
-    centerX,
-    centerY + radius + 36
-  );
+  pakshamText,
+  centerX,
+  centerY + radius + 36
+);
 }
 /***********************
  * PIE CHART

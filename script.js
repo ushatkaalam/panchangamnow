@@ -784,6 +784,8 @@ async function loadAll(nowUTC) {
   await loadElementData(ELEMENT_DEFINITIONS.nakshatram, nowUTC);
   await loadElementData(ELEMENT_DEFINITIONS.yogam, nowUTC);
   await loadElementData(ELEMENT_DEFINITIONS.karanam, nowUTC);
+  // render AFTER everything else
+  renderTableHeader();
 }
 async function loadElementColors() {
   const response = await fetch(COLOR_CSV + CACHE_BUSTER);

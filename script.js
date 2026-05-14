@@ -773,9 +773,7 @@ const formattedDateTime = nowLocal.toLocaleString("en-US", {
 document.getElementById("nowTime").innerHTML =
   `<b>Current date & time:</b> ${formattedDateTime}`;
 
-// Debug version stamp
-document.getElementById("version").textContent =
-  "JS loaded: " + new Date().toLocaleString();
+
 
 let GLOBAL_EXTRAS = {
   chandramanam: null,

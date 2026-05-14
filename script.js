@@ -503,22 +503,24 @@ const common_ui_labels = {
 
 
 };
-/* complete: {
-  en: "Complete",
-  sa: "पूर्णम्",
-  ta: "முழுமை",
-  te: "పూర్తి",
-  ka: "ಪೂರ್ಣ"
-},
 
-remaining: {
-  en: "Remaining",
-  sa: "अवशिष्टम्",
-  ta: "மீதமுள்ளது",
-  te: "మిగిలినది",
-  ka: "ಉಳಿದದ್ದು"
-} */
+const ui_labels_pie_legend = {
+  complete: {
+    en: "Complete",
+    sa: "समाप्तम्",
+    ta: "முடிந்தது",
+    te: "పూర్తైంది",
+    ka: "ಪೂರ್ಣಗೊಂಡಿದೆ"
+  },
 
+  remaining: {
+    en: "Remaining",
+    sa: "अवशिष्टम्",
+    ta: "மீதமுள்ளது",
+    te: "మిగిలినది",
+    ka: "ಉಳಿದಿದೆ"
+  }
+};
 
 const ui_labels_table_header = {
   header_line_1: {
@@ -1410,9 +1412,15 @@ function drawTimePie(canvasId, elapsedMs, remainingMs, titleText, elapsedColor, 
   ctx.lineWidth = 1;
   ctx.strokeRect(x, y, 10, 10);
   ctx.fillStyle = "#111";
-  ctx.fillText(`Complete: ${percentComplete}%`, x + 16, y + 9);
+  ctx.fillText(
+  `${getLang(ui_labels_pie_legend.complete)}: ${percentComplete}%`,
+  x + 16,
+  y + 9
+);
 
-  x += ctx.measureText(`Complete: ${percentComplete}%`).width + 30;
+  x += ctx.measureText(
+  `${getLang(ui_labels_pie_legend.complete)}: ${percentComplete}%`
+).width + 30;
 
   // Remaining
   ctx.fillStyle = remainingColor;
@@ -1421,7 +1429,11 @@ function drawTimePie(canvasId, elapsedMs, remainingMs, titleText, elapsedColor, 
   ctx.lineWidth = 1;
   ctx.strokeRect(x, y, 10, 10);
   ctx.fillStyle = "#111";
-  ctx.fillText(`Remaining: ${percentRemaining}%`, x + 16, y + 9);
+  ctx.fillText(
+  `${getLang(ui_labels_pie_legend.remaining)}: ${percentRemaining}%`,
+  x + 16,
+  y + 9
+);
 
   // --- Corrected Red hand ---
   // For every 1% of blue hand, red makes 100% rotation

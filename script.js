@@ -278,6 +278,7 @@ const paksham_data = {
 
 
 
+
 const day_of_week_data = {
   Sunday: {
     en: "Bhanu",
@@ -551,7 +552,15 @@ const ui_labels_paksham = {
   }
 };
 
-
+const ui_labels_paksham_block = {
+  title: {
+    en: "P A K S H A M   P R O G R E S S",
+    sa: "पक्षः   प्रगति",
+    ta: "பக்ஷம்   முன்னேற்றம்",
+    te: "పక్షం   ప్రగతి",
+    ka: "ಪಕ್ಷ   ಪ್ರಗತಿ"
+  }
+};
 const ELEMENT_INDEX_STORE = {
   thithi: null,
   nakshatram: null,
@@ -797,7 +806,8 @@ async function loadAll(nowUTC) {
   await loadElementData(ELEMENT_DEFINITIONS.yogam, nowUTC);
   await loadElementData(ELEMENT_DEFINITIONS.karanam, nowUTC);
   // render AFTER everything else
-  renderTableHeader();
+    renderPakshamTitle();
+	renderTableHeader();
 }
 async function loadElementColors() {
   const response = await fetch(COLOR_CSV + CACHE_BUSTER);
@@ -987,6 +997,12 @@ return;
     		</h2>
  		 `;
 		}
+		function renderPakshamTitle() {
+  			const el = document.getElementById("pakshamTitle");
+  		if (!el) return;
+
+  		el.innerHTML = `<b>${getLang(ui_labels_paksham_block.title)}</b><br><br>`;
+}
 
 	function updateLangUI(lang) {
 	document.querySelectorAll("#langSwitch button").forEach(btn => {
@@ -1015,7 +1031,7 @@ return;
 
   		updateLangUI(lang);
   		loadAll(Date.now());
-
+		renderPakshamTitle();
   		renderTableHeader(); // important
 		}
 // -------------------------------

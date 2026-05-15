@@ -893,7 +893,6 @@ function renderStaticUI() {
 
   // App title
   document.getElementById("appTitle").innerHTML = `${getLang(ui_labels_app.title_prefix)} ${getLang(ui_labels_app.now)}`;
-  `;
 
   // Current time
   document.getElementById("nowTime").innerHTML = `

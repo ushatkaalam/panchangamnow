@@ -563,22 +563,24 @@ const ui_labels_paksham_block = {
 };
 const ui_labels_app = {
 
-  title: {
-    en: "!!! Panchangam NOW !!!",
-    sa: "!!! पञ्चाङ्गम् NOW !!!",
-    ta: "!!! பஞ்சாங்கம் NOW !!!",
-    te: "!!! పంచాంగం NOW !!!",
-    ka: "!!! ಪಂಚಾಂಗ NOW !!!"
-  },
+title_prefix: {
+  en: "Panchangam",
+  sa: "पञ्चाङ्गम्",
+  ta: "பஞ்சாங்கம்",
+  te: "పంచాంగం",
+  ka: "ಪಂಚಾಂಗ"
+},
 
-  current_datetime: {
-    en: "Current date & time",
-    sa: "वर्तमान दिनाङ्कः तथा समयः",
-    ta: "தற்போதைய தேதி மற்றும் நேரம்",
-    te: "ప్రస్తుత తేదీ మరియు సమయం",
-    ka: "ಪ್ರಸ್ತುತ ದಿನಾಂಕ ಮತ್ತು ಸಮಯ"
-  }
+now: {
+  en: "Now !!!",
+  sa: "इदानीम् !!!",
+  ta: "இப்போது !!!",
+  te: "ఇప్పుడు !!!",
+  ka: "ಇದೀಗ !!!"
+}
 };
+
+  
 
 const ELEMENT_INDEX_STORE = {
   thithi: null,
@@ -882,8 +884,7 @@ async function loadsowramanamExtras(nowUTC) {
 function renderStaticUI() {
 
   // App title
-  document.getElementById("appTitle").innerHTML = `
-    <h2>${getLang(ui_labels_app.title)}</h2>
+  `${getLang(ui_labels_app.title_prefix)} ${getLang(ui_labels_app.now)}`
   `;
 
   // Current time

@@ -892,7 +892,7 @@ async function loadsowramanamExtras(nowUTC) {
 function renderStaticUI() {
 
   // App title
-  `${getLang(ui_labels_app.title_prefix)} ${getLang(ui_labels_app.now)}`
+  document.getElementById("appTitle").innerHTML = `${getLang(ui_labels_app.title_prefix)} ${getLang(ui_labels_app.now)}`;
   `;
 
   // Current time

@@ -561,35 +561,6 @@ const ui_labels_paksham_block = {
     ka: "ಪಕ್ಷ   ಪ್ರಗತಿ"
   }
 };
-const ui_labels_app = {
-
-title_prefix: {
-  en: "Panchangam",
-  sa: "पञ्चाङ्गम्",
-  ta: "பஞ்சாங்கம்",
-  te: "పంచాంగం",
-  ka: "ಪಂಚಾಂಗ"
-},
-
-now: {
-  en: "Now !!!",
-  sa: "इदानीम् !!!",
-  ta: "இப்போது !!!",
-  te: "ఇప్పుడు !!!",
-  ka: "ಇದೀಗ !!!"
-},
-current_datetime: {
-    en: "Current date & time",
-    sa: "वर्तमान दिनाङ्कः समयः च",
-    ta: "தற்போதைய தேதி மற்றும் நேரம்",
-    te: "ప్రస్తుత తేదీ మరియు సమయం",
-    ka: "ಪ್ರಸ್ತುತ ದಿನಾಂಕ ಮತ್ತು ಸಮಯ"
-  }
-}
-};
-
-  
-
 const ELEMENT_INDEX_STORE = {
   thithi: null,
   nakshatram: null,
@@ -811,6 +782,10 @@ const formattedDateTime = nowLocal.toLocaleString("en-US", {
   hour12: true
 });
 
+// Display current time
+document.getElementById("nowTime").innerHTML =
+  `<b>Current date & time:</b> ${formattedDateTime}`;
+
 
 
 let GLOBAL_EXTRAS = {
@@ -889,28 +864,7 @@ async function loadsowramanamExtras(nowUTC) {
     }
   }
 }
-function renderStaticUI() {
-  const nowLocal = new Date();
 
-  const formattedDateTime = nowLocal.toLocaleString("en-US", {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    hour: "numeric",
-    minute: "2-digit",
-    second: "2-digit",
-    hour12: true
-  });
-  // App title
-  document.getElementById("appTitle").innerHTML = `${getLang(ui_labels_app.title_prefix)} ${getLang(ui_labels_app.now)}`;
-
-  // Current time
-  document.getElementById("nowTime").innerHTML = `
-    <b>${getLang(ui_labels_app.current_datetime)}:</b>
-    ${formattedDateTime}
-  `;
-}
 async function loadElementData(def_element, nowUTC) {
 
   const response = await fetch(def_element.csv + CACHE_BUSTER);
@@ -1074,10 +1028,11 @@ return;
 	function setLanguage(lang) {
   		UI_LANG = lang;
   		localStorage.setItem("ui_lang", lang);
-		renderStaticUI()
-		updateLangUI(lang);
+
+  		updateLangUI(lang);
   		loadAll(Date.now());
-		
+		renderPakshamTitle();
+  		renderTableHeader(); // important
 		}
 // -------------------------------
       // This ensures rendering happens only when BOTH are loaded
@@ -1522,8 +1477,10 @@ ctx.fillText(
 /***********************
  * CALL IT
  ***********************/
+/***********************
+ * CALL IT
+ ***********************/
 updateLangUI(UI_LANG);   // sync button highlight
-renderStaticUI()
 loadAll(Date.now());     // redraw canvas
 
 document.querySelectorAll("#langSwitch button").forEach(btn => {

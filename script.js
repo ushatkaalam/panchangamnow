@@ -890,7 +890,18 @@ async function loadsowramanamExtras(nowUTC) {
   }
 }
 function renderStaticUI() {
+  const nowLocal = new Date();
 
+  const formattedDateTime = nowLocal.toLocaleString("en-US", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true
+  });
   // App title
   document.getElementById("appTitle").innerHTML = `${getLang(ui_labels_app.title_prefix)} ${getLang(ui_labels_app.now)}`;
 

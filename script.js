@@ -576,11 +576,11 @@ title_prefix: {
 },
 
 now: {
-  en: "Now",
-  sa: "इदानीम्",
-  ta: "இப்போது",
-  te: "ఇప్పుడు",
-  ka: "ಇದೀಗ"
+  en: "Now !!!",
+  sa: "इदानीम् !!!",
+  ta: "இப்போது !!!",
+  te: "ఇప్పుడు !!!",
+  ka: "ಇದೀಗ !!!"
 },
 current_datetime:{
 en: "Current date & time",

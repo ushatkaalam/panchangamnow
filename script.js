@@ -563,9 +563,7 @@ const ui_labels_paksham_block = {
 };
 
 
-ui_labels_app.title_prefix
-ui_labels_app.now
-ui_labels_app.current_datetime
+
 
 const ui_labels_app = {
 

@@ -561,6 +561,39 @@ const ui_labels_paksham_block = {
     ka: "ಪಕ್ಷ   ಪ್ರಗತಿ"
   }
 };
+
+
+ui_labels_app.title_prefix
+ui_labels_app.now
+ui_labels_app.current_datetime
+
+const ui_labels_app = {
+
+title_prefix: {
+  en: "Panchangam",
+  sa: "पञ्चाङ्गम्",
+  ta: "பஞ்சாங்கம்",
+  te: "పంచాంగం",
+  ka: "ಪಂಚಾಂಗ"
+},
+
+now: {
+  en: "Now",
+  sa: "इदानीम्",
+  ta: "இப்போது",
+  te: "ఇప్పుడు",
+  ka: "ಇದೀಗ"
+},
+current_datetime:{
+en: "Current date & time",
+    sa: "वर्तमान दिनाङ्कः समयः च",
+    ta: "தற்போதைய தேதி மற்றும் நேரம்",
+    te: "ప్రస్తుత తేదీ మరియు సమయం",
+    ka: "ಪ್ರಸ್ತುತ ದಿನಾಂಕ ಮತ್ತು ಸಮಯ"
+}
+};
+
+
 const ELEMENT_INDEX_STORE = {
   thithi: null,
   nakshatram: null,
@@ -782,9 +815,18 @@ const formattedDateTime = nowLocal.toLocaleString("en-US", {
   hour12: true
 });
 
+// Display Panchangam NOW app title
+
+  document.getElementById("appTitle").innerHTML =
+    `${getLang(ui_labels_app.title_prefix)} ${getLang(ui_labels_app.now)}`;
+
+
+
 // Display current time
-document.getElementById("nowTime").innerHTML =
-  `<b>Current date & time:</b> ${formattedDateTime}`;
+	document.getElementById("nowTime").innerHTML = `
+    	<b>${getLang(ui_labels_app.current_datetime)}:</b>
+    	${formattedDateTime}
+  `;
 
 
 

@@ -567,6 +567,24 @@ const ELEMENT_INDEX_STORE = {
   yogam: null,
   karanam: null
 };
+ui_labels_app {
+title_prefix: {
+  en: "Panchangam",
+  sa: "पञ्चाङ्गम्",
+  ta: "பஞ்சாங்கம்",
+  te: "పంచాంగం",
+  ka: "ಪಂಚಾಂಗ"
+},
+
+now: {
+  en: "Now",
+  sa: "इदानीम्",
+  ta: "இப்போது",
+  te: "ఇప్పుడు",
+  ka: "ಇದೀಗ"
+}
+
+};
 /***********************
  * COLOUR DEFINITIONS
  ***********************/
@@ -783,10 +801,12 @@ const formattedDateTime = nowLocal.toLocaleString("en-US", {
 });
 
 // Display current time
-document.getElementById("nowTime").innerHTML =
-  `<b>Current date & time:</b> ${formattedDateTime}`;
 
+  /*document.getElementById("appTitle").innerHTML =
+    `${getLang(ui_labels_app.title_prefix)} ${getLang(ui_labels_app.now)}`;*/
 
+  /*document.getElementById("appTitle").innerHTML =
+    `${getLang(ui_labels_app.title_prefix)} ${getLang(ui_labels_app.now)}`;*/
 
 let GLOBAL_EXTRAS = {
   chandramanam: null,

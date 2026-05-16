@@ -396,11 +396,11 @@ const ui_labels = {
 
 const ui_labels_for_sowramanam = {
   see_thithi_details_below: {
-    en: "see_sowramanam_thithi_details_below displayed in English",
-    sa: "see_sowramanam_तिथिः_details_below displayed in Sanskrit",
-    ta: "see_sowramanam_திதி_details_below displayed in Tamil",
-    te: "see_sowramanam_తిథి_details_below displayed in Telugu",
-    ka: "see_sowramanam_ತಿಥಿ_details_below displayed in Kannada"
+    en: "Details are displayed below",
+    sa: "विवरणानि अधः प्रदर्शितानि",
+    ta: "விவரங்கள் கீழே காண்பிக்கப்படுகின்றன",
+    te: "వివరాలు క్రింద చూపబడుతున్నాయి",
+    ka: "ವಿವರಗಳು ಕೆಳಗೆ ಪ್ರದರ್ಶಿಸಲಾಗುತ್ತಿವೆ"
   },
   sankalpam_line: {
     en: "Sowramana Sankalpam",

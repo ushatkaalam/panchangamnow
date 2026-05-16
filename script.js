@@ -802,11 +802,10 @@ const formattedDateTime = nowLocal.toLocaleString("en-US", {
 
 // Display current time
 
-  /*document.getElementById("appTitle").innerHTML =
-    `${getLang(ui_labels_app.title_prefix)} ${getLang(ui_labels_app.now)}`;*/
+  document.getElementById("appTitle").innerHTML =
+    `${getLang(ui_labels_app.title_prefix)} ${getLang(ui_labels_app.now)}`;
 
-  /*document.getElementById("appTitle").innerHTML =
-    `${getLang(ui_labels_app.title_prefix)} ${getLang(ui_labels_app.now)}`;*/
+  
 
 let GLOBAL_EXTRAS = {
   chandramanam: null,

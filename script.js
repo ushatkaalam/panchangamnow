@@ -413,11 +413,11 @@ const ui_labels_for_sowramanam = {
 
 const ui_labels_for_chandramanam = {
   see_thithi_details_below: {
-    en: "see_chandramanam_thithi_details_below displayed in English",
-    sa: "see_chandramanam_तिथिः_details_below displayed in Sanskrit",
-    ta: "see_chandramanam_திதி_details_below displayed in Tamil",
-    te: "see_chandramanam_తిథి_details_below displayed in Telugu",
-    ka: "see_chandramanam_ತಿಥಿ_details_below displayed in Kannada"
+    en: "Details are displayed below",
+    sa: "विवरणानि अधः प्रदर्शितानि",
+    ta: "விவரங்கள் கீழே காண்பிக்கப்படுகின்றன",
+    te: "వివరాలు క్రింద చూపబడుతున్నాయి",
+    ka: "ವಿವರಗಳು ಕೆಳಗೆ ಪ್ರದರ್ಶಿಸಲಾಗುತ್ತಿವೆ"
   },
   sankalpam_line: {
     en: "Chandramana Sankalpam",

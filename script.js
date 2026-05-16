@@ -791,6 +791,8 @@ let UI_LANG = localStorage.getItem("ui_lang") || "en";
 // ---- GLOBAL TIME SETUP (runs once) ----
 
 let CURRENT_DAY_INFO = null;
+
+
 renderAppHeader()
 
 
@@ -1075,7 +1077,7 @@ return;
 	function setLanguage(lang) {
   		UI_LANG = lang;
   		localStorage.setItem("ui_lang", lang);
-
+		renderAppHeader()
   		updateLangUI(lang);
   		loadAll(Date.now());
 		renderPakshamTitle();

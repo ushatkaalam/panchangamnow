@@ -789,42 +789,12 @@ let UI_LANG = localStorage.getItem("ui_lang") || "en";
 
 
 // ---- GLOBAL TIME SETUP (runs once) ----
-const nowLocal = new Date();
-nowLocal.setSeconds(0, 0);        // normalize seconds
 
-const weekdayName = nowLocal.toLocaleDateString("en-US", {
-  weekday: "long"
-});
-const weekdayInfo = day_of_week_data[weekdayName];
-
-const CURRENT_DAY_INFO = {
-  weekday: weekdayName,
-  traditional: weekdayInfo
-};
-
-const formattedDateTime = nowLocal.toLocaleString("en-US", {
-  weekday: "long",
-  day: "numeric",
-  month: "long",
-  year: "numeric",
-  hour: "numeric",
-  minute: "2-digit",
-  second: "2-digit",
-  hour12: true
-});
-
-// Display Panchangam NOW app title
-
-  document.getElementById("appTitle").innerHTML =
-    `${getLang(ui_labels_app.title_prefix)} ${getLang(ui_labels_app.now)}`;
+let CURRENT_DAY_INFO = null;
+renderAppHeader()
 
 
 
-// Display current time
-	document.getElementById("nowTime").innerHTML = `
-    	<b>${getLang(ui_labels_app.current_datetime)}:</b>
-    	${formattedDateTime}
-  `;
 
 
 
@@ -1062,6 +1032,43 @@ return;
   	return obj[UI_LANG] ?? obj.en ?? "";
 	}
 	
+	function renderAppHeader() {
+
+  const nowLocal = new Date();
+
+  nowLocal.setSeconds(0, 0);
+
+  const weekdayName = nowLocal.toLocaleDateString("en-US", {
+    weekday: "long"
+  });
+
+  const weekdayInfo = day_of_week_data[weekdayName];
+
+  CURRENT_DAY_INFO = {
+    weekday: weekdayName,
+    traditional: weekdayInfo
+  };
+
+  const formattedDateTime = nowLocal.toLocaleString("en-US", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true
+  });
+
+  document.getElementById("appTitle").innerHTML =
+    `${getLang(ui_labels_app.title_prefix)} ${getLang(ui_labels_app.now)}`;
+
+  document.getElementById("nowTime").innerHTML = `
+    <b>${getLang(ui_labels_app.current_datetime)}:</b>
+    ${formattedDateTime}
+  `;
+}
+
 // -------------------------------
       // This function ensures setting language
       // -------------------------------

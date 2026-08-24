@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Panchangam Queries</title>
+
+<style>
+
+body
+{
+    font-family:Arial, Helvetica, sans-serif;
+    margin:20px auto;
+    max-width:900px;
+    padding:0 15px;
+}
+
+h1
+{
+    text-align:center;
+}
+
+
+/*
+    Query category buttons
+*/
+#queryButtons
+{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:12px;
+    margin-bottom:25px;
+}
+
+.queryCategory
+{
+    padding:12px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.queryCategory.active
+{
+    background:#90CAF9;
+    font-weight:bold;
+}
+
+
+/*
+    Query form
+*/
+#queryForm
+{
+    background:#f5f5f5;
+    border:1px solid #c0c0c0;
+    border-radius:8px;
+    padding:20px;
+    margin-top:20px;
+}
+
+
+/*
+    Individual parameter
+*/
+.formRow
+{
+    margin-bottom:15px;
+}
+
+.formRow label
+{
+    display:block;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.formRow input,
+.formRow select
+{
+    width:100%;
+    box-sizing:border-box;
+    padding:10px;
+    font-size:16px;
+}
+
+
+/*
+    Run button
+*/
+#runButton
+{
+    padding:12px 25px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+
+/*
+    Results
+*/
+#results
+{
+    margin-top:25px;
+    padding:20px;
+    border:1px solid #c0c0c0;
+    border-radius:8px;
+    background:#ffffff;
+}
+
+#resultsHeader
+{
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+
+/*
+    Mobile
+*/
+@media (max-width:700px)
+{
+    #queryButtons
+    {
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<h1>Panchangam Queries</h1>
+
+
+<!--
+    Query category buttons
+-->
+<div id="queryButtons">
+
+    <button
+        id="btnThithi"
+        class="queryCategory">
+        Query by Thithi
+    </button>
+
+    <button
+        id="btnDate"
+        class="queryCategory">
+        Query by Calendar Date
+    </button>
+
+    <button
+        id="btnNakshatram"
+        class="queryCategory">
+        Query by Nakshatram
+    </button>
+
+</div>
+
+
+<!--
+    Form for selected query
+-->
+<div id="queryForm">
+
+    Select a query above.
+
+</div>
+
+
+<!--
+    Results
+-->
+<div id="results">
+
+    <div id="resultsHeader">
+        Results
+    </div>
+
+    <div id="resultsContent">
+    </div>
+
+</div>
+
+
+<script src="query.js"></script>
+
+</body>
+
+</html>

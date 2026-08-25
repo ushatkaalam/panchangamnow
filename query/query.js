@@ -14,6 +14,8 @@ document.addEventListener(
                 "click",
                 function()
                 {
+                    console.log("THITHI BUTTON CLICKED");
+
                     showQuery("thithi");
                 });
 

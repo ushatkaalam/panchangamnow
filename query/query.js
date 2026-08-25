@@ -64,12 +64,137 @@ function showQuery(type)
     // Select the correct button
     //
     if (type === "thithi")
-    {
-        document
-            .getElementById("btnThithi")
-            .classList.add("active");
-    }
+{
+    form.innerHTML =
+    `
+        <h2>Query by Thithi</h2>
 
+        <div class="formRow">
+
+            <label for="sowramanamMonth">
+                Sowramanam Month
+            </label>
+
+            <select id="sowramanamMonth">
+
+                <option value="">
+                    Select Month
+                </option>
+
+                <option value="Chaitra">
+                    Chaitra
+                </option>
+
+                <option value="Vaishakha">
+                    Vaishakha
+                </option>
+
+                <option value="Jyeshtha">
+                    Jyeshtha
+                </option>
+
+                <option value="Ashadha">
+                    Ashadha
+                </option>
+
+                <option value="Shravana">
+                    Shravana
+                </option>
+
+                <option value="Bhadrapada">
+                    Bhadrapada
+                </option>
+
+                <option value="Ashwin">
+                    Ashwin
+                </option>
+
+                <option value="Kartika">
+                    Kartika
+                </option>
+
+                <option value="Margashirsha">
+                    Margashirsha
+                </option>
+
+                <option value="Pausha">
+                    Pausha
+                </option>
+
+                <option value="Magha">
+                    Magha
+                </option>
+
+                <option value="Phalguna">
+                    Phalguna
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="formRow">
+
+            <label for="year">
+                Year
+            </label>
+
+            <select id="year">
+
+                <option value="">
+                    Select Year
+                </option>
+
+                <option value="2025-2026">
+                    2025–2026 — Year Name
+                </option>
+
+                <option value="2026-2027">
+                    2026–2027 — Year Name
+                </option>
+
+                <option value="2027-2028">
+                    2027–2028 — Year Name
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="formRow">
+
+            <label for="paksham">
+                Paksham
+            </label>
+
+            <select id="paksham">
+
+                <option value="">
+                    Select Paksham
+                </option>
+
+                <option value="Shukla">
+                    Shukla Paksham
+                </option>
+
+                <option value="Krishna">
+                    Krishna Paksham
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button
+            id="runButton"
+            onclick="runQuery('thithi')">
+            Run Query
+        </button>
+    `;
+}
     if (type === "date")
     {
         document
@@ -217,17 +342,35 @@ function runQuery(type)
     // Temporary result for testing
     //
     if (type === "thithi")
-    {
-        const value =
-            document.getElementById(
-                "thithi"
-            ).value;
+{
+    const month =
+        document.getElementById(
+            "sowramanamMonth"
+        ).value;
 
-        results.innerHTML =
-            "Thithi selected: <b>" +
-            value +
-            "</b>";
-    }
+    const year =
+        document.getElementById(
+            "year"
+        ).value;
+
+    const paksham =
+        document.getElementById(
+            "paksham"
+        ).value;
+
+
+    results.innerHTML =
+        "<b>Thithi Query Parameters</b>" +
+        "<br><br>" +
+        "Sowramanam Month: " +
+        "<b>" + month + "</b>" +
+        "<br>" +
+        "Year: " +
+        "<b>" + year + "</b>" +
+        "<br>" +
+        "Paksham: " +
+        "<b>" + paksham + "</b>";
+}
 
 
     if (type === "date")

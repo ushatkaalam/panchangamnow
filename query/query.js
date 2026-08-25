@@ -1,5 +1,6 @@
 //
 // Wait until page has loaded
+console.log("NEW QUERY.JS IS RUNNING");
 //
 document.addEventListener(
     "DOMContentLoaded",

@@ -25,6 +25,7 @@ document.addEventListener(
                 "click",
                 function()
                 {
+                    console.log("DATE BUTTON CLICKED");
                     showQuery("date");
                 });
 
@@ -34,6 +35,7 @@ document.addEventListener(
                 "click",
                 function()
                 {
+                    console.log("NAKSHATRAM BUTTON CLICKED");
                     showQuery("nakshatram");
                 });
 

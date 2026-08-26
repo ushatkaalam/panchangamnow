@@ -475,15 +475,33 @@ function runQuery(type)
 
 
     if (type === "nakshatram")
-    {
-        const value =
-            document.getElementById(
-                "nakshatram"
-            ).value;
+{
+    const month =
+        document.getElementById(
+            "nakshatramSowramanamMonth"
+        ).value;
 
-        results.innerHTML =
-            "Nakshatram selected: <b>" +
-            value +
-            "</b>";
-    }
+    const year =
+        document.getElementById(
+            "nakshatramYear"
+        ).value;
+
+    const nakshatram =
+        document.getElementById(
+            "nakshatram"
+        ).value;
+
+
+    results.innerHTML =
+        "<b>Nakshatram Query Parameters</b>" +
+        "<br><br>" +
+        "Sowramanam Month: " +
+        "<b>" + month + "</b>" +
+        "<br>" +
+        "Year: " +
+        "<b>" + year + "</b>" +
+        "<br>" +
+        "Nakshatram: " +
+        "<b>" + nakshatram + "</b>";
+}
 }

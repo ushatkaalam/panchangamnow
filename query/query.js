@@ -474,7 +474,10 @@ function runQuery(type)
     }
 
 
-    if (type === "nakshatram")
+    //
+// Temporary result for Nakshatram
+//
+if (type === "nakshatram")
 {
     const month =
         document.getElementById(
@@ -493,7 +496,7 @@ function runQuery(type)
 
 
     results.innerHTML =
-        "<b>Nakshatram Query Parameters</b>" +
+        "<b>Nakshatram Parameters</b>" +
         "<br><br>" +
         "Sowramanam Month: " +
         "<b>" + month + "</b>" +

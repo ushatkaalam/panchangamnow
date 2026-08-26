@@ -248,8 +248,14 @@ function showQuery(type)
                 </label>
 
                 <input
-                    type="date"
-                    id="calendarDate">
+                type="date"
+                id="calendarDate">
+
+            <div class="dateHint">
+            Tip: Click the calendar icon on the right to select a date.
+            </div>
+
+
 
             </div>
 

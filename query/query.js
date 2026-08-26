@@ -1,6 +1,92 @@
 //
 // Wait until page has loaded
 //
+
+//
+// Temporary month lists
+// Later these will come from master files
+//
+
+const sowramanamMonths =
+[
+    "Chaitra",
+    "Vaishakha",
+    "Jyeshtha",
+    "Ashadha",
+    "Shravana",
+    "Bhadrapada",
+    "Ashwin",
+    "Kartika",
+    "Margashirsha",
+    "Pausha",
+    "Magha",
+    "Phalguna"
+];
+
+const chaandramaanamMonths =
+[
+    "Chaitra",
+    "Vaishakha",
+    "Jyeshtha",
+    "Ashadha",
+    "Shravana",
+    "Bhadrapada",
+    "Ashwin",
+    "Kartika",
+    "Margashirsha",
+    "Pausha",
+    "Magha",
+    "Phalguna"
+];
+
+
+//
+// Build the month dropdown
+//
+function populateMonthDropdown(
+    selectId,
+    monthTypeId
+)
+{
+    const monthType =
+        document.getElementById(
+            monthTypeId
+        ).value;
+
+    const monthSelect =
+        document.getElementById(
+            selectId
+        );
+
+    monthSelect.innerHTML =
+        '<option value="">Select Month</option>';
+
+    let months;
+
+    if (monthType === "chaandramaanam")
+    {
+        months = chaandramaanamMonths;
+    }
+    else
+    {
+        months = sowramanamMonths;
+    }
+
+    months.forEach(
+        function(month)
+        {
+            const option =
+                document.createElement("option");
+
+            option.value = month;
+            option.textContent = month;
+
+            monthSelect.appendChild(option);
+        }
+    );
+}
+
+
 document.addEventListener(
     "DOMContentLoaded",
     function()

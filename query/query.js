@@ -265,47 +265,145 @@ function showQuery(type)
     //
     // Create Nakshatram form
     //
-    if (type === "nakshatram")
-    {
-        form.innerHTML =
-        `
-            <h2>Query by Nakshatram</h2>
+    //
+// Create Nakshatram form
+//
+if (type === "nakshatram")
+{
+    form.innerHTML =
+    `
+        <h2>Query by Nakshatram</h2>
 
-            <div class="formRow">
+        <div class="formRow">
 
-                <label for="nakshatram">
-                    Nakshatram
-                </label>
+            <label for="nakshatramSowramanamMonth">
+                Sowramanam Month
+            </label>
 
-                <select id="nakshatram">
+            <select id="nakshatramSowramanamMonth">
 
-                    <option value="">
-                        Select Nakshatram
-                    </option>
+                <option value="">
+                    Select Month
+                </option>
 
-                    <option value="Ashwini">
-                        Ashwini
-                    </option>
+                <option value="Chaitra">
+                    Chaitra
+                </option>
 
-                    <option value="Bharani">
-                        Bharani
-                    </option>
+                <option value="Vaishakha">
+                    Vaishakha
+                </option>
 
-                    <option value="Krittika">
-                        Krittika
-                    </option>
+                <option value="Jyeshtha">
+                    Jyeshtha
+                </option>
 
-                </select>
+                <option value="Ashadha">
+                    Ashadha
+                </option>
 
-            </div>
+                <option value="Shravana">
+                    Shravana
+                </option>
 
-            <button
-                id="runButton"
-                onclick="runQuery('nakshatram')">
-                Run Query
-            </button>
-        `;
-    }
+                <option value="Bhadrapada">
+                    Bhadrapada
+                </option>
+
+                <option value="Ashwin">
+                    Ashwin
+                </option>
+
+                <option value="Kartika">
+                    Kartika
+                </option>
+
+                <option value="Margashirsha">
+                    Margashirsha
+                </option>
+
+                <option value="Pausha">
+                    Pausha
+                </option>
+
+                <option value="Magha">
+                    Magha
+                </option>
+
+                <option value="Phalguna">
+                    Phalguna
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="formRow">
+
+            <label for="nakshatramYear">
+                Year
+            </label>
+
+            <select id="nakshatramYear">
+
+                <option value="">
+                    Select Year
+                </option>
+
+                <option value="2025-2026">
+                    2025–2026 — Year Name
+                </option>
+
+                <option value="2026-2027">
+                    2026–2027 — Year Name
+                </option>
+
+                <option value="2027-2028">
+                    2027–2028 — Year Name
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="formRow">
+
+            <label for="nakshatram">
+                Nakshatram
+            </label>
+
+            <select id="nakshatram">
+
+                <option value="">
+                    Select Nakshatram
+                </option>
+
+                <option value="Ashwini">
+                    Ashwini
+                </option>
+
+                <option value="Bharani">
+                    Bharani
+                </option>
+
+                <option value="Krittika">
+                    Krittika
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button
+            id="runButton"
+            onclick="runQuery('nakshatram')">
+            Run Query
+        </button>
+    `;
+}
 
 
     //

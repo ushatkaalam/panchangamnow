@@ -129,9 +129,7 @@ document.addEventListener(
     });
 
 
-//
-// Display the selected query form
-//
+
 //
 // Display the selected query form
 //
@@ -350,9 +348,6 @@ populateMonthDropdown(
     //
     // Create Nakshatram form
     //
-    //
-// Create Nakshatram form
-//
 if (type === "nakshatram")
 {
     form.innerHTML =

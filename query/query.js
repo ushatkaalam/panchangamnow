@@ -537,7 +537,8 @@ const month =
         "<br>" +
         "Month: " +
         "<b>" + month + "</b>" +
-         "Year: " +
+        "<br>" +
+        "Year: " +
         "<b>" + year + "</b>" +
         "<br>" +
         "Paksham: " +
@@ -592,7 +593,8 @@ const month =
         "<b>" + monthType + "</b>" +
         "<br>" +
         "Month: " +
-        "<b>" + month + "</b>"  +
+        "<b>" + month + "</b>" +
+        "<br>" +
         "Year: " +
         "<b>" + year + "</b>" +
         "<br>" +

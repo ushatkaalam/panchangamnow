@@ -360,69 +360,61 @@ if (type === "nakshatram")
 
         <div class="formRow">
 
-            <label for="nakshatramSowramanamMonth">
-                Sowramanam Month
-            </label>
+    <label for="nakshatramMonthType">
+        Chaandramaanam/Sowramanam
+    </label>
 
-            <select id="nakshatramSowramanamMonth">
+    <select id="nakshatramMonthType">
 
-                <option value="">
-                    Select Month
-                </option>
+        <option value="sowramanam">
+            Sowramanam
+        </option>
 
-                <option value="Chaitra">
-                    Chaitra
-                </option>
+        <option value="chaandramaanam">
+            Chaandramaanam
+        </option>
 
-                <option value="Vaishakha">
-                    Vaishakha
-                </option>
+    </select>
 
-                <option value="Jyeshtha">
-                    Jyeshtha
-                </option>
-
-                <option value="Ashadha">
-                    Ashadha
-                </option>
-
-                <option value="Shravana">
-                    Shravana
-                </option>
-
-                <option value="Bhadrapada">
-                    Bhadrapada
-                </option>
-
-                <option value="Ashwin">
-                    Ashwin
-                </option>
-
-                <option value="Kartika">
-                    Kartika
-                </option>
-
-                <option value="Margashirsha">
-                    Margashirsha
-                </option>
-
-                <option value="Pausha">
-                    Pausha
-                </option>
-
-                <option value="Magha">
-                    Magha
-                </option>
-
-                <option value="Phalguna">
-                    Phalguna
-                </option>
-
-            </select>
-
-        </div>
+</div>
 
 
+<div class="formRow">
+
+    <label for="nakshatramMonth">
+        Month
+    </label>
+
+    <select id="nakshatramMonth">
+
+        <option value="">
+            Select Month
+        </option>
+
+    </select>
+
+</div>
+
+//
+// Set up Nakshatram month selection
+//
+document
+    .getElementById("nakshatramMonthType")
+    .addEventListener(
+        "change",
+        function()
+        {
+            populateMonthDropdown(
+                "nakshatramMonth",
+                "nakshatramMonthType"
+            );
+        }
+    );
+
+populateMonthDropdown(
+    "nakshatramMonth",
+    "nakshatramMonthType"
+);
         <div class="formRow">
 
             <label for="nakshatramYear">
@@ -514,10 +506,15 @@ function runQuery(type)
     //
     if (type === "thithi")
 {
-    const month =
-        document.getElementById(
-            "sowramanamMonth"
-        ).value;
+    const monthType =
+    document.getElementById(
+        "thithiMonthType"
+    ).value;
+
+const month =
+    document.getElementById(
+        "thithiMonth"
+    ).value;
 
     const year =
         document.getElementById(
@@ -533,10 +530,12 @@ function runQuery(type)
     results.innerHTML =
         "<b>Thithi Query Parameters</b>" +
         "<br><br>" +
-        "Sowramanam Month: " +
-        "<b>" + month + "</b>" +
+        "Chaandramaanam/Sowramanam: " +
+        "<b>" + monthType + "</b>" +
         "<br>" +
-        "Year: " +
+        "Month: " +
+        "<b>" + month + "</b>" +
+         "Year: " +
         "<b>" + year + "</b>" +
         "<br>" +
         "Paksham: " +
@@ -563,10 +562,15 @@ function runQuery(type)
 //
 if (type === "nakshatram")
 {
-    const month =
-        document.getElementById(
-            "nakshatramSowramanamMonth"
-        ).value;
+    const monthType =
+    document.getElementById(
+        "nakshatramMonthType"
+    ).value;
+
+const month =
+    document.getElementById(
+        "nakshatramMonth"
+    ).value;
 
     const year =
         document.getElementById(
@@ -582,9 +586,11 @@ if (type === "nakshatram")
     results.innerHTML =
         "<b>Nakshatram Parameters</b>" +
         "<br><br>" +
-        "Sowramanam Month: " +
-        "<b>" + month + "</b>" +
+        "Chaandramaanam/Sowramanam: " +
+        "<b>" + monthType + "</b>" +
         "<br>" +
+        "Month: " +
+        "<b>" + month + "</b>"  +
         "Year: " +
         "<b>" + year + "</b>" +
         "<br>" +

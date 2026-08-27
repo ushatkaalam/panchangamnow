@@ -192,67 +192,40 @@ function showQuery(type)
 
             <div class="formRow">
 
-                <label for="sowramanamMonth">
-                    Sowramanam Month
-                </label>
+    <label for="thithiMonthType">
+        Chaandramaanam/Sowramanam
+    </label>
 
-                <select id="sowramanamMonth">
+    <select id="thithiMonthType">
 
-                    <option value="">
-                        Select Month
-                    </option>
+        <option value="sowramanam">
+            Sowramanam
+        </option>
 
-                    <option value="Chaitra">
-                        Chaitra
-                    </option>
+        <option value="chaandramaanam">
+            Chaandramaanam
+        </option>
 
-                    <option value="Vaishakha">
-                        Vaishakha
-                    </option>
+    </select>
 
-                    <option value="Jyeshtha">
-                        Jyeshtha
-                    </option>
+</div>
 
-                    <option value="Ashadha">
-                        Ashadha
-                    </option>
 
-                    <option value="Shravana">
-                        Shravana
-                    </option>
+<div class="formRow">
 
-                    <option value="Bhadrapada">
-                        Bhadrapada
-                    </option>
+    <label for="thithiMonth">
+        Month
+    </label>
 
-                    <option value="Ashwin">
-                        Ashwin
-                    </option>
+    <select id="thithiMonth">
 
-                    <option value="Kartika">
-                        Kartika
-                    </option>
+        <option value="">
+            Select Month
+        </option>
 
-                    <option value="Margashirsha">
-                        Margashirsha
-                    </option>
+    </select>
 
-                    <option value="Pausha">
-                        Pausha
-                    </option>
-
-                    <option value="Magha">
-                        Magha
-                    </option>
-
-                    <option value="Phalguna">
-                        Phalguna
-                    </option>
-
-                </select>
-
-            </div>
+</div>
 
 
             <div class="formRow">
@@ -316,7 +289,26 @@ function showQuery(type)
             </button>
         `;
     }
+//
+// Set up Thithi month selection
+//
+document
+    .getElementById("thithiMonthType")
+    .addEventListener(
+        "change",
+        function()
+        {
+            populateMonthDropdown(
+                "thithiMonth",
+                "thithiMonthType"
+            );
+        }
+    );
 
+populateMonthDropdown(
+    "thithiMonth",
+    "thithiMonthType"
+);
 
     //
     // Create Calendar Date form

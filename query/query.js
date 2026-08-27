@@ -288,9 +288,7 @@ function showQuery(type)
                 Run Query
             </button>
         `;
-    }
-//
-// Set up Thithi month selection
+        // Set up Thithi month selection
 //
 document
     .getElementById("thithiMonthType")
@@ -309,6 +307,9 @@ populateMonthDropdown(
     "thithiMonth",
     "thithiMonthType"
 );
+    }
+//
+
 
     //
     // Create Calendar Date form
@@ -395,26 +396,7 @@ if (type === "nakshatram")
 
 </div>
 
-//
-// Set up Nakshatram month selection
-//
-document
-    .getElementById("nakshatramMonthType")
-    .addEventListener(
-        "change",
-        function()
-        {
-            populateMonthDropdown(
-                "nakshatramMonth",
-                "nakshatramMonthType"
-            );
-        }
-    );
 
-populateMonthDropdown(
-    "nakshatramMonth",
-    "nakshatramMonthType"
-);
         <div class="formRow">
 
             <label for="nakshatramYear">
@@ -479,6 +461,26 @@ populateMonthDropdown(
             Run Query
         </button>
     `;
+    //
+// Set up Nakshatram month selection
+//
+document
+    .getElementById("nakshatramMonthType")
+    .addEventListener(
+        "change",
+        function()
+        {
+            populateMonthDropdown(
+                "nakshatramMonth",
+                "nakshatramMonthType"
+            );
+        }
+    );
+
+populateMonthDropdown(
+    "nakshatramMonth",
+    "nakshatramMonthType"
+);
 }
 
 

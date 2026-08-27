@@ -287,8 +287,8 @@ function showQuery(type)
             </button>
         `;
         // Set up Thithi month selection
-//
-document
+        //
+    document
     .getElementById("thithiMonthType")
     .addEventListener(
         "change",

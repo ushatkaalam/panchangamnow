@@ -605,9 +605,47 @@ function csvUTCDate(
     minsValue
 )
 {
-    const dateString =
+    //
+    // Clean the CSV values
+    //
+    let dateString =
         String(dateValue)
-            .trim();
+            .trim()
+            .replace(/^"|"$/g, "");
+
+    let hourString =
+        String(hourValue)
+            .trim()
+            .replace(/^"|"$/g, "");
+
+    let minsString =
+        String(minsValue)
+            .trim()
+            .replace(/^"|"$/g, "");
+
+
+    //
+    // Handle values such as 20260715.0
+    //
+    dateString =
+        dateString.replace(
+            /\.0$/,
+            ""
+        );
+
+
+    //
+    // Date must be exactly YYYYMMDD
+    //
+    if (!/^\d{8}$/.test(dateString))
+    {
+        console.error(
+            "Invalid CSV date:",
+            dateValue
+        );
+
+        return null;
+    }
 
 
     const year =
@@ -625,29 +663,67 @@ function csvUTCDate(
             dateString.substring(6, 8)
         );
 
-
     const hour =
-        Number(hourValue);
+        Number(hourString);
 
     const mins =
-        Number(minsValue);
+        Number(minsString);
 
 
-    return new Date(
-        Date.UTC(
-            year,
-            month,
-            day,
-            hour,
-            mins,
-            0,
-            0
-        )
-    );
+    //
+    // Validate time
+    //
+    if (
+        !Number.isFinite(hour) ||
+        !Number.isFinite(mins)
+    )
+    {
+        console.error(
+            "Invalid CSV time:",
+            dateValue,
+            hourValue,
+            minsValue
+        );
+
+        return null;
+    }
+
+
+    //
+    // Create UTC date
+    //
+    const result =
+        new Date(
+            Date.UTC(
+                year,
+                month,
+                day,
+                hour,
+                mins,
+                0,
+                0
+            )
+        );
+
+
+    //
+    // Final validation
+    //
+    if (isNaN(result.getTime()))
+    {
+        console.error(
+            "Invalid UTC date:",
+            dateValue,
+            hourValue,
+            minsValue
+        );
+
+        return null;
+    }
+
+
+    return result;
 }
-
-
-
 //
 // Format a UTC Date in the user's timezone
 //
@@ -1302,7 +1378,18 @@ function processDateRows(
                     row[endMinsColumn]
                 );
 
+            if (
+    !startDate ||
+    !endDate
+)
+{
+    console.warn(
+        "Skipping invalid CSV row:",
+        row
+    );
 
+    return;
+}
             //
             // Does this interval overlap
             // the selected LOCAL calendar date?

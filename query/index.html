@@ -132,7 +132,33 @@ h1
         grid-template-columns:1fr;
     }
 }
+/*
+    Query result tables
+*/
+.queryResultTable
+{
+    width:100%;
+    border-collapse:collapse;
+    margin-bottom:25px;
+}
 
+.queryResultTable th,
+.queryResultTable td
+{
+    border:1px solid #c0c0c0;
+    padding:8px;
+    text-align:left;
+}
+
+.queryResultTable th
+{
+    font-weight:bold;
+}
+
+.queryResultTable tr:nth-child(even)
+{
+    background:#f7f7f7;
+}
 </style>
 
 </head>

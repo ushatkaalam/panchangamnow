@@ -1367,10 +1367,36 @@ function processDateRows(
         // Skip rows that do not contain
         // valid start/end date values
         //
-        if (
-            !row[startDateColumn] ||
-            !row[endDateColumn]
-        )
+        //
+// Debug column names and values
+//
+console.log(
+    "TYPE:",
+    type
+);
+
+console.log(
+    "START COLUMN:",
+    startDateColumn,
+    "VALUE:",
+    row[startDateColumn]
+);
+
+console.log(
+    "END COLUMN:",
+    endDateColumn,
+    "VALUE:",
+    row[endDateColumn]
+);
+
+//
+// Skip rows that do not contain
+// valid start/end date values
+//
+if (
+    !row[startDateColumn] ||
+    !row[endDateColumn]
+)
         {
             console.warn(
                 "Skipping invalid " +

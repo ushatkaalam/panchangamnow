@@ -1410,17 +1410,17 @@ function processDateRows(
 
     return;
 }
+//
+// Does this interval overlap
+// the selected LOCAL calendar date?
             //
-            // Does this interval overlap
-            // the selected LOCAL calendar date?
-            //
-            console.log(
-    "THITHI ROW:",
+console.log(
+    type.toUpperCase() + " ROW:",
     row
 );
 
 console.log(
-    "THITHI DATES:",
+    type.toUpperCase() + " DATES:",
     startDate,
     endDate
 );

@@ -1257,28 +1257,28 @@ function processDateRows(
     if (type === "thithi")
     {
         startDateColumn =
-            "thithi_start_date";
+            "othithi_start_date";
 
         endDateColumn =
-            "thithi_end_date";
+            "othithi_end_date";
 
         startHourColumn =
-            "thithi_start_hour";
+            "othithi_start_hour";
 
         startMinsColumn =
-            "thithi_start_mins";
+            "othithi_start_mins";
 
         endHourColumn =
-            "thithi_end_hour";
+            "othithi_end_hour";
 
         endMinsColumn =
-            "thithi_end_mins";
+            "othithi_end_mins";
 
         valueColumn =
-            "thithi_thithi";
+            "othithi_thithi";
 
         pakshamColumn =
-            "thithi_paksham";
+            "othithi_paksham";
     }
 
 

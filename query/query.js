@@ -1361,14 +1361,34 @@ function processDateRows(
     // Process rows
     //
     rows.forEach(
-        function(row)
+    function(row)
+    {
+        //
+        // Skip rows that do not contain
+        // valid start/end date values
+        //
+        if (
+            !row[startDateColumn] ||
+            !row[endDateColumn]
+        )
         {
-            const startDate =
-                csvUTCDate(
-                    row[startDateColumn],
-                    row[startHourColumn],
-                    row[startMinsColumn]
-                );
+            console.warn(
+                "Skipping invalid " +
+                type +
+                " row:",
+                row
+            );
+
+            return;
+        }
+
+
+        const startDate =
+            csvUTCDate(
+                row[startDateColumn],
+                row[startHourColumn],
+                row[startMinsColumn]
+            );
 
 
             const endDate =

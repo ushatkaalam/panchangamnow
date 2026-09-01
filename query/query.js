@@ -1394,13 +1394,30 @@ function processDateRows(
             // Does this interval overlap
             // the selected LOCAL calendar date?
             //
-            if (
-                overlapsLocalDate(
-                    startDate,
-                    endDate,
-                    selectedDate
-                )
-            )
+            console.log(
+    "THITHI ROW:",
+    row
+);
+
+console.log(
+    "THITHI DATES:",
+    startDate,
+    endDate
+);
+
+console.log(
+    "SELECTED DATE:",
+    selectedDate
+);
+
+
+if (
+    overlapsLocalDate(
+        startDate,
+        endDate,
+        selectedDate
+    )
+)
             {
                 const startDisplay =
                     formatUserDateTime(

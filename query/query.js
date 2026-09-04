@@ -259,7 +259,21 @@ function showQuery(type)
                 </select>
 
             </div>
+                        <div class="formRow">
 
+                <label for="thithi">
+                    Thithi
+                </label>
+
+                <select id="thithi">
+
+                    <option value="">
+                        Select Thithi
+                    </option>
+
+                </select>
+
+            </div>
 
             <div class="formRow">
 
@@ -331,11 +345,12 @@ function showQuery(type)
             .addEventListener(
                 "change",
                 function()
-                {
-                    populateMonthDropdown(
-                        "thithiMonth",
-                        "thithiMonthType"
-                    );
+            populateMonthDropdown(
+            "thithiMonth",
+            "thithiMonthType"
+        );
+
+        loadThithiDropdown();
                 }
             );
 
@@ -1032,9 +1047,14 @@ function runQuery(type)
             ).value;
 
 
-        const paksham =
+                const paksham =
             document.getElementById(
                 "paksham"
+            ).value;
+
+        const thithi =
+            document.getElementById(
+                "thithi"
             ).value;
 
 
@@ -1046,6 +1066,9 @@ function runQuery(type)
             "<br>" +
             "Month: " +
             "<b>" + month + "</b>" +
+            "<br>" +
+            "Thithi: " +
+            "<b>" + thithi + "</b>" +
             "<br>" +
             "Year: " +
             "<b>" + year + "</b>" +

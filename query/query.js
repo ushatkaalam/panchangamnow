@@ -68,7 +68,10 @@ const DATA_FILES =
 const DROPDOWN_FILES =
 {
     thithi:
-        "../thithi_dropdown.csv"
+        "../thithi_dropdown.csv",
+
+    nakshatram:
+        "../nakshatram_dropdown.csv"
 };
 
 //
@@ -525,8 +528,12 @@ function showQuery(type)
                     );
                 }
             );
-
-
+        
+        //
+        // Load Nakshatram dropdown
+        //
+        loadNakshatramDropdown();
+        
         populateMonthDropdown(
             "nakshatramMonth",
             "nakshatramMonthType"
@@ -709,7 +716,107 @@ function loadThithiDropdown()
             }
         );
 }
+//
+// Load Nakshatram dropdown from CSV
+//
+function loadNakshatramDropdown()
+{
+    const nakshatramSelect =
+        document.getElementById("nakshatram");
 
+    if (!nakshatramSelect)
+    {
+        return;
+    }
+
+    fetch(DROPDOWN_FILES.nakshatram)
+        .then(
+            function(response)
+            {
+                if (!response.ok)
+                {
+                    throw new Error(
+                        "Unable to read Nakshatram dropdown CSV: " +
+                        response.url
+                    );
+                }
+
+                return response.text();
+            }
+        )
+        .then(
+            function(csvText)
+            {
+                const rows =
+                    parseCSV(csvText);
+
+                //
+                // Keep the first option
+                //
+                nakshatramSelect.innerHTML =
+                    '<option value="">Select Nakshatram</option>';
+
+                rows.forEach(
+                    function(row)
+                    {
+                        //
+                        // Make sure the row has an ID
+                        //
+                        if (!row.id)
+                        {
+                            return;
+                        }
+
+                        //
+                        // Concatenate all languages
+                        //
+                        const displayText =
+                            [
+                                row.english,
+                                row.sanskrit,
+                                row.tamil,
+                                row.telugu,
+                                row.kannada
+                            ]
+                            .filter(
+                                function(value)
+                                {
+                                    return value &&
+                                           value.trim() !== "";
+                                }
+                            )
+                            .join(" / ");
+
+                        const option =
+                            document.createElement("option");
+
+                        //
+                        // Actual value used by query
+                        //
+                        option.value =
+                            row.id;
+
+                        //
+                        // Text displayed to user
+                        //
+                        option.textContent =
+                            displayText;
+
+                        nakshatramSelect.appendChild(option);
+                    }
+                );
+            }
+        )
+        .catch(
+            function(error)
+            {
+                console.error(error);
+
+                nakshatramSelect.innerHTML =
+                    '<option value="">Unable to load Nakshatram</option>';
+            }
+        );
+}
 //
 // Create a UTC Date from a CSV date and time
 //

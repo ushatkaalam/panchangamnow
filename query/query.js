@@ -61,7 +61,15 @@ const DATA_FILES =
         "../data_karanam.csv"
 };
 
-
+//
+// Dropdown CSV files
+// These files are one level above the query folder.
+//
+const DROPDOWN_FILES =
+{
+    thithi:
+        "../thithi_dropdown.csv"
+};
 
 //
 // Build the month dropdown
@@ -585,7 +593,107 @@ function parseCSV(text)
     return rows;
 }
 
+//
+// Load Thithi dropdown from CSV
+//
+function loadThithiDropdown()
+{
+    const thithiSelect =
+        document.getElementById("thithi");
 
+    if (!thithiSelect)
+    {
+        return;
+    }
+
+    fetch(DROPDOWN_FILES.thithi)
+        .then(
+            function(response)
+            {
+                if (!response.ok)
+                {
+                    throw new Error(
+                        "Unable to read Thithi dropdown CSV: " +
+                        response.url
+                    );
+                }
+
+                return response.text();
+            }
+        )
+        .then(
+            function(csvText)
+            {
+                const rows =
+                    parseCSV(csvText);
+
+                //
+                // Keep the first option
+                //
+                thithiSelect.innerHTML =
+                    '<option value="">Select Thithi</option>';
+
+                rows.forEach(
+                    function(row)
+                    {
+                        //
+                        // Make sure the row has an ID
+                        //
+                        if (!row.id)
+                        {
+                            return;
+                        }
+
+                        //
+                        // Concatenate all languages
+                        //
+                        const displayText =
+                            [
+                                row.english,
+                                row.sanskrit,
+                                row.tamil,
+                                row.telugu,
+                                row.kannada
+                            ]
+                            .filter(
+                                function(value)
+                                {
+                                    return value &&
+                                           value.trim() !== "";
+                                }
+                            )
+                            .join(" / ");
+
+                        const option =
+                            document.createElement("option");
+
+                        //
+                        // Actual value used by query
+                        //
+                        option.value =
+                            row.id;
+
+                        //
+                        // Text displayed to user
+                        //
+                        option.textContent =
+                            displayText;
+
+                        thithiSelect.appendChild(option);
+                    }
+                );
+            }
+        )
+        .catch(
+            function(error)
+            {
+                console.error(error);
+
+                thithiSelect.innerHTML =
+                    '<option value="">Unable to load Thithi</option>';
+            }
+        );
+}
 
 //
 // Create a UTC Date from a CSV date and time

@@ -488,17 +488,13 @@ function showQuery(type)
                         Select Nakshatram
                     </option>
 
-                    <option value="Ashwini">
-                        Ashwini
-                    </option>
+                    <select id="nakshatram">
 
-                    <option value="Bharani">
-                        Bharani
-                    </option>
-
-                    <option value="Krittika">
-                        Krittika
-                    </option>
+                        <option value="">
+                            Select Nakshatram
+                        </option>
+                    
+                    </select>
 
                 </select>
 

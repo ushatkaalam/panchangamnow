@@ -350,10 +350,10 @@ function showQuery(type)
             "thithiMonthType"
         );
 
-        loadThithiDropdown();
-                }
+        }
             );
 
+        loadThithiDropdown();
 
         populateMonthDropdown(
             "thithiMonth",

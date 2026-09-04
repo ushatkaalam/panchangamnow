@@ -337,7 +337,7 @@ function showQuery(type)
         `;
 
 
-        //
+                //
         // Set up Thithi month selection
         //
         document
@@ -345,12 +345,12 @@ function showQuery(type)
             .addEventListener(
                 "change",
                 function()
-            populateMonthDropdown(
-            "thithiMonth",
-            "thithiMonthType"
-        );
-
-        }
+                {
+                    populateMonthDropdown(
+                        "thithiMonth",
+                        "thithiMonthType"
+                    );
+                }
             );
 
         loadThithiDropdown();

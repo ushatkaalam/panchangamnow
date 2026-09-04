@@ -259,7 +259,7 @@ function showQuery(type)
                 </select>
 
             </div>
-                        <div class="formRow">
+            <div class="formRow">
 
                 <label for="thithi">
                     Thithi

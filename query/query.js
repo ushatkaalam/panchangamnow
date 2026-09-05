@@ -46,6 +46,10 @@ const DROPDOWN_FILES =
 //
 // Build the month dropdown
 //
+//
+// Load and build the month dropdown
+// from the appropriate CSV file
+//
 function populateMonthDropdown(
     selectId,
     monthTypeId
@@ -61,32 +65,134 @@ function populateMonthDropdown(
             selectId
         );
 
+    if (!monthSelect)
+    {
+        return;
+    }
+
+    //
+    // Show temporary loading option
+    //
     monthSelect.innerHTML =
-        '<option value="">Select Month</option>';
+        '<option value="">Loading Months...</option>';
 
-    let months;
+    //
+    // Select the correct CSV file
+    //
+    const csvFile =
+        DROPDOWN_FILES[monthType];
 
-    if (monthType === "chaandramaanam")
+    if (!csvFile)
     {
-        months = chaandramaanamMonths;
+        monthSelect.innerHTML =
+            '<option value="">Unable to load Months</option>';
+
+        console.error(
+            "No month dropdown file for:",
+            monthType
+        );
+
+        return;
     }
-    else
-    {
-        months = sowramanamMonths;
-    }
 
-    months.forEach(
-        function(month)
-        {
-            const option =
-                document.createElement("option");
+    //
+    // Read the CSV
+    //
+    fetch(csvFile)
+        .then(
+            function(response)
+            {
+                if (!response.ok)
+                {
+                    throw new Error(
+                        "Unable to read month dropdown CSV: " +
+                        response.url
+                    );
+                }
 
-            option.value = month;
-            option.textContent = month;
+                return response.text();
+            }
+        )
+        .then(
+            function(csvText)
+            {
+                const rows =
+                    parseCSV(csvText);
 
-            monthSelect.appendChild(option);
-        }
-    );
+                //
+                // Start with default option
+                //
+                monthSelect.innerHTML =
+                    '<option value="">Select Month</option>';
+
+                //
+                // Build month options
+                //
+                rows.forEach(
+                    function(row)
+                    {
+                        //
+                        // Make sure row has an ID
+                        //
+                        if (!row.id)
+                        {
+                            return;
+                        }
+
+                        //
+                        // Display all language names
+                        //
+                        const displayText =
+                            [
+                                row.english,
+                                row.sanskrit,
+                                row.tamil,
+                                row.telugu,
+                                row.kannada
+                            ]
+                            .filter(
+                                function(value)
+                                {
+                                    return value &&
+                                           value.trim() !== "";
+                                }
+                            )
+                            .join(" / ");
+
+                        //
+                        // Create option
+                        //
+                        const option =
+                            document.createElement("option");
+
+                        //
+                        // Use CSV ID as actual value
+                        //
+                        option.value =
+                            row.id;
+
+                        //
+                        // Display multilingual name
+                        //
+                        option.textContent =
+                            displayText;
+
+                        monthSelect.appendChild(
+                            option
+                        );
+                    }
+                );
+            }
+        )
+        .catch(
+            function(error)
+            {
+                console.error(error);
+
+                monthSelect.innerHTML =
+                    '<option value="">Unable to load Months</option>';
+            }
+        );
 }
 
 

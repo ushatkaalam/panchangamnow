@@ -562,15 +562,7 @@ function showQuery(type)
                     <option value="">
                         Select Nakshatram
                     </option>
-
-                    <select id="nakshatram">
-
-                        <option value="">
-                            Select Nakshatram
-                        </option>
-                    
-                    </select>
-
+                
                 </select>
 
             </div>

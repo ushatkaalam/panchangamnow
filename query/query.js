@@ -2,43 +2,6 @@
 // Panchangam Query Application
 //
 
-//
-// Temporary month lists
-// Later these will come from master files
-//
-
-const sowramanamMonths =
-[
-    "Chaitra",
-    "Vaishakha",
-    "Jyeshtha",
-    "Ashadha",
-    "Shravana",
-    "Bhadrapada",
-    "Ashwin",
-    "Kartika",
-    "Margashirsha",
-    "Pausha",
-    "Magha",
-    "Phalguna"
-];
-
-const chaandramaanamMonths =
-[
-    "Chaitra",
-    "Vaishakha",
-    "Jyeshtha",
-    "Ashadha",
-    "Shravana",
-    "Bhadrapada",
-    "Ashwin",
-    "Kartika",
-    "Margashirsha",
-    "Pausha",
-    "Magha",
-    "Phalguna"
-];
-
 
 //
 // CSV files
@@ -71,7 +34,13 @@ const DROPDOWN_FILES =
         "../thithi_dropdown.csv",
 
     nakshatram:
-        "../nakshatram_dropdown.csv"
+        "../nakshatram_dropdown.csv",
+
+    sowramanam:
+        "../sowramanam_masam_dropdown.csv",
+
+    chaandramaanam:
+        "../chandramanam_masam_dropdown.csv"
 };
 
 //

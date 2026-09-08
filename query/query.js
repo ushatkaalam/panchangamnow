@@ -403,24 +403,43 @@ function showQuery(type)
         // Set up Thithi month selection
         //
         document
-            .getElementById("thithiMonthType")
-            .addEventListener(
-                "change",
-                function()
-                {
-                    populateMonthDropdown(
-                        "thithiMonth",
-                        "thithiMonthType"
-                    );
-                }
+    .getElementById("thithiMonthType")
+    .addEventListener(
+        "change",
+        function()
+        {
+            loadCCYYYears(
+                "thithiMonthType",
+                "thithiYear",
+                "thithiMonth"
             );
+        }
+    );
 
-        loadThithiDropdown();
 
-        populateMonthDropdown(
-            "thithiMonth",
-            "thithiMonthType"
-        );
+document
+    .getElementById("thithiYear")
+    .addEventListener(
+        "change",
+        function()
+        {
+            populateCCYYMonthDropdown(
+                "thithiMonthType",
+                "thithiYear",
+                "thithiMonth"
+            );
+        }
+    );
+
+
+loadThithiDropdown();
+
+
+loadCCYYYears(
+    "thithiMonthType",
+    "thithiYear",
+    "thithiMonth"
+);
     }
 
 
@@ -1370,12 +1389,10 @@ function runQuery(type)
 
 
         const year =
-            document.getElementById(
-                "year"
-            ).value;
+            document.getElementById("thithiYear").value;
 
 
-                const paksham =
+        const paksham =
             document.getElementById(
                 "paksham"
             ).value;
@@ -1389,22 +1406,26 @@ function runQuery(type)
         results.innerHTML =
             "<b>Thithi Query Parameters</b>" +
             "<br><br>" +
-            "Chaandramaanam/Sowramanam: " +
-            "<b>" + monthType + "</b>" +
+            "Chaandramaanam/Sowramanam: <b>" +
+            monthType +
+            "</b>" +
             "<br>" +
-            "Month: " +
-            "<b>" + month + "</b>" +
+            "Year: <b>" +
+            year +
+            "</b>" +
             "<br>" +
-            "Thithi: " +
-            "<b>" + thithi + "</b>" +
+            "Month: <b>" +
+            month +
+            "</b>" +
             "<br>" +
-            "Year: " +
-            "<b>" + year + "</b>" +
+            "Thithi: <b>" +
+            thithi +
+            "</b>" +
             "<br>" +
-            "Paksham: " +
-            "<b>" + paksham + "</b>";
-
-
+            "Paksham: <b>" +
+            paksham +
+            "</b>";
+        
         return;
     }
 

@@ -42,7 +42,20 @@ const DROPDOWN_FILES =
     chaandramaanam:
         "../chandramanam_masam_dropdown.csv"
 };
+const CCYY_FILES =
+{
+    sowramanam:
+        "../sowramanam_ccyy_data.csv",
 
+    chaandramaanam:
+        "../chandramanam_ccyy_data.csv"
+};
+
+const CCYY_DATA =
+{
+    sowramanam: [],
+    chaandramaanam: []
+};
 //
 // Build the month dropdown
 //
@@ -301,117 +314,88 @@ function showQuery(type)
         `
             <h2>Query by Thithi</h2>
 
-            <div class="formRow">
+<div class="formRow">
+    <label for="thithiMonthType">
+        Chaandramaanam/Sowramanam
+    </label>
 
-                <label for="thithiMonthType">
-                    Chaandramaanam/Sowramanam
-                </label>
+    <select id="thithiMonthType">
+        <option value="sowramanam">
+            Sowramanam
+        </option>
 
-                <select id="thithiMonthType">
-
-                    <option value="sowramanam">
-                        Sowramanam
-                    </option>
-
-                    <option value="chaandramaanam">
-                        Chaandramaanam
-                    </option>
-
-                </select>
-
-            </div>
+        <option value="chaandramaanam">
+            Chaandramaanam
+        </option>
+    </select>
+</div>
 
 
-            <div class="formRow">
+<div class="formRow">
+    <label for="thithiYear">
+        Year
+    </label>
 
-                <label for="thithiMonth">
-                    Month
-                </label>
-
-                <select id="thithiMonth">
-
-                    <option value="">
-                        Select Month
-                    </option>
-
-                </select>
-
-            </div>
-            <div class="formRow">
-
-                <label for="thithi">
-                    Thithi
-                </label>
-
-                <select id="thithi">
-
-                    <option value="">
-                        Select Thithi
-                    </option>
-
-                </select>
-
-            </div>
-
-            <div class="formRow">
-
-                <label for="year">
-                    Year
-                </label>
-
-                <select id="year">
-
-                    <option value="">
-                        Select Year
-                    </option>
-
-                    <option value="2025-2026">
-                        2025–2026 — Year Name
-                    </option>
-
-                    <option value="2026-2027">
-                        2026–2027 — Year Name
-                    </option>
-
-                    <option value="2027-2028">
-                        2027–2028 — Year Name
-                    </option>
-
-                </select>
-
-            </div>
+    <select id="thithiYear">
+        <option value="">
+            Select Year
+        </option>
+    </select>
+</div>
 
 
-            <div class="formRow">
+<div class="formRow">
+    <label for="thithiMonth">
+        Month
+    </label>
 
-                <label for="paksham">
-                    Paksham
-                </label>
-
-                <select id="paksham">
-
-                    <option value="">
-                        Select Paksham
-                    </option>
-
-                    <option value="Shukla">
-                        Shukla Paksham
-                    </option>
-
-                    <option value="Krishna">
-                        Krishna Paksham
-                    </option>
-
-                </select>
-
-            </div>
+    <select id="thithiMonth">
+        <option value="">
+            Select Month
+        </option>
+    </select>
+</div>
 
 
-            <button
-                id="runButton"
-                onclick="runQuery('thithi')">
-                Run Query
-            </button>
+<div class="formRow">
+    <label for="thithi">
+        Thithi
+    </label>
+
+    <select id="thithi">
+        <option value="">
+            Select Thithi
+        </option>
+    </select>
+</div>
+
+
+<div class="formRow">
+    <label for="paksham">
+        Paksham
+    </label>
+
+    <select id="paksham">
+        <option value="">
+            Select Paksham
+        </option>
+
+        <option value="Shukla">
+            Shukla Paksham
+        </option>
+
+        <option value="Krishna">
+            Krishna Paksham
+        </option>
+    </select>
+</div>
+
+
+<button
+    id="runButton"
+    onclick="runQuery('thithi')">
+    Run Query
+</button>
         `;
 
 
@@ -677,7 +661,181 @@ function parseCSV(text)
 
     return rows;
 }
+function loadCCYYYears(
+    monthTypeId,
+    yearSelectId,
+    monthSelectId
+)
+{
+    const monthType =
+        document.getElementById(monthTypeId).value;
 
+    const yearSelect =
+        document.getElementById(yearSelectId);
+
+    const monthSelect =
+        document.getElementById(monthSelectId);
+
+    yearSelect.innerHTML =
+        '<option value="">Loading Years...</option>';
+
+    monthSelect.innerHTML =
+        '<option value="">Select Month</option>';
+
+    fetch(CCYY_FILES[monthType])
+        .then(function(response)
+        {
+            if (!response.ok)
+            {
+                throw new Error(
+                    "Unable to load CCYY data"
+                );
+            }
+
+            return response.text();
+        })
+        .then(function(text)
+        {
+            const rows = parseCSV(text);
+
+            CCYY_DATA[monthType] = rows;
+
+            const years = new Map();
+
+            rows.forEach(function(row)
+            {
+                const startCCYY =
+                    (row.start_ccyy || "").trim();
+
+                const endCCYY =
+                    (row.end_ccyy || "").trim();
+
+                const varsham =
+                    (row.Varsham || "").trim();
+
+                if (
+                    !startCCYY ||
+                    !endCCYY ||
+                    !varsham
+                )
+                {
+                    return;
+                }
+
+                if (!years.has(varsham))
+                {
+                    years.set(
+                        varsham,
+                        {
+                            startCCYY: startCCYY,
+                            endCCYY: endCCYY
+                        }
+                    );
+                }
+            });
+
+            yearSelect.innerHTML =
+                '<option value="">Select Year</option>';
+
+            years.forEach(
+                function(yearInfo, varsham)
+                {
+                    const option =
+                        document.createElement("option");
+
+                    option.value =
+                        varsham;
+
+                    option.textContent =
+                        yearInfo.startCCYY +
+                        "-" +
+                        yearInfo.endCCYY +
+                        " - " +
+                        varsham;
+
+                    yearSelect.appendChild(option);
+                }
+            );
+
+            monthSelect.innerHTML =
+                '<option value="">Select Month</option>';
+        })
+        .catch(function(error)
+        {
+            console.error(
+                "Error loading CCYY data:",
+                error
+            );
+
+            yearSelect.innerHTML =
+                '<option value="">Unable to load years</option>';
+
+            monthSelect.innerHTML =
+                '<option value="">Select Month</option>';
+        });
+}
+
+
+function populateCCYYMonthDropdown(
+    monthTypeId,
+    yearSelectId,
+    monthSelectId
+)
+{
+    const monthType =
+        document.getElementById(monthTypeId).value;
+
+    const varsham =
+        document.getElementById(yearSelectId).value;
+
+    const monthSelect =
+        document.getElementById(monthSelectId);
+
+    monthSelect.innerHTML =
+        '<option value="">Select Month</option>';
+
+    if (!varsham)
+    {
+        return;
+    }
+
+    const rows =
+        CCYY_DATA[monthType] || [];
+
+    const months =
+        new Set();
+
+    rows.forEach(function(row)
+    {
+        const rowVarsham =
+            (row.Varsham || "").trim();
+
+        const masam =
+            (row.Masam || "").trim();
+
+        if (
+            rowVarsham === varsham &&
+            masam
+        )
+        {
+            months.add(masam);
+        }
+    });
+
+    months.forEach(function(masam)
+    {
+        const option =
+            document.createElement("option");
+
+        option.value =
+            masam;
+
+        option.textContent =
+            masam;
+
+        monthSelect.appendChild(option);
+    });
+}
 //
 // Load Thithi dropdown from CSV
 //

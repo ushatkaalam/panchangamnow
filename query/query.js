@@ -40,7 +40,10 @@ const DROPDOWN_FILES =
         "../sowramanam_masam_dropdown.csv",
 
     chaandramaanam:
-        "../chandramanam_masam_dropdown.csv"
+        "../chandramanam_masam_dropdown.csv",
+
+    commonYear:
+        "../common_year_desc.csv"
 };
 
 //
@@ -711,57 +714,136 @@ function loadCCYYYears(
     monthSelect.innerHTML =
         '<option value="">Select Month</option>';
 
-    fetch(CCYY_FILES[monthType])
-        .then(function(response)
+    Promise.all(
+        [
+            fetch(CCYY_FILES[monthType]),
+            fetch(DROPDOWN_FILES.commonYear)
+        ]
+    )
+    .then(
+        function(responses)
         {
-            if (!response.ok)
-            {
-                throw new Error(
-                    "Unable to load CCYY data"
-                );
-            }
-
-            return response.text();
-        })
-        .then(function(text)
-        {
-            const rows = parseCSV(text);
-
-            CCYY_DATA[monthType] = rows;
-
-            const years = new Map();
-
-            rows.forEach(function(row)
-            {
-                const startCCYY =
-                    (row.start_ccyy || "").trim();
-
-                const endCCYY =
-                    (row.end_ccyy || "").trim();
-
-                const varsham =
-                    (row.Varsham || "").trim();
-
-                if (
-                    !startCCYY ||
-                    !endCCYY ||
-                    !varsham
-                )
+            responses.forEach(
+                function(response)
                 {
-                    return;
+                    if (!response.ok)
+                    {
+                        throw new Error(
+                            "Unable to load dropdown data: " +
+                            response.url
+                        );
+                    }
                 }
+            );
 
-                if (!years.has(varsham))
+            return Promise.all(
+                responses.map(
+                    function(response)
+                    {
+                        return response.text();
+                    }
+                )
+            );
+        }
+    )
+    .then(
+        function(texts)
+        {
+            const ccyyRows =
+                parseCSV(texts[0]);
+
+            const yearDescRows =
+                parseCSV(texts[1]);
+
+            //
+            // Save CCYY data for Month dropdown
+            //
+            CCYY_DATA[monthType] =
+                ccyyRows;
+
+            //
+            // Build Varsham description lookup
+            //
+            const yearDescriptions =
+                new Map();
+
+            yearDescRows.forEach(
+                function(row)
                 {
-                    years.set(
-                        varsham,
-                        {
-                            startCCYY: startCCYY,
-                            endCCYY: endCCYY
-                        }
+                    const id =
+                        (row.id || "").trim();
+
+                    if (!id)
+                    {
+                        return;
+                    }
+
+                    const displayText =
+                        [
+                            row.english,
+                            row.sanskrit,
+                            row.tamil,
+                            row.telugu,
+                            row.kannada
+                        ]
+                        .filter(
+                            function(value)
+                            {
+                                return value &&
+                                       value.trim() !== "";
+                            }
+                        )
+                        .join(" / ");
+
+                    yearDescriptions.set(
+                        id,
+                        displayText
                     );
                 }
-            });
+            );
+
+            //
+            // Build unique Year list
+            //
+            const years =
+                new Map();
+
+            ccyyRows.forEach(
+                function(row)
+                {
+                    const startCCYY =
+                        (row.start_ccyy || "").trim();
+
+                    const endCCYY =
+                        (row.end_ccyy || "").trim();
+
+                    const varsham =
+                        (row.Varsham || "").trim();
+
+                    if (
+                        !startCCYY ||
+                        !endCCYY ||
+                        !varsham
+                    )
+                    {
+                        return;
+                    }
+
+                    if (!years.has(varsham))
+                    {
+                        years.set(
+                            varsham,
+                            {
+                                startCCYY:
+                                    startCCYY,
+
+                                endCCYY:
+                                    endCCYY
+                            }
+                        );
+                    }
+                }
+            );
 
             yearSelect.innerHTML =
                 '<option value="">Select Year</option>';
@@ -772,24 +854,42 @@ function loadCCYYYears(
                     const option =
                         document.createElement("option");
 
+                    //
+                    // Keep Varsham code as actual value
+                    //
                     option.value =
                         varsham;
 
+                    //
+                    // Get multilingual Varsham description
+                    //
+                    const yearDescription =
+                        yearDescriptions.get(varsham) ||
+                        varsham;
+
+                    //
+                    // Display:
+                    // 2022-2023 - multilingual description
+                    //
                     option.textContent =
                         yearInfo.startCCYY +
                         "-" +
                         yearInfo.endCCYY +
                         " - " +
-                        varsham;
+                        yearDescription;
 
-                    yearSelect.appendChild(option);
+                    yearSelect.appendChild(
+                        option
+                    );
                 }
             );
 
             monthSelect.innerHTML =
                 '<option value="">Select Month</option>';
-        })
-        .catch(function(error)
+        }
+    )
+    .catch(
+        function(error)
         {
             console.error(
                 "Error loading CCYY data:",
@@ -801,9 +901,9 @@ function loadCCYYYears(
 
             monthSelect.innerHTML =
                 '<option value="">Select Month</option>';
-        });
+        }
+    );
 }
-
 
 function populateCCYYMonthDropdown(
     monthTypeId,

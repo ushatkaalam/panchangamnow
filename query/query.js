@@ -42,6 +42,12 @@ const DROPDOWN_FILES =
     chaandramaanam:
         "../chandramanam_masam_dropdown.csv"
 };
+
+//
+// CCYY data files
+// These files are one level above the query folder.
+//
+
 const CCYY_FILES =
 {
     sowramanam:
@@ -680,6 +686,10 @@ function parseCSV(text)
 
     return rows;
 }
+
+//
+// Load CCYY year data
+//
 function loadCCYYYears(
     monthTypeId,
     yearSelectId,

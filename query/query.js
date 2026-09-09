@@ -395,25 +395,7 @@ function showQuery(type)
 </div>
 
 
-<div class="formRow">
-    <label for="paksham">
-        Paksham
-    </label>
 
-    <select id="paksham">
-        <option value="">
-            Select Paksham
-        </option>
-
-        <option value="Shukla">
-            Shukla Paksham
-        </option>
-
-        <option value="Krishna">
-            Krishna Paksham
-        </option>
-    </select>
-</div>
 
 
 <button

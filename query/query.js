@@ -33,6 +33,9 @@ const DROPDOWN_FILES =
     thithi:
         "../thithi_dropdown.csv",
 
+    paksham:
+        "../paksham_dropdown.csv",
+
     nakshatram:
         "../nakshatram_dropdown.csv",
 
@@ -367,6 +370,19 @@ function showQuery(type)
 
 
 <div class="formRow">
+    <label for="paksham">
+        Paksham
+    </label>
+
+    <select id="paksham">
+        <option value="">
+            Select Paksham
+        </option>
+    </select>
+</div>
+
+
+<div class="formRow">
     <label for="thithi">
         Thithi
     </label>
@@ -440,6 +456,8 @@ document
         }
     );
 
+
+loadPakshamDropdown();
 
 loadThithiDropdown();
 
@@ -1083,6 +1101,108 @@ function populateCCYYMonthDropdown(
             }
         );
 }
+//
+// Load Paksham dropdown from CSV
+//
+function loadPakshamDropdown()
+{
+    const pakshamSelect =
+        document.getElementById("paksham");
+
+    if (!pakshamSelect)
+    {
+        return;
+    }
+
+    fetch(DROPDOWN_FILES.paksham)
+        .then(
+            function(response)
+            {
+                if (!response.ok)
+                {
+                    throw new Error(
+                        "Unable to read Paksham dropdown CSV: " +
+                        response.url
+                    );
+                }
+
+                return response.text();
+            }
+        )
+        .then(
+            function(csvText)
+            {
+                const rows =
+                    parseCSV(csvText);
+
+                //
+                // Keep the first option
+                //
+                pakshamSelect.innerHTML =
+                    '<option value="">Select Paksham</option>';
+
+                rows.forEach(
+                    function(row)
+                    {
+                        //
+                        // Make sure the row has an ID
+                        //
+                        if (!row.id)
+                        {
+                            return;
+                        }
+
+                        //
+                        // Concatenate all languages
+                        //
+                        const displayText =
+                            [
+                                row.english,
+                                row.sanskrit,
+                                row.tamil,
+                                row.telugu,
+                                row.kannada
+                            ]
+                            .filter(
+                                function(value)
+                                {
+                                    return value &&
+                                           value.trim() !== "";
+                                }
+                            )
+                            .join(" / ");
+
+                        const option =
+                            document.createElement("option");
+
+                        //
+                        // Actual value used by query
+                        //
+                        option.value =
+                            row.id;
+
+                        //
+                        // Text displayed to user
+                        //
+                        option.textContent =
+                            displayText;
+
+                        pakshamSelect.appendChild(option);
+                    }
+                );
+            }
+        )
+        .catch(
+            function(error)
+            {
+                console.error(error);
+
+                pakshamSelect.innerHTML =
+                    '<option value="">Unable to load Paksham</option>';
+            }
+        );
+}
+
 //
 // Load Thithi dropdown from CSV
 //

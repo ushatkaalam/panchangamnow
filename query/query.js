@@ -928,42 +928,160 @@ function populateCCYYMonthDropdown(
         return;
     }
 
+    //
+    // Get CCYY rows already loaded
+    //
     const rows =
         CCYY_DATA[monthType] || [];
 
-    const months =
-        new Set();
+    //
+    // Get the appropriate Masam description file
+    //
+    const monthDescriptionFile =
+        DROPDOWN_FILES[monthType];
 
-    rows.forEach(function(row)
+    if (!monthDescriptionFile)
     {
-        const rowVarsham =
-            (row.Varsham || "").trim();
+        console.error(
+            "No month description file for:",
+            monthType
+        );
 
-        const masam =
-            (row.Masam || "").trim();
+        return;
+    }
 
-        if (
-            rowVarsham === varsham &&
-            masam
+    //
+    // Read Masam descriptions
+    //
+    fetch(monthDescriptionFile)
+        .then(
+            function(response)
+            {
+                if (!response.ok)
+                {
+                    throw new Error(
+                        "Unable to load month description CSV: " +
+                        response.url
+                    );
+                }
+
+                return response.text();
+            }
         )
-        {
-            months.add(masam);
-        }
-    });
+        .then(
+            function(text)
+            {
+                const monthDescRows =
+                    parseCSV(text);
 
-    months.forEach(function(masam)
-    {
-        const option =
-            document.createElement("option");
+                //
+                // Build Masam description lookup
+                //
+                const monthDescriptions =
+                    new Map();
 
-        option.value =
-            masam;
+                monthDescRows.forEach(
+                    function(row)
+                    {
+                        const id =
+                            (row.id || "").trim();
 
-        option.textContent =
-            masam;
+                        if (!id)
+                        {
+                            return;
+                        }
 
-        monthSelect.appendChild(option);
-    });
+                        const displayText =
+                            [
+                                row.english,
+                                row.sanskrit,
+                                row.tamil,
+                                row.telugu,
+                                row.kannada
+                            ]
+                            .filter(
+                                function(value)
+                                {
+                                    return value &&
+                                           value.trim() !== "";
+                                }
+                            )
+                            .join(" / ");
+
+                        monthDescriptions.set(
+                            id,
+                            displayText
+                        );
+                    }
+                );
+
+                //
+                // Build unique Masam list
+                // for the selected Varsham
+                //
+                const months =
+                    new Set();
+
+                rows.forEach(
+                    function(row)
+                    {
+                        const rowVarsham =
+                            (row.Varsham || "").trim();
+
+                        const masam =
+                            (row.Masam || "").trim();
+
+                        if (
+                            rowVarsham === varsham &&
+                            masam
+                        )
+                        {
+                            months.add(masam);
+                        }
+                    }
+                );
+
+                //
+                // Build Month dropdown
+                //
+                months.forEach(
+                    function(masam)
+                    {
+                        const option =
+                            document.createElement("option");
+
+                        //
+                        // Keep Masam code as actual value
+                        //
+                        option.value =
+                            masam;
+
+                        //
+                        // Display multilingual Masam description
+                        //
+                        option.textContent =
+                            monthDescriptions.get(masam) ||
+                            masam;
+
+                        monthSelect.appendChild(
+                            option
+                        );
+                    }
+                );
+            }
+        )
+        .catch(
+            function(error)
+            {
+                console.error(
+                    "Error loading month descriptions:",
+                    error
+                );
+
+                monthSelect.innerHTML =
+                    '<option value="">Unable to load Months</option>';
+            }
+        );
 }
 //
 // Load Thithi dropdown from CSV

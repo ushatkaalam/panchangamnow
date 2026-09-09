@@ -1597,65 +1597,209 @@ function runQuery(type)
         document.getElementById(
             "resultsContent"
         );
+//
+// Thithi query
+//
+if (type === "thithi")
+{
+    const monthType =
+        document.getElementById(
+            "thithiMonthType"
+        ).value;
+
+    const month =
+        document.getElementById(
+            "thithiMonth"
+        ).value;
+
+    const year =
+        document.getElementById(
+            "thithiYear"
+        ).value;
+
+    const paksham =
+        document.getElementById(
+            "paksham"
+        ).value;
+
+    const thithi =
+        document.getElementById(
+            "thithi"
+        ).value;
 
 
     //
-    // Existing temporary Thithi query
+    // Make sure all selections were made
     //
-    if (type === "thithi")
+    if (
+        !monthType ||
+        !year ||
+        !month ||
+        !paksham ||
+        !thithi
+    )
     {
-        const monthType =
-            document.getElementById(
-                "thithiMonthType"
-            ).value;
-
-
-        const month =
-            document.getElementById(
-                "thithiMonth"
-            ).value;
-
-
-        const year =
-            document.getElementById("thithiYear").value;
-
-
-        const paksham =
-            document.getElementById(
-                "paksham"
-            ).value;
-
-        const thithi =
-            document.getElementById(
-                "thithi"
-            ).value;
-
-
         results.innerHTML =
-            "<b>Thithi Query Parameters</b>" +
-            "<br><br>" +
-            "Chaandramaanam/Sowramanam: <b>" +
-            monthType +
-            "</b>" +
-            "<br>" +
-            "Year: <b>" +
-            year +
-            "</b>" +
-            "<br>" +
-            "Month: <b>" +
-            month +
-            "</b>" +
-            "<br>" +
-            "Thithi: <b>" +
-            thithi +
-            "</b>" +
-            "<br>" +
-            "Paksham: <b>" +
-            paksham +
-            "</b>";
-        
+            "<b>Please select all Thithi query options.</b>";
+
         return;
     }
+
+
+    //
+    // For this first version, lookup is
+    // only for Chaandramaanam.
+    //
+    if (monthType !== "chaandramaanam")
+    {
+        results.innerHTML =
+            "<b>Chaandramaanam Thithi lookup only.</b>";
+
+        return;
+    }
+
+
+    //
+    // Show loading message
+    //
+    results.innerHTML =
+        "<b>Reading Thithi data...</b>";
+
+
+    //
+    // Read Thithi CSV
+    //
+    fetch(DATA_FILES.thithi)
+        .then(
+            function(response)
+            {
+                if (!response.ok)
+                {
+                    throw new Error(
+                        "Unable to read Thithi CSV: " +
+                        response.url
+                    );
+                }
+
+                return response.text();
+            }
+        )
+        .then(
+            function(csvText)
+            {
+                const rows =
+                    parseCSV(csvText);
+
+
+                //
+                // Find matching Thithi rows
+                //
+                const matchingRows =
+                    rows.filter(
+                        function(row)
+                        {
+                            return (
+                                (row.othithi_varsham || "").trim() ===
+                                    year &&
+
+                                (row.othithi_masam || "").trim() ===
+                                    month &&
+
+                                (row.othithi_paksham || "").trim() ===
+                                    paksham &&
+
+                                (row.othithi_thithi || "").trim() ===
+                                    thithi
+                            );
+                        }
+                    );
+
+
+                //
+                // Build table rows
+                //
+                const resultRows =
+                    matchingRows.map(
+                        function(row)
+                        {
+                            const startDate =
+                                csvUTCDate(
+                                    row.othithi_start_date,
+                                    row.othithi_start_hour,
+                                    row.othithi_start_mins
+                                );
+
+                            const endDate =
+                                csvUTCDate(
+                                    row.othithi_end_date,
+                                    row.othithi_end_hour,
+                                    row.othithi_end_mins
+                                );
+
+
+                            //
+                            // Skip invalid dates
+                            //
+                            if (
+                                !startDate ||
+                                !endDate
+                            )
+                            {
+                                return null;
+                            }
+
+
+                            return [
+                                row.othithi_paksham,
+                                row.othithi_thithi,
+                                formatUserDateTime(startDate),
+                                formatUserDateTime(endDate)
+                            ];
+                        }
+                    )
+                    .filter(
+                        function(row)
+                        {
+                            return row !== null;
+                        }
+                    );
+
+
+                //
+                // Display only Thithi information
+                //
+                results.innerHTML =
+                    "<p>" +
+                    "<b>Chaandramaanam Thithi Query</b>" +
+                    "</p>" +
+
+                    createResultTable(
+                        "Thithi",
+                        [
+                            "Paksham",
+                            "Thithi",
+                            "Started At",
+                            "Ends At"
+                        ],
+                        resultRows
+                    );
+            }
+        )
+        .catch(
+            function(error)
+            {
+                console.error(error);
+
+                results.innerHTML =
+                    "<b>Error reading Thithi data.</b>" +
+                    "<br><br>" +
+                    error.message;
+            }
+        );
+
+
+    return;
+}
 
 
 

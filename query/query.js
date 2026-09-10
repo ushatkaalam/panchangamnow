@@ -1752,13 +1752,7 @@ if (type === "thithi")
     // For this first version, lookup is
     // only for Chaandramaanam.
     //
-    if (monthType !== "chaandramaanam")
-    {
-        results.innerHTML =
-            "<b>Chaandramaanam Thithi lookup only.</b>";
-
-        return;
-    }
+    
 
 
     //

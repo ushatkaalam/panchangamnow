@@ -2139,7 +2139,7 @@ const thithiText =
             "</tr>" +
         
             "<tr>" +
-            "<td>Month System</td>" +
+            "<td>Year System</td>" +
             "<td>" +
             monthTypeText +
             "</td>" +

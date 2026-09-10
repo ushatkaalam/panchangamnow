@@ -1774,8 +1774,7 @@ if (type === "thithi")
 
 
     //
-    // For this first version, lookup is
-    // only for Chaandramaanam.
+    // Thithi lookup is for both Chaandramaanam and sowramanam.
     //
     
 

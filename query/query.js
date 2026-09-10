@@ -1796,25 +1796,222 @@ if (type === "thithi")
                 //
                 // Find matching Thithi rows
                 //
-                const matchingRows =
-                    rows.filter(
-                        function(row)
-                        {
-                            return (
-                                (row.othithi_varsham || "").trim() ===
-                                    year &&
+                let matchingRows = [];
 
-                                (row.othithi_masam || "").trim() ===
-                                    month &&
+//
+// Chaandramaanam lookup
+//
+if (monthType === "chaandramaanam")
+{
+    matchingRows =
+        rows.filter(
+            function(row)
+            {
+                return (
+                    (row.othithi_varsham || "").trim() ===
+                        year &&
 
-                                (row.othithi_paksham || "").trim() ===
-                                    paksham &&
+                    (row.othithi_masam || "").trim() ===
+                        month &&
 
-                                (row.othithi_thithi || "").trim() ===
-                                    thithi
-                            );
-                        }
+                    (row.othithi_paksham || "").trim() ===
+                        paksham &&
+
+                    (row.othithi_thithi || "").trim() ===
+                        thithi
+                );
+            }
+        );
+}
+
+//
+// Sowramanam lookup
+//
+else if (monthType === "sowramanam")
+{
+    //
+    // Find the selected Sowramanam month
+    //
+    const sowraRows =
+        CCYY_DATA.sowramanam.filter(
+            function(row)
+            {
+                return (
+                    (row.Varsham || "").trim() ===
+                        year &&
+
+                    (row.Masam || "").trim() ===
+                        month
+                );
+            }
+        );
+
+    if (sowraRows.length === 0)
+    {
+        results.innerHTML =
+            "<b>Unable to find Sowramanam month.</b>";
+
+        return;
+    }
+
+    const sowraRow =
+        sowraRows[0];
+
+    //
+    // Build Sowramanam start/end UTC dates
+    //
+    const sowraStart =
+        new Date(
+            Date.UTC(
+                Number(
+                    sowraRow["Start date"]
+                        .toString()
+                        .substring(0, 4)
+                ),
+                Number(
+                    sowraRow["Start date"]
+                        .toString()
+                        .substring(4, 6)
+                ) - 1,
+                Number(
+                    sowraRow["Start date"]
+                        .toString()
+                        .substring(6, 8)
+                ),
+                Number(sowraRow["Start hours"]),
+                Number(sowraRow["Start mins"])
+            )
+        );
+
+    const sowraEnd =
+        new Date(
+            Date.UTC(
+                Number(
+                    sowraRow["End date"]
+                        .toString()
+                        .substring(0, 4)
+                ),
+                Number(
+                    sowraRow["End date"]
+                        .toString()
+                        .substring(4, 6)
+                ) - 1,
+                Number(
+                    sowraRow["End date"]
+                        .toString()
+                        .substring(6, 8)
+                ),
+                Number(sowraRow["End hours"]),
+                Number(sowraRow["End mins"])
+            )
+        );
+
+    //
+    // Find Thithis overlapping the
+    // selected Sowramanam month.
+    //
+    matchingRows =
+        rows.filter(
+            function(row)
+            {
+                //
+                // First match Paksham and Thithi
+                //
+                if (
+                    (row.othithi_paksham || "").trim() !==
+                        paksham ||
+
+                    (row.othithi_thithi || "").trim() !==
+                        thithi
+                )
+                {
+                    return false;
+                }
+
+                //
+                // Build Thithi start UTC date
+                //
+                const startDate =
+                    row.othithi_start_date
+                        .toString();
+
+                const startYear =
+                    Number(
+                        startDate.substring(0, 4)
                     );
+
+                const startMonth =
+                    Number(
+                        startDate.substring(4, 6)
+                    ) - 1;
+
+                const startDay =
+                    Number(
+                        startDate.substring(6, 8)
+                    );
+
+                const thithiStart =
+                    new Date(
+                        Date.UTC(
+                            startYear,
+                            startMonth,
+                            startDay,
+                            Number(
+                                row.othithi_start_hour
+                            ),
+                            Number(
+                                row.othithi_start_mins
+                            )
+                        )
+                    );
+
+                //
+                // Build Thithi end UTC date
+                //
+                const endDate =
+                    row.othithi_end_date
+                        .toString();
+
+                const endYear =
+                    Number(
+                        endDate.substring(0, 4)
+                    );
+
+                const endMonth =
+                    Number(
+                        endDate.substring(4, 6)
+                    ) - 1;
+
+                const endDay =
+                    Number(
+                        endDate.substring(6, 8)
+                    );
+
+                const thithiEnd =
+                    new Date(
+                        Date.UTC(
+                            endYear,
+                            endMonth,
+                            endDay,
+                            Number(
+                                row.othithi_end_hour
+                            ),
+                            Number(
+                                row.othithi_end_mins
+                            )
+                        )
+                    );
+
+                //
+                // Interval overlap
+                //
+                return (
+                    thithiStart < sowraEnd &&
+                    thithiEnd > sowraStart
+                );
+            }
+        );
+}
 
 
                 //

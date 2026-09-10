@@ -1689,7 +1689,32 @@ function createResultTable(
 }
 
 
+//
+// Get the text currently displayed
+// for a selected dropdown option.
+//
+function getSelectedOptionText(selectId)
+{
+    const select =
+        document.getElementById(selectId);
 
+    if (!select)
+    {
+        return "";
+    }
+
+    const option =
+        select.options[
+            select.selectedIndex
+        ];
+
+    if (!option)
+    {
+        return "";
+    }
+
+    return option.textContent.trim();
+}
 //
 // Run selected query
 //
@@ -2061,25 +2086,106 @@ else if (monthType === "sowramanam")
                 //
                 // Display only Thithi information
                 //
-                results.innerHTML =
-                    "<p>" +
-                    "<b>" +
-                    (monthType === "sowramanam"
-                        ? "Sowramanam"
-                        : "Chaandramaanam") +
-                    " Thithi Query</b>" +
-                    "</p>" +
+                //
+// Get the descriptions displayed
+// in the selected dropdowns.
+//
+const monthTypeText =
+    getSelectedOptionText(
+        "thithiMonthType"
+    );
 
-                    createResultTable(
-                        "Thithi",
-                        [
-                            "Paksham",
-                            "Thithi",
-                            "Started At",
-                            "Ends At"
-                        ],
-                        resultRows
-                    );
+const yearText =
+    getSelectedOptionText(
+        "thithiYear"
+    );
+
+const monthText =
+    getSelectedOptionText(
+        "thithiMonth"
+    );
+
+const pakshamText =
+    getSelectedOptionText(
+        "paksham"
+    );
+
+const thithiText =
+    getSelectedOptionText(
+        "thithi"
+    );
+
+
+//
+// Display query parameters
+// followed by the results.
+//
+        results.innerHTML =
+            "<p>" +
+            "<b>" +
+            (monthType === "sowramanam"
+                ? "Sowramanam"
+                : "Chaandramaanam") +
+            " Thithi Query" +
+            "</b>" +
+            "</p>" +
+        
+            "<h3>Query Parameters</h3>" +
+        
+            "<table class='queryResultTable'>" +
+        
+            "<tr>" +
+            "<th>Parameter</th>" +
+            "<th>Selected</th>" +
+            "</tr>" +
+        
+            "<tr>" +
+            "<td>Month System</td>" +
+            "<td>" +
+            monthTypeText +
+            "</td>" +
+            "</tr>" +
+        
+            "<tr>" +
+            "<td>Year</td>" +
+            "<td>" +
+            yearText +
+            "</td>" +
+            "</tr>" +
+        
+            "<tr>" +
+            "<td>Month</td>" +
+            "<td>" +
+            monthText +
+            "</td>" +
+            "</tr>" +
+        
+            "<tr>" +
+            "<td>Paksham</td>" +
+            "<td>" +
+            pakshamText +
+            "</td>" +
+            "</tr>" +
+        
+            "<tr>" +
+            "<td>Thithi</td>" +
+            "<td>" +
+            thithiText +
+            "</td>" +
+            "</tr>" +
+        
+            "</table>" +
+        
+            createResultTable(
+                "Thithi",
+                [
+                    "Paksham",
+                    "Thithi",
+                    "Started At",
+                    "Ends At"
+                ],
+                resultRows
+            );
             }
         )
         .catch(

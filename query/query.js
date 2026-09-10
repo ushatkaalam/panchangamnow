@@ -2063,7 +2063,11 @@ else if (monthType === "sowramanam")
                 //
                 results.innerHTML =
                     "<p>" +
-                    "<b>Chaandramaanam Thithi Query</b>" +
+                    "<b>" +
+                    (monthType === "sowramanam"
+                        ? "Sowramanam"
+                        : "Chaandramaanam") +
+                    " Thithi Query</b>" +
                     "</p>" +
 
                     createResultTable(

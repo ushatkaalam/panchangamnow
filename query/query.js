@@ -474,21 +474,6 @@ loadCCYYYears(
     "thithiMonth"
 );
 
-document
-    .getElementById("thithiYear")
-    .addEventListener(
-        "change",
-        function()
-        {
-            populateCCYYMonthDropdown(
-                "thithiMonthType",
-                "thithiYear",
-                "thithiMonth"
-            );
-        }
-    );
-    }
-
 
     //
     // Create Calendar Date form

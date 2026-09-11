@@ -420,6 +420,29 @@ function showQuery(type)
                 "thithiYear",
                 "thithiMonth"
             );
+                    //
+        // Reset Run Query button when a parameter changes
+        //
+        [
+            "thithiMonthType",
+            "thithiYear",
+            "thithiMonth",
+            "paksham",
+            "thithi"
+        ].forEach(
+            function(selectId)
+            {
+                document
+                    .getElementById(selectId)
+                    .addEventListener(
+                        "change",
+                        function()
+                        {
+                            setThithiQueryButton(true);
+                        }
+                    );
+            }
+        );
         }
     );
 
@@ -1715,6 +1738,32 @@ function getSelectedOptionText(selectId)
 
     return option.textContent.trim();
 }
+
+//
+// Set the Thithi query button state.
+//
+function setThithiQueryButton(needsQuery)
+{
+    const button =
+        document.getElementById("runButton");
+
+    if (!button)
+    {
+        return;
+    }
+
+    if (needsQuery)
+    {
+        button.textContent = "Run Query";
+        button.disabled = false;
+    }
+    else
+    {
+        button.textContent = "See Results Below";
+        button.disabled = true;
+    }
+}
+
 //
 // Run selected query
 //
@@ -2185,6 +2234,7 @@ const thithiText =
                 ],
                 resultRows
             );
+                setThithiQueryButton(false);
             }
         )
         .catch(

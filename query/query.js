@@ -472,7 +472,7 @@ loadCCYYYears(
     "thithiMonth"
 );
 
-
+    }
     //
     // Create Calendar Date form
     //

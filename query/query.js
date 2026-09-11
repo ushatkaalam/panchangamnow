@@ -409,7 +409,7 @@ function showQuery(type)
 //
 // Set up Thithi month selection
 //
-        document
+document
     .getElementById("thithiMonthType")
     .addEventListener(
         "change",
@@ -420,32 +420,59 @@ function showQuery(type)
                 "thithiYear",
                 "thithiMonth"
             );
-             }
-        );
-        //
-        // Reset Run Query button when a parameter changes
-        //
-        [
-            "thithiMonthType",
-            "thithiYear",
-            "thithiMonth",
-            "paksham",
-            "thithi"
-        ].forEach(
-            function(selectId)
-            {
-                document
-                    .getElementById(selectId)
-                    .addEventListener(
-                        "change",
-                        function()
-                        {
-                            setThithiQueryButton(true);
-                        }
-                    );
         }
     );
 
+//
+// Reset Run Query button when a parameter changes
+//
+[
+    "thithiMonthType",
+    "thithiYear",
+    "thithiMonth",
+    "paksham",
+    "thithi"
+].forEach(
+    function(selectId)
+    {
+        document
+            .getElementById(selectId)
+            .addEventListener(
+                "change",
+                function()
+                {
+                    setThithiQueryButton(true);
+                }
+            );
+    }
+);
+
+
+document
+    .getElementById("thithiYear")
+    .addEventListener(
+        "change",
+        function()
+        {
+            populateCCYYMonthDropdown(
+                "thithiMonthType",
+                "thithiYear",
+                "thithiMonth"
+            );
+        }
+    );
+
+
+loadPakshamDropdown();
+
+loadThithiDropdown();
+
+
+loadCCYYYears(
+    "thithiMonthType",
+    "thithiYear",
+    "thithiMonth"
+);
 
 document
     .getElementById("thithiYear")

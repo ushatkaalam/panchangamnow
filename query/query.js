@@ -487,18 +487,6 @@ document
             );
         }
     );
-
-
-loadPakshamDropdown();
-
-loadThithiDropdown();
-
-
-loadCCYYYears(
-    "thithiMonthType",
-    "thithiYear",
-    "thithiMonth"
-);
     }
 
 

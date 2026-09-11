@@ -68,9 +68,7 @@ const CCYY_DATA =
     sowramanam: [],
     chaandramaanam: []
 };
-//
-// Build the month dropdown
-//
+
 //
 // Load and build the month dropdown
 // from the appropriate CSV file

@@ -406,9 +406,9 @@ function showQuery(type)
         `;
 
 
-                //
-        // Set up Thithi month selection
-        //
+//
+// Set up Thithi month selection
+//
         document
     .getElementById("thithiMonthType")
     .addEventListener(
@@ -420,7 +420,9 @@ function showQuery(type)
                 "thithiYear",
                 "thithiMonth"
             );
-                    //
+             }
+        );
+        //
         // Reset Run Query button when a parameter changes
         //
         [
@@ -441,8 +443,6 @@ function showQuery(type)
                             setThithiQueryButton(true);
                         }
                     );
-            }
-        );
         }
     );
 

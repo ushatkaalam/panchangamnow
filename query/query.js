@@ -2478,129 +2478,56 @@ const thithiText =
         return;
     }
 
+
+
     //
-    // Nakshatram query
+    // Existing temporary Nakshatram query
     //
-if (type === "nakshatram")
-{
-const monthType =
-document.getElementById(
-"nakshatramMonthType"
-).value;
+    if (type === "nakshatram")
+    {
+        const monthType =
+            document.getElementById(
+                "nakshatramMonthType"
+            ).value;
 
 
-const year =
-    document.getElementById(
-        "nakshatramYear"
-    ).value;
-
-const month =
-    document.getElementById(
-        "nakshatramMonth"
-    ).value;
-
-const nakshatram =
-    document.getElementById(
-        "nakshatram"
-    ).value;
+        const month =
+            document.getElementById(
+                "nakshatramMonth"
+            ).value;
 
 
-//
-// Make sure all selections were made
-//
-if (
-    !monthType ||
-    !year ||
-    !month ||
-    !nakshatram
-)
-{
-    results.innerHTML =
-        "<b>Please select all Nakshatram query options.</b>";
+        const year =
+            document.getElementById(
+                "nakshatramYear"
+            ).value;
 
-    return;
+
+        const nakshatram =
+            document.getElementById(
+                "nakshatram"
+            ).value;
+
+
+        results.innerHTML =
+            "<b>Nakshatram Parameters</b>" +
+            "<br><br>" +
+            "Chaandramaanam/Sowramanam: " +
+            "<b>" + monthType + "</b>" +
+            "<br>" +
+            "Month: " +
+            "<b>" + month + "</b>" +
+            "<br>" +
+            "Year: " +
+            "<b>" + year + "</b>" +
+            "<br>" +
+            "Nakshatram: " +
+            "<b>" + nakshatram + "</b>";
+
+
+        return;
+    }
 }
-
-
-//
-// Get the descriptions displayed
-// in the selected dropdowns.
-//
-const monthTypeText =
-    getSelectedOptionText(
-        "nakshatramMonthType"
-    );
-
-const yearText =
-    getSelectedOptionText(
-        "nakshatramYear"
-    );
-
-const monthText =
-    getSelectedOptionText(
-        "nakshatramMonth"
-    );
-
-const nakshatramText =
-    getSelectedOptionText(
-        "nakshatram"
-    );
-
-
-//
-// Display query parameters.
-//
-results.innerHTML =
-    "<p>" +
-    "<b>" +
-    "Nakshatram Query" +
-    "</b>" +
-    "</p>" +
-
-    "<h3>Query Parameters</h3>" +
-
-    "<table class='queryResultTable'>" +
-
-    "<tr>" +
-    "<th>Parameter</th>" +
-    "<th>Selected</th>" +
-    "</tr>" +
-
-    "<tr>" +
-    "<td>Year System</td>" +
-    "<td>" +
-    monthTypeText +
-    "</td>" +
-    "</tr>" +
-
-    "<tr>" +
-    "<td>Year</td>" +
-    "<td>" +
-    yearText +
-    "</td>" +
-    "</tr>" +
-
-    "<tr>" +
-    "<td>Month</td>" +
-    "<td>" +
-    monthText +
-    "</td>" +
-    "</tr>" +
-
-    "<tr>" +
-    "<td>Nakshatram</td>" +
-    "<td>" +
-    nakshatramText +
-    "</td>" +
-    "</tr>" +
-
-    "</table>";
-
-
-return;
-
-}
-
 
 
 

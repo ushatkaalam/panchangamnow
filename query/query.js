@@ -597,12 +597,10 @@ loadCCYYYears(
         `;
 
 
+        
         //
-        // Set up Nakshatram month selection
+        // Month system changed
         //
-       //
-// Month system changed
-//
 document
     .getElementById("nakshatramMonthType")
     .addEventListener(

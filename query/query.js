@@ -2484,121 +2484,232 @@ const thithiText =
     //
 if (type === "nakshatram")
 {
-const monthType =
-document.getElementById(
-"nakshatramMonthType"
-).value;
+    const monthType =
+        document.getElementById("nakshatramMonthType").value;
 
-const year =
-    document.getElementById(
-        "nakshatramYear"
-    ).value;
+    const year =
+        document.getElementById("nakshatramYear").value;
 
-const month =
-    document.getElementById(
-        "nakshatramMonth"
-    ).value;
+    const month =
+        document.getElementById("nakshatramMonth").value;
 
-const nakshatram =
-    document.getElementById(
-        "nakshatram"
-    ).value;
+    const nakshatram =
+        document.getElementById("nakshatram").value;
 
+    if (!monthType || !year || !month || !nakshatram)
+    {
+        results.innerHTML =
+            "<b>Please select all Nakshatram query options.</b>";
+        return;
+    }
 
-//
-// Make sure all selections were made
-//
-if (
-    !monthType ||
-    !year ||
-    !month ||
-    !nakshatram
-)
-{
+    const monthTypeText =
+        getSelectedOptionText("nakshatramMonthType");
+
+    const yearText =
+        getSelectedOptionText("nakshatramYear");
+
+    const monthText =
+        getSelectedOptionText("nakshatramMonth");
+
+    const nakshatramText =
+        getSelectedOptionText("nakshatram");
+
+    //
+    // Find the selected month in the appropriate CCYY data.
+    //
+    const ccyyRows = CCYY_DATA[monthType] || [];
+
+    const ccyyRow = ccyyRows.find(function(row)
+    {
+        return (
+            (row.Varsham || "").trim() === year &&
+            (row.Masam || "").trim() === month
+        );
+    });
+
+    if (!ccyyRow)
+    {
+        results.innerHTML =
+            "<b>Unable to find the selected Nakshatram month.</b>";
+        return;
+    }
+
+    //
+    // Get the exact start and end of the selected month.
+    //
+    const monthStart =
+        csvUTCDate(
+            ccyyRow["Start date"],
+            ccyyRow["Start hours"],
+            ccyyRow["Start mins"]
+        );
+
+    const monthEnd =
+        csvUTCDate(
+            ccyyRow["End date"],
+            ccyyRow["End hours"],
+            ccyyRow["End mins"]
+        );
+
+    if (!monthStart || !monthEnd)
+    {
+        results.innerHTML =
+            "<b>Unable to determine the selected month dates.</b>";
+        return;
+    }
+
     results.innerHTML =
-        "<b>Please select all Nakshatram query options.</b>";
+        "<b>Reading Nakshatram data...</b>";
+
+    //
+    // Read Nakshatram data.
+    //
+    fetch(DATA_FILES.nakshatram)
+        .then(function(response)
+        {
+            if (!response.ok)
+            {
+                throw new Error("Unable to load Nakshatram data.");
+            }
+
+            return response.text();
+        })
+
+        .then(function(csvText)
+        {
+            const rows = parseCSV(csvText);
+
+            //
+            // Select the requested Nakshatram and find all
+            // records overlapping the selected CCYY month.
+            //
+            const matchingRows = rows.filter(function(row)
+            {
+                if (
+                    (row.onakshatram_nakshatram || "").trim()
+                    !== nakshatram
+                )
+                {
+                    return false;
+                }
+
+                const startDate =
+                    csvUTCDate(
+                        row.onakshatram_start_date,
+                        row.onakshatram_start_hour,
+                        row.onakshatram_start_mins
+                    );
+
+                const endDate =
+                    csvUTCDate(
+                        row.onakshatram_end_date,
+                        row.onakshatram_end_hour,
+                        row.onakshatram_end_mins
+                    );
+
+                if (!startDate || !endDate)
+                {
+                    return false;
+                }
+
+                //
+                // Include records that overlap the month.
+                // Exact endpoint touching is excluded.
+                //
+                return (
+                    startDate < monthEnd &&
+                    endDate > monthStart
+                );
+            });
+
+            //
+            // Build result rows.
+            //
+            const resultRows = matchingRows.map(function(row)
+            {
+                const startDate =
+                    csvUTCDate(
+                        row.onakshatram_start_date,
+                        row.onakshatram_start_hour,
+                        row.onakshatram_start_mins
+                    );
+
+                const endDate =
+                    csvUTCDate(
+                        row.onakshatram_end_date,
+                        row.onakshatram_end_hour,
+                        row.onakshatram_end_mins
+                    );
+
+                return [
+                    row.onakshatram_nakshatram,
+                    formatUserDateTime(startDate),
+                    formatUserDateTime(endDate)
+                ];
+            });
+
+            //
+            // Display query parameters and results.
+            //
+            let html =
+                "<p><b>" +
+                monthTypeText +
+                " Nakshatram Query</b></p>" +
+
+                "<h3>Query Parameters</h3>" +
+
+                "<table class='queryResultTable'>" +
+
+                "<tr>" +
+                "<th>Parameter</th>" +
+                "<th>Selected</th>" +
+                "</tr>" +
+
+                "<tr>" +
+                "<td>Year System</td>" +
+                "<td>" + monthTypeText + "</td>" +
+                "</tr>" +
+
+                "<tr>" +
+                "<td>Year</td>" +
+                "<td>" + yearText + "</td>" +
+                "</tr>" +
+
+                "<tr>" +
+                "<td>Month</td>" +
+                "<td>" + monthText + "</td>" +
+                "</tr>" +
+
+                "<tr>" +
+                "<td>Nakshatram</td>" +
+                "<td>" + nakshatramText + "</td>" +
+                "</tr>" +
+
+                "</table>";
+
+            html += createResultTable(
+                "Nakshatram Results",
+                [
+                    "Nakshatram",
+                    "Started At",
+                    "Ends At"
+                ],
+                resultRows
+            );
+
+            results.innerHTML = html;
+        })
+
+        .catch(function(error)
+        {
+            console.error(error);
+
+            results.innerHTML =
+                "<b>Unable to load Nakshatram data.</b>";
+        });
 
     return;
-}
-
-
-//
-// Get the descriptions displayed
-// in the selected dropdowns.
-//
-const monthTypeText =
-    getSelectedOptionText(
-        "nakshatramMonthType"
-    );
-
-const yearText =
-    getSelectedOptionText(
-        "nakshatramYear"
-    );
-
-const monthText =
-    getSelectedOptionText(
-        "nakshatramMonth"
-    );
-
-const nakshatramText =
-    getSelectedOptionText(
-        "nakshatram"
-    );
-
-
-//
-// Display query parameters.
-//
-results.innerHTML =
-    "<p>" +
-    "<b>" +
-    "Nakshatram Query test" +
-    "</b>" +
-    "</p>" +
-
-    "<h3>Query Parameters</h3>" +
-
-    "<table class='queryResultTable'>" +
-
-    "<tr>" +
-    "<th>Parameter</th>" +
-    "<th>Selected</th>" +
-    "</tr>" +
-
-    "<tr>" +
-    "<td>Year System</td>" +
-    "<td>" +
-    monthTypeText +
-    "</td>" +
-    "</tr>" +
-
-    "<tr>" +
-    "<td>Year</td>" +
-    "<td>" +
-    yearText +
-    "</td>" +
-    "</tr>" +
-
-    "<tr>" +
-    "<td>Month</td>" +
-    "<td>" +
-    monthText +
-    "</td>" +
-    "</tr>" +
-
-    "<tr>" +
-    "<td>Nakshatram</td>" +
-    "<td>" +
-    nakshatramText +
-    "</td>" +
-    "</tr>" +
-
-    "</table>";
-
-
-return;
-
 }
 }
 

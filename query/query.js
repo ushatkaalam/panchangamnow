@@ -566,19 +566,7 @@ loadCCYYYears(
                     <option value="">
                         Select Year
                     </option>
-
-                    <option value="2025-2026">
-                        2025–2026 — Year Name
-                    </option>
-
-                    <option value="2026-2027">
-                        2026–2027 — Year Name
-                    </option>
-
-                    <option value="2027-2028">
-                        2027–2028 — Year Name
-                    </option>
-
+                    
                 </select>
 
             </div>
@@ -630,10 +618,7 @@ loadCCYYYears(
         //
         loadNakshatramDropdown();
         
-        populateMonthDropdown(
-            "nakshatramMonth",
-            "nakshatramMonthType"
-        );
+        
     }
 
 

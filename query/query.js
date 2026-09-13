@@ -537,7 +537,21 @@ loadCCYYYears(
 
             </div>
 
+            <div class="formRow">
 
+                <label for="nakshatramYear">
+                    Year
+                </label>
+
+                <select id="nakshatramYear">
+
+                    <option value="">
+                        Select Year
+                    </option>
+                    
+                </select>
+
+            </div>
             <div class="formRow">
 
                 <label for="nakshatramMonth">
@@ -555,21 +569,7 @@ loadCCYYYears(
             </div>
 
 
-            <div class="formRow">
-
-                <label for="nakshatramYear">
-                    Year
-                </label>
-
-                <select id="nakshatramYear">
-
-                    <option value="">
-                        Select Year
-                    </option>
-                    
-                </select>
-
-            </div>
+            
 
 
             <div class="formRow">
@@ -600,24 +600,49 @@ loadCCYYYears(
         //
         // Set up Nakshatram month selection
         //
-        document
-            .getElementById("nakshatramMonthType")
-            .addEventListener(
-                "change",
-                function()
-                {
-                    populateMonthDropdown(
-                        "nakshatramMonth",
-                        "nakshatramMonthType"
-                    );
-                }
+       //
+// Month system changed
+//
+document
+    .getElementById("nakshatramMonthType")
+    .addEventListener(
+        "change",
+        function()
+        {
+            loadCCYYYears(
+                "nakshatramMonthType",
+                "nakshatramYear",
+                "nakshatramMonth"
             );
+        }
+    );
+
+//
+// Year changed
+//
+document
+    .getElementById("nakshatramYear")
+    .addEventListener(
+        "change",
+        function()
+        {
+            populateCCYYMonthDropdown(
+                "nakshatramMonthType",
+                "nakshatramYear",
+                "nakshatramMonth"
+            );
+        }
+    );
         
         //
         // Load Nakshatram dropdown
         //
         loadNakshatramDropdown();
-        
+        loadCCYYYears(
+            "nakshatramMonthType",
+            "nakshatramYear",
+            "nakshatramMonth"
+        );
         
     }
 

@@ -2598,7 +2598,6 @@ results.innerHTML =
 
 
 return;
-```
 
 }
 

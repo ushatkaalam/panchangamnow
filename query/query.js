@@ -2488,7 +2488,7 @@ document.getElementById(
 "nakshatramMonthType"
 ).value;
 
-```
+
 const year =
     document.getElementById(
         "nakshatramYear"

@@ -2553,7 +2553,7 @@ const nakshatramText =
 results.innerHTML =
     "<p>" +
     "<b>" +
-    "Nakshatram Query" +
+    "Nakshatram Query test" +
     "</b>" +
     "</p>" +
 

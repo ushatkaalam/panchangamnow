@@ -445,7 +445,7 @@ document
                 "change",
                 function()
                 {
-                    setThithiQueryButton(true);
+                    setQueryButton(true);
                 }
             );
     }
@@ -511,6 +511,18 @@ loadCCYYYears(
                 Run Query
             </button>
         `;
+                //
+        // Reset Run Query button when date changes
+        //
+        document
+            .getElementById("calendarDate")
+            .addEventListener(
+                "change",
+                function()
+                {
+                    setQueryButton(true);
+                }
+            );
     }
 
 
@@ -598,9 +610,31 @@ loadCCYYYears(
             <button
                 id="runButton"
                 onclick="runQuery('nakshatram')">
-                Run Query
+                Nakshatram Test — Run Query
             </button>
         `;
+                //
+        // Reset Run Query button when a parameter changes
+        //
+        [
+            "nakshatramMonthType",
+            "nakshatramYear",
+            "nakshatramMonth",
+            "nakshatram"
+        ].forEach(
+            function(selectId)
+            {
+                document
+                    .getElementById(selectId)
+                    .addEventListener(
+                        "change",
+                        function()
+                        {
+                            setQueryButton(true);
+                        }
+                    );
+            }
+        );
 
 
         
@@ -1807,7 +1841,7 @@ function getSelectedOptionText(selectId)
 //
 // Set the Thithi query button state.
 //
-function setThithiQueryButton(needsQuery)
+function setQueryButton(needsQuery)
 {
     const button =
         document.getElementById("runButton");
@@ -2299,7 +2333,7 @@ const thithiText =
                 ],
                 resultRows
             );
-                setThithiQueryButton(false);
+                setQueryButton(false);
             }
         )
         .catch(

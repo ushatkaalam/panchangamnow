@@ -3074,13 +3074,25 @@ if (
                 }
                 else
                 {
-                    results.push(
-                        [
+                    if (type === "nakshatram")
+                    {
+                        results.push([
+                            valueDescriptions.get(
+                                (row[valueColumn] || "").trim()
+                            ) || row[valueColumn],
+                
+                            startDisplay,
+                            endDisplay
+                        ]);
+                    }
+                    else
+                    {
+                        results.push([
                             row[valueColumn],
                             startDisplay,
                             endDisplay
-                        ]
-                    );
+                        ]);
+                    }
                 }
             }
         }

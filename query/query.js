@@ -2354,13 +2354,19 @@ const thithiText =
         // Read all four CSV files
         //
         Promise.all(
-            [
-                fetch(DATA_FILES.thithi),
-                fetch(DATA_FILES.nakshatram),
-                fetch(DATA_FILES.yogam),
-                fetch(DATA_FILES.karanam)
-            ]
-        )
+    [
+        fetch(DATA_FILES.thithi),
+        fetch(DATA_FILES.nakshatram),
+        fetch(DATA_FILES.yogam),
+        fetch(DATA_FILES.karanam),
+
+        fetch(DROPDOWN_FILES.thithi),
+        fetch(DROPDOWN_FILES.paksham),
+        fetch(DROPDOWN_FILES.nakshatram),
+        fetch(DROPDOWN_FILES.yogam),
+        fetch(DROPDOWN_FILES.karanam)
+    ]
+)
         .then(
             function(responses)
             {
@@ -2406,6 +2412,21 @@ const thithiText =
                 const karanamRows =
                     parseCSV(csvTexts[3]);
 
+                const thithiDescriptions =
+                    buildDescriptionMap(csvTexts[4]);
+                
+                const pakshamDescriptions =
+                    buildDescriptionMap(csvTexts[5]);
+                
+                const nakshatramDescriptions =
+                    buildDescriptionMap(csvTexts[6]);
+                
+                const yogamDescriptions =
+                    buildDescriptionMap(csvTexts[7]);
+                
+                const karanamDescriptions =
+                    buildDescriptionMap(csvTexts[8]);
+
 
                 //
                 // Process each dataset
@@ -2413,14 +2434,17 @@ const thithiText =
                 const thithiResults =
                     processDateRows(
                         thithiRows,
-                        "thithi"
+                        "thithi",
+                        thithiDescriptions,
+                        pakshamDescriptions
                     );
 
 
                 const nakshatramResults =
                     processDateRows(
                         nakshatramRows,
-                        "nakshatram"
+                        "nakshatram",
+                        nakshatramDescriptions
                     );
 
 
@@ -2780,7 +2804,9 @@ if (type === "nakshatram")
 //
 function processDateRows(
     rows,
-    type
+    type,
+    valueDescriptions = null,
+    pakshamDescriptions = null
 )
 {
     const selectedDate =
@@ -3032,14 +3058,19 @@ if (
 
                 if (type === "thithi")
                 {
-                    results.push(
-                        [
-                            row[pakshamColumn],
-                            row[valueColumn],
-                            startDisplay,
-                            endDisplay
-                        ]
-                    );
+                    results.push([
+                        pakshamDescriptions.get(
+                            (row[pakshamColumn] || "").trim()
+                        ) || row[pakshamColumn],
+                    
+                        valueDescriptions.get(
+                            (row[valueColumn] || "").trim()
+                        ) || row[valueColumn],
+                    
+                        startDisplay,
+                        endDisplay
+                    ]);
+                    
                 }
                 else
                 {

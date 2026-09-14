@@ -2181,8 +2181,8 @@ else if (monthType === "sowramanam")
 
 
                     return [
-                        pakshamText,
-                        thithiText,
+                        getSelectedOptionText("paksham"),
+                        getSelectedOptionText("thithi"),
                         formatUserDateTime(startDate),
                         formatUserDateTime(endDate)
                     ];

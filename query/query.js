@@ -2451,7 +2451,8 @@ const thithiText =
                 const yogamResults =
                     processDateRows(
                         yogamRows,
-                        "yogam"
+                        "yogam",
+                        yogamDescriptions
                     );
 
 
@@ -3074,7 +3075,9 @@ if (
                 }
                 else
                 {
-                    if (type === "nakshatram")
+                    if (type === "nakshatram" ||
+                            type === "yogam"
+                        )
                     {
                         results.push([
                             valueDescriptions.get(

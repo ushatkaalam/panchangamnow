@@ -2578,6 +2578,7 @@ const thithiText =
 
                 results.innerHTML =
                     html;
+                setQueryButton(false);
             }
         )
         .catch(

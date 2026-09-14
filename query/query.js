@@ -610,7 +610,7 @@ loadCCYYYears(
             <button
                 id="runButton"
                 onclick="runQuery('nakshatram')">
-                Nakshatram Test — Run Query
+                Run Query
             </button>
         `;
                 //

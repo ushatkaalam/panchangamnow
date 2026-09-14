@@ -2459,7 +2459,8 @@ const thithiText =
                 const karanamResults =
                     processDateRows(
                         karanamRows,
-                        "karanam"
+                        "karanam",
+                        karanamDescriptions
                     );
 
 
@@ -3076,8 +3077,9 @@ if (
                 else
                 {
                     if (type === "nakshatram" ||
-                            type === "yogam"
-                        )
+                        type === "yogam" ||
+                        type === "karanam"
+                    )
                     {
                         results.push([
                             valueDescriptions.get(

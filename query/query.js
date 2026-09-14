@@ -39,6 +39,12 @@ const DROPDOWN_FILES =
     nakshatram:
         "../nakshatram_dropdown.csv",
 
+    yogam:
+        "../yogam_dropdown.csv",
+
+    karanam:
+        "../karanam_dropdown.csv",
+
     sowramanam:
         "../sowramanam_masam_dropdown.csv",
 
@@ -718,7 +724,60 @@ function parseCSV(text)
 
     return rows;
 }
+//
+// Build a multilingual description from a dropdown CSV row.
+//
+function getMultilingualDescription(row)
+{
+    return [
+        row.english,
+        row.sanskrit,
+        row.tamil,
+        row.telugu,
+        row.kannada
+    ]
+    .filter(
+        function(value)
+        {
+            return value &&
+                   value.trim() !== "";
+        }
+    )
+    .join(" / ");
+}
 
+
+//
+// Build a lookup map from a dropdown CSV.
+//
+function buildDescriptionMap(csvText)
+{
+    const rows =
+        parseCSV(csvText);
+
+    const descriptions =
+        new Map();
+
+    rows.forEach(
+        function(row)
+        {
+            const id =
+                (row.id || "").trim();
+
+            if (!id)
+            {
+                return;
+            }
+
+            descriptions.set(
+                id,
+                getMultilingualDescription(row)
+            );
+        }
+    );
+
+    return descriptions;
+}
 //
 // Load CCYY year data
 //
@@ -2121,12 +2180,12 @@ else if (monthType === "sowramanam")
                             }
 
 
-                            return [
-                                row.othithi_paksham,
-                                row.othithi_thithi,
-                                formatUserDateTime(startDate),
-                                formatUserDateTime(endDate)
-                            ];
+                    return [
+                        pakshamText,
+                        thithiText,
+                        formatUserDateTime(startDate),
+                        formatUserDateTime(endDate)
+                    ];
                         }
                     )
                     .filter(
@@ -2643,7 +2702,7 @@ if (type === "nakshatram")
                     );
 
                 return [
-                    row.onakshatram_nakshatram,
+                    nakshatramText,
                     formatUserDateTime(startDate),
                     formatUserDateTime(endDate)
                 ];

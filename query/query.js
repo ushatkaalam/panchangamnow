@@ -2818,6 +2818,7 @@ if (type === "nakshatram")
             );
 
             results.innerHTML = html;
+            setQueryButton(false);
         })
 
         .catch(function(error)

@@ -43,12 +43,47 @@ h1
     font-size:16px;
     font-weight:bold;
     cursor:pointer;
+    border:1px solid #999999;
+    border-radius:6px;
 }
 
-.queryCategory.active
+/*
+    Thithi
+*/
+#btnThithi
 {
-    background:#90CAF9;
-    font-weight:bold;
+    background:#E6D9F2;
+}
+
+#btnThithi.active
+{
+    background:#BFA3D8;
+}
+
+/*
+    Calendar Date
+*/
+#btnDate
+{
+    background:#D9EAF7;
+}
+
+#btnDate.active
+{
+    background:#A9CBE5;
+}
+
+/*
+    Nakshatram
+*/
+#btnNakshatram
+{
+    background:#DCEFD8;
+}
+
+#btnNakshatram.active
+{
+    background:#ADD3A5;
 }
 
 
@@ -93,12 +128,26 @@ h1
 /*
     Run button
 */
-#runButton
+##runButton
 {
     padding:12px 25px;
     font-size:16px;
     font-weight:bold;
     cursor:pointer;
+    background:#D9EAF7;
+    color:#222222;
+    border:1px solid #999999;
+    border-radius:6px;
+}
+
+/*
+    After results are displayed
+*/
+#runButton:disabled
+{
+    background:#A9CBE5;
+    color:#222222;
+    cursor:default;
 }
 
 

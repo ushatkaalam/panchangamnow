@@ -2508,11 +2508,7 @@ const thithiText =
                     "</p>";
 
 
-                html +=
-                    "<p>" +
-                    "<b>Timezone:</b> " +
-                    getUserTimeZone() +
-                    "</p>";
+                
 
 
                 //

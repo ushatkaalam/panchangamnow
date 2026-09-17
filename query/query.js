@@ -75,6 +75,38 @@ const CCYY_DATA =
     chaandramaanam: []
 };
 
+function updateCurrentDateTime()
+{
+    const now =
+        new Date();
+
+    const formatted =
+        new Intl.DateTimeFormat(
+            undefined,
+            {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+                hour: "numeric",
+                minute: "2-digit",
+                second: "2-digit"
+            }
+        ).format(now);
+
+    document
+        .getElementById("currentDateTime")
+        .textContent =
+            "Current date & time: " + formatted;
+}
+
+updateCurrentDateTime();
+
+setInterval(
+    updateCurrentDateTime,
+    1000
+);
+
 //
 // Load and build the month dropdown
 // from the appropriate CSV file

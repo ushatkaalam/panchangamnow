@@ -1526,9 +1526,6 @@ ctx.fillText(
 /***********************
  * CALL IT
  ***********************/
-/***********************
- * CALL IT
- ***********************/
 updateLangUI(UI_LANG);   // sync button highlight
 loadAll(Date.now());     // redraw canvas
 
@@ -1537,3 +1534,9 @@ document.querySelectorAll("#langSwitch button").forEach(btn => {
     setLanguage(btn.dataset.lang);
   });
 });
+
+document.getElementById("queryButton").addEventListener("click", () => {
+  window.open("query/index.html", "_blank");
+});
+
+

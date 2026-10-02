@@ -1526,27 +1526,12 @@ ctx.fillText(
 /***********************
  * CALL IT
  ***********************/
-updateLangUI(UI_LANG);   // sync button highlight
-loadAll(Date.now());     // redraw canvas
+updateLangUI(UI_LANG);   // sync language button highlight
 
-document.querySelectorAll("#langSwitch button").forEach(btn => {
-  btn.addEventListener("click", () => {
-    setLanguage(btn.dataset.lang);
-  });
-});
-
-document.getElementById("queryButton").addEventListener("click", () => {
-  window.open("query/index.html", "_blank");
-});
-
-/***********************
- * CALL IT
- ***********************/
-updateLangUI(UI_LANG);   // sync button highlight
 renderAppHeader();       // show current date and time
 loadAll(Date.now());     // draw current Panchangam
 
-document.querySelectorAll("#langSwitch button").forEach(btn => {
+document.querySelectorAll("#langSwitch button[data-lang]").forEach(btn => {
   btn.addEventListener("click", () => {
     setLanguage(btn.dataset.lang);
   });
@@ -1560,5 +1545,4 @@ document.getElementById("refreshButton").addEventListener("click", () => {
 document.getElementById("queryButton").addEventListener("click", () => {
   window.open("query/index.html", "_blank");
 });
-
 

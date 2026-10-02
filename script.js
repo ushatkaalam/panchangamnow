@@ -1017,9 +1017,10 @@ return;
 }
 
 	function updateLangUI(lang) {
-	document.querySelectorAll("#langSwitch button").forEach(btn => {
-	btn.classList.toggle("active", btn.dataset.lang === lang);
-	});
+  document.querySelectorAll("#langSwitch button[data-lang]").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.lang === lang);
+  });
+}
 }
 	// -------------------------------
         // This ensures getting lang used for language toggle.

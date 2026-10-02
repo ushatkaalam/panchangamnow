@@ -1539,4 +1539,23 @@ document.getElementById("queryButton").addEventListener("click", () => {
   window.open("query/index.html", "_blank");
 });
 
+/***********************
+ * CALL IT
+ ***********************/
+updateLangUI(UI_LANG);   // sync button highlight
+loadAll(Date.now());     // redraw canvas
+
+document.querySelectorAll("#langSwitch button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    setLanguage(btn.dataset.lang);
+  });
+});
+document.getElementById("refreshButton").addEventListener("click", () => {
+  loadAll(Date.now());
+});
+document.getElementById("queryButton").addEventListener("click", () => {
+  window.open("query/index.html", "_blank");
+});
+
+
 

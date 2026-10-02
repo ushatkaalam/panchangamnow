@@ -75,6 +75,28 @@
 #queryButton:hover {
   background: #115E59;
 }
+
+  #refreshInfo {
+  margin-top: 6px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+#refreshButton {
+  background: #0F766E;
+  color: #FFFFFF;
+  border: 1px solid #0F766E;
+  padding: 5px 10px;
+  margin-left: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+#refreshButton:hover {
+  background: #115E59;
+}
 </style>
 </head>
 
@@ -99,6 +121,13 @@
   
 <div id="appTitle"></div>
 <div id="nowTime"></div>
+
+<div id="refreshInfo">
+  Data displayed below is as of the time displayed above.<br>
+  Hit Refresh when needed.
+  <button id="refreshButton">Refresh</button>
+</div>
+  
 
 <div id="sowramanamExtras" class="box" style="background:#f5faff;"></div>
 <div id="thithiExtras" class="box" style="background:#fafafa;"></div>

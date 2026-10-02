@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Panchangam - On the go</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 70px 20px 20px 20px;
+  }
+
+  h2 {
+    font-size: 1.17em;
+    font-weight: bold;
+  }
+
+  .box {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-top: 10px;
+  }
+
+  #langSwitch button {
+  background: #0F766E;
+  color: #FFFFFF;
+  border: 1px solid #0F766E;
+  padding: 6px 10px;
+  margin: 2px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#langSwitch button:hover {
+  background: #115E59;
+}
+#langSwitch {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+
+  background: white;
+  padding: 8px 10px;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+#langSwitch button.active {
+  background: #FFFFFF;
+  color: #0F766E;
+  border: 2px solid #FACC15;
+  font-weight: bold;
+  transform: scale(1.05);
+  box-shadow: 0 0 6px rgba(250, 204, 21, 0.35);
+}
+
+#queryButtonBar {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#queryButton {
+  background: #0F766E;
+  color: #FFFFFF;
+  border: 1px solid #0F766E;
+  padding: 8px 14px;
+  margin: 2px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1.4;
+  display: block;
+}
+#queryButton:hover {
+  background: #115E59;
+}
+</style>
+</head>
+
+<body>
+
+<div id="langSwitch">
+<button data-lang="en">English</button>
+<button data-lang="sa">संस्कृतम्</button>
+<button data-lang="ta">தமிழ்</button>
+<button data-lang="te">తెలుగు</button>
+<button data-lang="ka">ಕನ್ನಡ</button>
+</div> 
+
+<div id="queryButtonBar">
+  <button id="queryButton">
+    Panchangam Queries / पञ्चाङ्ग प्रश्नाः / பஞ்சாங்க வினாவல்கள் /<br>
+    పంచాంగ ప్రశ్నలు / ಪಂಚಾಂಗ ಪ್ರಶ್ನೆಗಳು
+  </button>
+</div>
+
+  
+  
+<div id="appTitle"></div>
+<div id="nowTime"></div>
+
+<div id="sowramanamExtras" class="box" style="background:#f5faff;"></div>
+<div id="thithiExtras" class="box" style="background:#fafafa;"></div>
+<div id="thithiBlock" class="box"></div>
+<div id="nakshatramBlock" class="box"></div>
+<div id="yogamBlock" class="box"></div>
+<div id="karanamBlock" class="box"></div>
+<div id="pakshamDegreesBlock" class="box">
+<div id="pakshamTitle"></div>
+  <canvas id="pakshamDegreesPie" width="500" height="480"></canvas>
+</div>
+
+<hr style="border-top: 4px solid black;">
+
+<div id="tableHeaderBlock"></div>
+<div id="thithiTableBox"></div>
+<br>
+
+<div id="nakshatramTableBox"></div>
+<br>
+
+<div id="yogamTableBox"></div>
+<br>
+
+<div id="karanamTableBox"></div>
+<!-- Load JS ONCE -->
+<script src="script.js?v=6"></script>
+
+</body>
+</html>

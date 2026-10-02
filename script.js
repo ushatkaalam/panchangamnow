@@ -784,7 +784,7 @@ const THITHI_INDEX = {
   EKA: 11, DWA: 12, TRY: 13, CHD: 14,
   POU: 15, AMA: 15
 };
-let CACHE_BUSTER = "?v=" + Date.now();
+const CACHE_BUSTER = "?v=" + Date.now();
 let UI_LANG = localStorage.getItem("ui_lang") || "en";
 
 
@@ -1017,10 +1017,9 @@ return;
 }
 
 	function updateLangUI(lang) {
-  document.querySelectorAll("#langSwitch button[data-lang]").forEach(btn => {
-    btn.classList.toggle("active", btn.dataset.lang === lang);
-  });
-}
+	document.querySelectorAll("#langSwitch button").forEach(btn => {
+	btn.classList.toggle("active", btn.dataset.lang === lang);
+	});
 }
 	// -------------------------------
         // This ensures getting lang used for language toggle.
@@ -1038,6 +1037,8 @@ return;
 	function renderAppHeader() {
 
   const nowLocal = new Date();
+
+  nowLocal.setSeconds(0, 0);
 
   const weekdayName = nowLocal.toLocaleDateString("en-US", {
     weekday: "long"
@@ -1525,24 +1526,15 @@ ctx.fillText(
 /***********************
  * CALL IT
  ***********************/
-updateLangUI(UI_LANG);   // sync language button highlight
+updateLangUI(UI_LANG);   // sync button highlight
+loadAll(Date.now());     // redraw canvas
 
-renderAppHeader();       // show current date and time
-loadAll(Date.now());     // draw current Panchangam
-
-document.querySelectorAll("#langSwitch button[data-lang]").forEach(btn => {
+document.querySelectorAll("#langSwitch button").forEach(btn => {
   btn.addEventListener("click", () => {
     setLanguage(btn.dataset.lang);
   });
 });
 
-document.getElementById("refreshButton").addEventListener("click", () => {
-  CACHE_BUSTER = "?v=" + Date.now();
-  renderAppHeader();     // update displayed date and time
-  loadAll(Date.now());   // recalculate and redraw
-});
-
 document.getElementById("queryButton").addEventListener("click", () => {
   window.open("query/index.html", "_blank");
 });
-

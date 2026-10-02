@@ -784,7 +784,7 @@ const THITHI_INDEX = {
   EKA: 11, DWA: 12, TRY: 13, CHD: 14,
   POU: 15, AMA: 15
 };
-const CACHE_BUSTER = "?v=" + Date.now();
+let CACHE_BUSTER = "?v=" + Date.now();
 let UI_LANG = localStorage.getItem("ui_lang") || "en";
 
 
@@ -1038,8 +1038,6 @@ return;
 	function renderAppHeader() {
 
   const nowLocal = new Date();
-
-  nowLocal.setSeconds(0, 0);
 
   const weekdayName = nowLocal.toLocaleDateString("en-US", {
     weekday: "long"
@@ -1539,6 +1537,7 @@ document.querySelectorAll("#langSwitch button[data-lang]").forEach(btn => {
 });
 
 document.getElementById("refreshButton").addEventListener("click", () => {
+  CACHE_BUSTER = "?v=" + Date.now();
   renderAppHeader();     // update displayed date and time
   loadAll(Date.now());   // recalculate and redraw
 });

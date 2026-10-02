@@ -1543,19 +1543,22 @@ document.getElementById("queryButton").addEventListener("click", () => {
  * CALL IT
  ***********************/
 updateLangUI(UI_LANG);   // sync button highlight
-loadAll(Date.now());     // redraw canvas
+renderAppHeader();       // show current date and time
+loadAll(Date.now());     // draw current Panchangam
 
 document.querySelectorAll("#langSwitch button").forEach(btn => {
   btn.addEventListener("click", () => {
     setLanguage(btn.dataset.lang);
   });
 });
+
 document.getElementById("refreshButton").addEventListener("click", () => {
-  loadAll(Date.now());
+  renderAppHeader();     // update displayed date and time
+  loadAll(Date.now());   // recalculate and redraw
 });
+
 document.getElementById("queryButton").addEventListener("click", () => {
   window.open("query/index.html", "_blank");
 });
-
 
 

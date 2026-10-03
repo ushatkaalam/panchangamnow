@@ -1178,9 +1178,8 @@ function renderElementTable(def, lines, headers, index) {
     const fromUTC = parseUTC(cols, idx, def.fromPrefix);
     const toUTC   = parseUTC(cols, idx, def.toPrefix);
 
-    const fromLocal = fromUTC ? new Date(fromUTC).toLocaleString() : "—";
-    const toLocal   = toUTC ? new Date(toUTC).toLocaleString() : "—";
-
+    const fromLocal = fromUTC ? formatLocalDateTime(new Date(fromUTC)) : "—";
+    const toLocal   = toUTC ? formatLocalDateTime(new Date(toUTC)) : "—";
     const code = cols[idx(def.codeColumn)]?.trim();
     const info = def.mapping?.[code] ?? {};
     const name = getLang(info);

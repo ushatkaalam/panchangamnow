@@ -1251,6 +1251,17 @@ function formatDuration(ms) {
   return `${hours}h ${minutes}m`;
 }
 
+function formatLocalDateTime(date) {
+  return date.toLocaleString("en-GB", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true
+  });
+}
 const isHex = v => /^#([0-9A-F]{3}){1,2}$/i.test(v);
 
 /***********************
@@ -1275,13 +1286,13 @@ function renderElementBlock({
   if (!container) return;
 
     container.innerHTML = `
-      <b>${title}</b><br><br>
-      <b>${getLang(common_ui_labels.name)}: ${name}</b><br>
-      ${getLang(common_ui_labels.started_at)}: ${fromLocal.toLocaleString()}<br>
-      ${getLang(common_ui_labels.ends_at)}: ${toLocal.toLocaleString()}<br>
-      ${getLang(common_ui_labels.elapsed_time)}: ${elapsedStr}<br>
-      <b>${getLang(common_ui_labels.remaining_time)}: ${remainingStr}</b><br>
-      <canvas id="${canvasId}" width="450" height="400" style="margin-top:10px;"></canvas>
+	<b>${title}</b><br><br>
+    <b>${getLang(common_ui_labels.name)}: ${name}</b><br>
+    ${getLang(common_ui_labels.started_at)}: ${formatLocalDateTime(fromLocal)}<br>
+    ${getLang(common_ui_labels.ends_at)}: ${formatLocalDateTime(toLocal)}<br>
+    ${getLang(common_ui_labels.elapsed_time)}: ${elapsedStr}<br>
+    <b>${getLang(common_ui_labels.remaining_time)}: ${remainingStr}</b><br>
+    <canvas id="${canvasId}" width="450" height="400" style="margin-top:10px;"></canvas>
     `;
 
   drawTimePie(canvasId, elapsedMs, remainingMs, pieLabel, elapsedColor,

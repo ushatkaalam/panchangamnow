@@ -549,8 +549,8 @@ loadCCYYYears(
         // Reset Run Query button when date changes
         //
         document
-    .getElementById("calendarDate")
-    .addEventListener(
+            .getElementById("calendarDate")
+            .addEventListener(
         "change",
         function()
         {

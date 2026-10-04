@@ -527,8 +527,10 @@ loadCCYYYears(
                 </label>
 
                 <input
-                    type="date"
-                    id="calendarDate">
+                type="date"
+                id="calendarDate">
+
+                <div id="selectedCalendarDate"></div>
 
                 <div class="dateHint">
                     Tip: Click the calendar icon on the right
@@ -547,14 +549,42 @@ loadCCYYYears(
         // Reset Run Query button when date changes
         //
         document
-            .getElementById("calendarDate")
-            .addEventListener(
-                "change",
-                function()
-                {
-                    setQueryButton(true);
-                }
-            );
+    .getElementById("calendarDate")
+    .addEventListener(
+        "change",
+        function()
+        {
+            const selectedDate = this.value;
+
+            if (selectedDate)
+            {
+                const date =
+                    new Date(
+                        selectedDate + "T00:00:00"
+                    );
+
+                document
+                    .getElementById("selectedCalendarDate")
+                    .textContent =
+                        date.toLocaleDateString(
+                            undefined,
+                            {
+                                year: "numeric",
+                                month: "long",
+                                day: "numeric"
+                            }
+                        );
+            }
+            else
+            {
+                document
+                    .getElementById("selectedCalendarDate")
+                    .textContent = "";
+            }
+
+            setQueryButton(true);
+        }
+    );
     }
 
 

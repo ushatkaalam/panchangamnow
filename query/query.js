@@ -2563,10 +2563,21 @@ const thithiText =
                 //
                 // Build result page
                 //
+                const displayDate =
+                    new Date(
+                    selectedDate + "T00:00:00"
+                    ).toLocaleDateString(
+                    undefined,
+                    {
+                        year: "numeric",
+                        month: "long",
+                        day: "2-digit"
+                    }
+                );
                 let html =
                     "<p>" +
                     "<b>Calendar Date:</b> " +
-                    selectedDate +
+                    displayDate +
                     "</p>";
 
 

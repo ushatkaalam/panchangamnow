@@ -3149,17 +3149,16 @@ if (
         selectedDate
     )
 )
-            {
-                const startDisplay =
-                    formatLocalDateTime(
-                        startDate
-                    );
+{
+    const startDisplay =
+        formatLocalDateTime(
+            startDate
+        );
 
-
-                const endDisplay =
-                    formatLocalDateTime(
-                        endDate
-                    );
+    const endDisplay =
+        formatLocalDateTime(
+            endDate
+        );
 
 
                 if (type === "thithi")

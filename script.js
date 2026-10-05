@@ -1013,7 +1013,8 @@ return;
   			const el = document.getElementById("pakshamTitle");
   		if (!el) return;
 
-  		el.innerHTML = `<b>${getLang(ui_labels_paksham_block.title)}</b><br><br>`;
+  		el.innerHTML = `<b>${getLang(ui_labels_paksham_block.title).replace("   ", "&nbsp;&nbsp;&nbsp;")}</b><br><br>`;
+			
 }
 
 	function updateLangUI(lang) {

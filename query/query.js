@@ -2278,8 +2278,8 @@ else if (monthType === "sowramanam")
                     return [
                         getSelectedOptionText("paksham"),
                         getSelectedOptionText("thithi"),
-                        formatUserDateTime(startDate),
-                        formatUserDateTime(endDate)
+                        formatLocalDateTime(startDate),
+                        formatLocalDateTime(endDate)
                     ];
                         }
                     )
@@ -2832,8 +2832,8 @@ if (type === "nakshatram")
 
                 return [
                     nakshatramText,
-                    formatUserDateTime(startDate),
-                    formatUserDateTime(endDate)
+                    formatLocalDateTime(startDate),
+                    formatLocalDateTime(endDate)
                 ];
             });
 

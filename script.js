@@ -1070,6 +1070,12 @@ return;
     <b>${getLang(ui_labels_app.current_datetime)}:</b>
     ${formattedDateTime}
   `;
+
+document.getElementById("nowTime").innerHTML += `
+    <div style="margin-top:8px;">
+        Refresh / Reload the page as needed to get the current data.
+    </div>
+`;
 }
 
 // -------------------------------

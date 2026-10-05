@@ -1251,13 +1251,12 @@ function formatDuration(ms) {
 }
 
 function formatLocalDateTime(date) {
-  return date.toLocaleString("en-GB", {
+  return date.toLocaleString("en-US", {
+    month: "long",
     day: "2-digit",
-    month: "2-digit",
     year: "numeric",
     hour: "numeric",
     minute: "2-digit",
-    second: "2-digit",
     hour12: true
   });
 }

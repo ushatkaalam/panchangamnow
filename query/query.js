@@ -518,12 +518,12 @@ loadCCYYYears(
     {
         form.innerHTML =
         `
-            <h2>Query by Calendar Date</h2>
+            <h2>Query by Date</h2>
 
             <div class="formRow">
 
                 <label for="calendarDate">
-                    Calendar Date
+                    Date
                 </label>
 
                 <input
@@ -2575,7 +2575,7 @@ const thithiText =
                 );
                 let html =
                     "<p>" +
-                    "<b>Calendar Date:</b> " +
+                    "<b>Date:</b> " +
                     displayDate +
                     "</p>";
 

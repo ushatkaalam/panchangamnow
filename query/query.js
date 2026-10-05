@@ -1711,20 +1711,19 @@ function csvUTCDate(
 //
 // Format a UTC Date in the user's timezone
 //
-function formatUserDateTime(date)
+function formatLocalDateTime(date)
 {
     const timeZone =
         Intl.DateTimeFormat()
             .resolvedOptions()
             .timeZone;
 
-
     return new Intl.DateTimeFormat(
-        undefined,
+        "en-US",
         {
             timeZone: timeZone,
             year: "numeric",
-            month: "2-digit",
+            month: "long",
             day: "2-digit",
             hour: "2-digit",
             minute: "2-digit",
@@ -3152,13 +3151,13 @@ if (
 )
             {
                 const startDisplay =
-                    formatUserDateTime(
+                    formatLocalDateTime(
                         startDate
                     );
 
 
                 const endDisplay =
-                    formatUserDateTime(
+                    formatLocalDateTime(
                         endDate
                     );
 

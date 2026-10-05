@@ -1071,9 +1071,9 @@ return;
     ${formattedDateTime}
   `;
 
-document.getElementById("nowTime").innerHTML += `
+  document.getElementById("nowTime").innerHTML += `
     <div style="margin-top:8px;">
-        Refresh / Reload the page as needed to get the current data.
+        Refresh / Reload page as needed to get current data
     </div>
 `;
 }

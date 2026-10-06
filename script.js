@@ -588,6 +588,13 @@ en: "Current date & time",
     ta: "தற்போதைய தேதி மற்றும் நேரம்",
     te: "ప్రస్తుత తేదీ మరియు సమయం",
     ka: "ಪ್ರಸ್ತುತ ದಿನಾಂಕ ಮತ್ತು ಸಮಯ"
+},
+refresh_notice: {
+    en: "Refresh / Reload the page as needed to get the current data.",
+    sa: "वर्तमानदत्तांशं प्राप्तुं आवश्यकतानुसारं पृष्ठं पुनः लोडयन्तु।",
+    ta: "தற்போதைய தரவைப் பெற தேவையானபோது பக்கத்தைப் புதுப்பிக்கவும்.",
+    te: "ప్రస్తుత డేటాను పొందడానికి అవసరమైనప్పుడు పేజీని రిఫ్రెష్ చేయండి.",
+    ka: "ಪ್ರಸ್ತುತ ದತ್ತಾಂಶವನ್ನು ಪಡೆಯಲು ಅಗತ್ಯವಿದ್ದಾಗ ಪುಟವನ್ನು ರಿಫ್ರೆಶ್ ಮಾಡಿ."
 }
 };
 
@@ -1073,7 +1080,7 @@ return;
 
   document.getElementById("nowTime").innerHTML += `
     <div style="margin-top:8px;">
-        Refresh / Reload page as needed to get current data
+        ${getLang(ui_labels_app.refresh_notice)}
     </div>
 `;
 }
